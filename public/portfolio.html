@@ -1,0 +1,961 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>高彦 · AI产品经理作品集</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Noto Sans SC', 'Inter', -apple-system, sans-serif;
+      background: #fff;
+      color: #1e293b;
+      overflow-x: hidden;
+      line-height: 1.6;
+    }
+    img { max-width: 100%; display: block; }
+    a { text-decoration: none; color: inherit; }
+
+    :root {
+      --indigo: #4f46e5;
+      --indigo-50: #eef2ff;
+      --indigo-100: #e0e7ff;
+      --amber: #d97706;
+      --amber-50: #fffbeb;
+      --amber-100: #fef3c7;
+      --emerald: #059669;
+      --emerald-50: #ecfdf5;
+      --emerald-100: #d1fae5;
+      --slate-900: #0f172a;
+      --slate-800: #1e293b;
+      --slate-700: #334155;
+      --slate-600: #475569;
+      --slate-500: #64748b;
+      --slate-400: #94a3b8;
+      --slate-300: #cbd5e1;
+      --slate-200: #e2e8f0;
+      --slate-100: #f1f5f9;
+      --slate-50: #f8fafc;
+      --max-w: 900px;
+    }
+
+    /* ===== NAV ===== */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      background: rgba(255,255,255,0.9);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--slate-200);
+      transition: box-shadow .3s;
+    }
+    nav.scrolled { box-shadow: 0 4px 24px rgba(0,0,0,0.06); }
+    .nav-inner {
+      max-width: var(--max-w); margin: 0 auto; padding: 0 24px;
+      height: 58px; display: flex; align-items: center; justify-content: space-between;
+    }
+    .nav-logo { font-family: 'Inter',sans-serif; font-weight: 700; font-size: 15px; color: var(--slate-900); letter-spacing: -.02em; }
+    .nav-logo em { color: var(--indigo); font-style: normal; }
+    .nav-links { display: flex; gap: 2px; list-style: none; }
+    .nav-links a {
+      font-size: 13px; font-weight: 500; color: var(--slate-500);
+      padding: 6px 10px; border-radius: 8px;
+      transition: color .2s, background .2s;
+    }
+    .nav-links a:hover, .nav-links a.active { color: var(--indigo); background: var(--indigo-50); }
+
+    /* ===== HERO ===== */
+    #hero {
+      min-height: 100vh; display: flex; align-items: center;
+      position: relative; overflow: hidden; padding-top: 58px;
+    }
+    .hero-bg {
+      position: absolute; inset: -80px; will-change: transform;
+      background:
+        radial-gradient(ellipse 65% 55% at 15% 25%, rgba(224,231,255,.7) 0%, transparent 65%),
+        radial-gradient(ellipse 50% 40% at 85% 75%, rgba(209,250,229,.45) 0%, transparent 65%),
+        radial-gradient(ellipse 45% 50% at 65% 10%, rgba(254,243,199,.35) 0%, transparent 65%);
+    }
+    .hero-inner {
+      position: relative; z-index: 1;
+      max-width: var(--max-w); margin: 0 auto; padding: 80px 24px;
+      display: grid; grid-template-columns: 1fr auto; gap: 48px; align-items: center;
+    }
+    @media(max-width:700px){ .hero-inner { grid-template-columns: 1fr; } .hero-phone { display: none; } }
+    .hero-eyebrow {
+      display: inline-flex; align-items: center; gap: 6px;
+      background: var(--indigo-50); color: var(--indigo);
+      border: 1px solid var(--indigo-100); border-radius: 100px;
+      padding: 4px 14px; font-size: 11px; font-weight: 700;
+      font-family: 'Inter',sans-serif; letter-spacing: .08em; text-transform: uppercase;
+      margin-bottom: 20px;
+    }
+    .hero-name {
+      font-family: 'Inter',sans-serif;
+      font-size: clamp(52px,9vw,84px); font-weight: 800;
+      line-height: 1.02; letter-spacing: -.04em; color: var(--slate-900);
+      margin-bottom: 6px;
+    }
+    .hero-name .cn { font-family: 'Noto Sans SC',sans-serif; }
+    .hero-name .dot { color: var(--indigo); }
+    .hero-role { font-size: clamp(18px,2.5vw,24px); font-weight: 600; color: var(--indigo); font-family: 'Inter',sans-serif; margin-bottom: 6px; }
+    .hero-sub { font-size: 13px; color: var(--slate-400); margin-bottom: 28px; letter-spacing: .04em; }
+    .hero-pills { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 32px; }
+    .pill {
+      background: #fff; border: 1px solid var(--slate-200); border-radius: 100px;
+      padding: 5px 14px; font-size: 12px; color: var(--slate-700);
+      box-shadow: 0 1px 4px rgba(0,0,0,.04);
+      transition: border-color .2s, transform .2s, box-shadow .2s;
+    }
+    .pill:hover { border-color: var(--indigo); transform: translateY(-1px); box-shadow: 0 4px 12px rgba(79,70,229,.12); }
+    .hero-btns { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 36px; }
+    .btn-p {
+      display: inline-flex; align-items: center; gap: 7px;
+      background: var(--indigo); color: #fff; padding: 11px 22px;
+      border-radius: 11px; font-weight: 600; font-size: 14px;
+      box-shadow: 0 4px 16px rgba(79,70,229,.3);
+      transition: transform .2s, box-shadow .2s, background .2s;
+    }
+    .btn-p:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(79,70,229,.38); background: #4338ca; }
+    .btn-o {
+      display: inline-flex; align-items: center; gap: 7px;
+      background: #fff; color: var(--slate-700); padding: 11px 22px;
+      border-radius: 11px; font-weight: 600; font-size: 14px;
+      border: 1.5px solid var(--slate-200);
+      transition: transform .2s, box-shadow .2s, border-color .2s;
+    }
+    .btn-o:hover { transform: translateY(-2px); box-shadow: 0 4px 16px rgba(0,0,0,.08); border-color: var(--slate-300); }
+    .hero-contacts { display: flex; flex-wrap: wrap; gap: 18px; }
+    .hc { display: flex; align-items: center; gap: 6px; font-size: 13px; color: var(--slate-500); }
+    .scroll-hint {
+      position: absolute; bottom: 28px; left: 50%; transform: translateX(-50%);
+      display: flex; flex-direction: column; align-items: center; gap: 4px;
+      color: var(--slate-400); font-size: 10px; font-family: 'Inter',sans-serif;
+      letter-spacing: .1em; text-transform: uppercase;
+      animation: bob 2s ease-in-out infinite;
+    }
+    @keyframes bob { 0%,100%{ transform: translateX(-50%) translateY(0); } 50%{ transform: translateX(-50%) translateY(6px); } }
+    .hero-phone {
+      width: 220px; border-radius: 44px; border: 7px solid var(--slate-800);
+      box-shadow: 0 0 0 1px rgba(0,0,0,.08), 0 32px 80px rgba(0,0,0,.18), inset 0 0 0 1px rgba(255,255,255,.1);
+      overflow: hidden; flex-shrink: 0;
+      animation: float 4s ease-in-out infinite;
+    }
+    @keyframes float { 0%,100%{ transform: translateY(0); } 50%{ transform: translateY(-10px); } }
+    .hero-phone img { width: 100%; display: block; }
+
+    /* ===== SHARED ===== */
+    section { padding: 96px 24px; }
+    .container { max-width: var(--max-w); margin: 0 auto; }
+    .section-label { font-family: 'Inter',sans-serif; font-size: 11px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--indigo); margin-bottom: 8px; }
+    .section-title { font-size: clamp(28px,4vw,40px); font-weight: 700; color: var(--slate-900); line-height: 1.2; letter-spacing: -.025em; margin-bottom: 12px; }
+    .section-sub { font-size: 16px; color: var(--slate-500); line-height: 1.7; max-width: 560px; }
+    .divider { height: 1px; background: var(--slate-100); margin: 0 24px; }
+
+    .fade-in { opacity: 0; transform: translateY(22px); transition: opacity .65s ease, transform .65s ease; }
+    .fade-in.d1 { transition-delay: .1s; }
+    .fade-in.d2 { transition-delay: .2s; }
+    .fade-in.d3 { transition-delay: .3s; }
+    .fade-in.d4 { transition-delay: .4s; }
+    .fade-in.visible { opacity: 1; transform: none; }
+
+    /* ===== ABOUT ===== */
+    #about { background: var(--slate-50); }
+    .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; margin-top: 48px; }
+    @media(max-width:640px){ .about-grid { grid-template-columns: 1fr; } }
+    .edu-list { display: flex; flex-direction: column; }
+    .edu-item { display: flex; gap: 16px; padding-bottom: 28px; position: relative; }
+    .edu-item:not(:last-child)::before { content:''; position: absolute; left: 19px; top: 40px; bottom: 0; width: 2px; background: var(--slate-200); }
+    .edu-dot { width: 40px; height: 40px; border-radius: 50%; background: var(--indigo-50); border: 2px solid var(--indigo-100); display: flex; align-items: center; justify-content: center; font-size: 17px; flex-shrink: 0; }
+    .edu-body { padding-top: 8px; }
+    .edu-period { font-size: 11px; color: var(--slate-500); font-family: 'Inter',sans-serif; font-weight: 500; margin-bottom: 3px; }
+    .edu-school { font-weight: 700; font-size: 15px; color: var(--slate-900); margin-bottom: 2px; }
+    .edu-major { font-size: 13px; color: var(--slate-500); margin-bottom: 5px; }
+    .edu-badge { display: inline-block; font-size: 11px; background: var(--indigo-50); color: var(--indigo); padding: 2px 9px; border-radius: 5px; font-weight: 600; font-family: 'Inter',sans-serif; }
+    .highlight-box { background: #fff; border-radius: 20px; padding: 28px; border: 1px solid var(--slate-200); box-shadow: 0 4px 24px rgba(0,0,0,.04); }
+    .quote-text { font-size: 14px; line-height: 1.8; color: var(--slate-700); border-left: 3px solid var(--indigo); padding-left: 16px; margin-bottom: 24px; }
+    .tag-label { font-size: 11px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--slate-500); font-family: 'Inter',sans-serif; margin-bottom: 12px; }
+    .tag-wrap { display: flex; flex-wrap: wrap; gap: 7px; }
+    .stag { background: var(--slate-50); border: 1px solid var(--slate-200); border-radius: 8px; padding: 5px 11px; font-size: 12px; font-weight: 500; color: var(--slate-700); transition: all .2s; cursor: default; }
+    .stag:hover { background: var(--indigo-50); border-color: var(--indigo-100); color: var(--indigo); transform: translateY(-1px); }
+    .stag.hi { background: var(--indigo-50); border-color: var(--indigo-100); color: var(--indigo); }
+
+    /* ===== PRODUCT INTRO ===== */
+    #product-intro { background: #fff; }
+    .product-hero {
+      background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 100%);
+      border-radius: 24px; padding: 52px 48px; color: #fff;
+      margin: 40px 0; position: relative; overflow: hidden;
+      display: grid; grid-template-columns: 1fr auto; gap: 32px; align-items: center;
+    }
+    @media(max-width:640px){ .product-hero { grid-template-columns: 1fr; padding: 32px 24px; } .product-hero-phone { display: none; } }
+    .product-hero::before { content:''; position: absolute; top: -60px; right: 200px; width: 280px; height: 280px; background: radial-gradient(circle, rgba(79,70,229,.25) 0%, transparent 70%); border-radius: 50%; }
+    .ph-eyebrow { font-size: 11px; font-weight: 700; color: rgba(255,255,255,.4); letter-spacing: .1em; text-transform: uppercase; font-family: 'Inter',sans-serif; margin-bottom: 12px; }
+    .ph-title { font-size: clamp(26px,3.5vw,38px); font-weight: 800; letter-spacing: -.025em; line-height: 1.15; margin-bottom: 14px; }
+    .ph-sub { font-size: 15px; color: rgba(255,255,255,.65); margin-bottom: 28px; }
+    .ph-tags { display: flex; flex-wrap: wrap; gap: 8px; }
+    .ph-tag { background: rgba(255,255,255,.1); border: 1px solid rgba(255,255,255,.15); border-radius: 100px; padding: 4px 14px; font-size: 12px; color: rgba(255,255,255,.8); }
+    .product-hero-phone { width: 160px; border-radius: 32px; border: 5px solid rgba(255,255,255,.15); box-shadow: 0 20px 60px rgba(0,0,0,.4); overflow: hidden; flex-shrink: 0; }
+    .product-hero-phone img { width: 100%; display: block; }
+    .value-row { display: grid; grid-template-columns: repeat(3,1fr); gap: 14px; }
+    @media(max-width:600px){ .value-row { grid-template-columns: 1fr; } }
+    .vcard { background: var(--slate-50); border: 1px solid var(--slate-200); border-radius: 16px; padding: 24px; transition: transform .2s, box-shadow .2s; }
+    .vcard:hover { transform: translateY(-4px); box-shadow: 0 12px 32px rgba(0,0,0,.07); }
+    .vcard-icon { font-size: 26px; margin-bottom: 10px; }
+    .vcard-title { font-weight: 700; font-size: 14px; color: var(--slate-900); margin-bottom: 5px; }
+    .vcard-desc { font-size: 13px; color: var(--slate-500); line-height: 1.6; }
+
+    /* ===== DESIGN THINKING ===== */
+    #product-design { background: var(--slate-50); }
+    .pain-row { display: grid; grid-template-columns: repeat(3,1fr); gap: 14px; margin: 32px 0 20px; }
+    @media(max-width:600px){ .pain-row { grid-template-columns: 1fr; } }
+    .pcard { background: #fff; border: 1px solid var(--slate-200); border-radius: 16px; padding: 24px; position: relative; overflow: hidden; transition: transform .2s, box-shadow .2s; }
+    .pcard:hover { transform: translateY(-3px); box-shadow: 0 8px 24px rgba(0,0,0,.07); }
+    .pnum { position: absolute; top: 12px; right: 14px; font-size: 52px; font-weight: 900; color: var(--slate-100); font-family: 'Inter',sans-serif; line-height: 1; }
+    .picon { font-size: 22px; margin-bottom: 10px; }
+    .ptitle { font-weight: 700; font-size: 14px; color: var(--slate-900); margin-bottom: 5px; }
+    .pdesc { font-size: 12px; color: var(--slate-500); line-height: 1.65; }
+    .arrow-row { text-align: center; color: var(--slate-400); font-size: 18px; margin: 16px 0 20px; }
+    .sol-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+    @media(max-width:600px){ .sol-row { grid-template-columns: 1fr; } }
+    .scard { border-radius: 16px; padding: 24px; border: 1.5px solid; transition: transform .2s, box-shadow .2s; }
+    .scard:hover { transform: translateY(-3px); box-shadow: 0 8px 24px rgba(0,0,0,.09); }
+    .scard.a { background: var(--amber-50); border-color: var(--amber-100); }
+    .scard.e { background: var(--emerald-50); border-color: var(--emerald-100); }
+    .sname { font-weight: 700; font-size: 16px; margin-bottom: 6px; }
+    .scard.a .sname { color: var(--amber); }
+    .scard.e .sname { color: var(--emerald); }
+    .sdesc { font-size: 13px; color: var(--slate-600); line-height: 1.65; }
+
+    /* Architecture diagram */
+    .arch-box { background: #fff; border: 1px solid var(--slate-200); border-radius: 20px; padding: 36px; margin-top: 32px; }
+    .arch-label { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: .08em; color: var(--slate-500); text-align: center; margin-bottom: 24px; font-family: 'Inter',sans-serif; }
+    .arch-row { display: flex; align-items: stretch; }
+    @media(max-width:600px){ .arch-row { flex-direction: column; } }
+    .anode { flex: 1; border-radius: 14px; padding: 20px; }
+    .anode.n1 { background: var(--indigo-50); border: 1.5px solid var(--indigo-100); }
+    .anode.n2 { background: #faf5ff; border: 1.5px solid #e9d5ff; }
+    .anode.n3 { background: var(--emerald-50); border: 1.5px solid var(--emerald-100); }
+    .anode-title { font-size: 11px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; margin-bottom: 12px; font-family: 'Inter',sans-serif; }
+    .anode.n1 .anode-title { color: var(--indigo); }
+    .anode.n2 .anode-title { color: #7c3aed; }
+    .anode.n3 .anode-title { color: var(--emerald); }
+    .anode ul { list-style: none; display: flex; flex-direction: column; gap: 7px; }
+    .anode ul li { font-size: 12px; color: var(--slate-600); display: flex; align-items: center; gap: 6px; }
+    .aarrow { display: flex; align-items: center; padding: 0 14px; color: var(--slate-300); font-size: 22px; flex-shrink: 0; }
+    @media(max-width:600px){ .aarrow { transform: rotate(90deg); align-self: center; padding: 8px 0; } }
+    .arch-foot { margin-top: 18px; text-align: center; font-size: 12px; color: var(--slate-500); background: var(--slate-50); border-radius: 8px; padding: 10px 16px; }
+
+    /* ===== DEVELOPMENT ===== */
+    #product-dev { background: #fff; }
+    .stat-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 36px; }
+    .sstat { background: var(--slate-50); border: 1px solid var(--slate-200); border-radius: 16px; padding: 28px; text-align: center; transition: transform .2s; }
+    .sstat:hover { transform: translateY(-3px); }
+    .sstat-num { font-size: 52px; font-weight: 800; font-family: 'Inter',sans-serif; letter-spacing: -.04em; line-height: 1; margin-bottom: 4px; }
+    .sstat-num.ind { color: var(--indigo); }
+    .sstat-num.amb { color: var(--amber); }
+    .sstat-lbl { font-size: 13px; color: var(--slate-500); }
+    .tech-box { background: var(--slate-50); border: 1px solid var(--slate-200); border-radius: 16px; padding: 28px; margin-top: 20px; }
+    .tech-box-title { font-weight: 700; font-size: 14px; color: var(--slate-900); margin-bottom: 16px; }
+    .tech-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 10px; }
+    @media(max-width:580px){ .tech-grid { grid-template-columns: 1fr 1fr; } }
+    .titem { display: flex; align-items: center; gap: 10px; background: #fff; border: 1px solid var(--slate-200); border-radius: 10px; padding: 10px 14px; transition: all .2s; }
+    .titem:hover { border-color: var(--indigo); background: var(--indigo-50); }
+    .ticon { font-size: 18px; }
+    .tname { font-size: 13px; font-weight: 600; color: var(--slate-800); line-height: 1.3; }
+    .trole { font-size: 11px; color: var(--slate-500); }
+
+    /* ===== SHOWCASE ===== */
+    #product-showcase { background: var(--slate-50); }
+    .mod-block { margin-top: 56px; }
+    .mod-block + .mod-block { margin-top: 72px; padding-top: 72px; border-top: 1px solid var(--slate-100); }
+    .mod-tag { display: inline-flex; align-items: center; gap: 6px; border-radius: 100px; padding: 4px 14px; font-size: 12px; font-weight: 700; font-family: 'Inter',sans-serif; margin-bottom: 10px; }
+    .mod-tag.a { background: var(--amber-100); color: var(--amber); }
+    .mod-tag.e { background: var(--emerald-100); color: var(--emerald); }
+    .mod-name { font-size: 22px; font-weight: 700; color: var(--slate-900); margin-bottom: 4px; }
+    .mod-sub { font-size: 13px; color: var(--slate-500); }
+    .sc-grid { display: grid; grid-template-columns: auto 1fr; gap: 48px; align-items: start; margin-top: 28px; }
+    .sc-grid.rev { grid-template-columns: 1fr auto; }
+    @media(max-width:640px){ .sc-grid, .sc-grid.rev { grid-template-columns: 1fr; } }
+    .phones-wrap { display: flex; align-items: flex-start; gap: 14px; }
+    .phone-frame { width: 190px; border-radius: 38px; border: 6px solid var(--slate-800); box-shadow: 0 0 0 1px rgba(0,0,0,.08), 0 20px 56px rgba(0,0,0,.16), inset 0 0 0 1px rgba(255,255,255,.1); overflow: hidden; flex-shrink: 0; transition: transform .3s; }
+    .phone-frame:hover { transform: translateY(-4px); }
+    .phone-frame img { width: 100%; display: block; }
+    .ph-lbl { text-align: center; font-size: 11px; color: var(--slate-400); margin-top: 8px; }
+    .ph-arrow { display: flex; align-items: center; color: var(--slate-300); font-size: 20px; padding-top: 80px; flex-shrink: 0; }
+    .feat-list { display: flex; flex-direction: column; gap: 18px; }
+    .feat-item { display: flex; gap: 14px; align-items: flex-start; }
+    .feat-dot { width: 34px; height: 34px; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 15px; flex-shrink: 0; margin-top: 1px; }
+    .feat-dot.a { background: var(--amber-100); }
+    .feat-dot.e { background: var(--emerald-100); }
+    .feat-title { font-weight: 600; font-size: 14px; color: var(--slate-900); margin-bottom: 2px; }
+    .feat-desc { font-size: 13px; color: var(--slate-500); line-height: 1.65; }
+
+    /* ===== ROADMAP ===== */
+    #product-roadmap { background: #fff; }
+    .rm-row { display: grid; grid-template-columns: repeat(3,1fr); gap: 16px; margin-top: 36px; }
+    @media(max-width:640px){ .rm-row { grid-template-columns: 1fr; } }
+    .rmcard { border-radius: 16px; padding: 24px; border: 1.5px solid; }
+    .rmcard.c { background: var(--indigo-50); border-color: var(--indigo-100); }
+    .rmcard.s { background: var(--amber-50); border-color: var(--amber-100); }
+    .rmcard.l { background: var(--emerald-50); border-color: var(--emerald-100); }
+    .rm-period { font-size: 10px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; font-family: 'Inter',sans-serif; margin-bottom: 6px; }
+    .rmcard.c .rm-period { color: var(--indigo); }
+    .rmcard.s .rm-period { color: var(--amber); }
+    .rmcard.l .rm-period { color: var(--emerald); }
+    .rm-title { font-weight: 700; font-size: 14px; color: var(--slate-900); margin-bottom: 12px; }
+    .rm-items { list-style: none; display: flex; flex-direction: column; gap: 7px; }
+    .rm-items li { font-size: 12px; color: var(--slate-600); display: flex; align-items: flex-start; gap: 6px; line-height: 1.5; }
+    .rm-items li::before { content: '›'; flex-shrink: 0; opacity: .5; margin-top: 1px; }
+
+    /* ===== SKILLS ===== */
+    #skills { background: var(--slate-50); }
+    .skills-row { display: grid; grid-template-columns: repeat(3,1fr); gap: 16px; margin-top: 40px; }
+    @media(max-width:640px){ .skills-row { grid-template-columns: 1fr; } }
+    .skcat { background: #fff; border: 1px solid var(--slate-200); border-radius: 16px; padding: 24px; transition: transform .2s, box-shadow .2s; }
+    .skcat:hover { transform: translateY(-3px); box-shadow: 0 8px 24px rgba(0,0,0,.06); }
+    .skcat-icon { font-size: 22px; margin-bottom: 10px; }
+    .skcat-title { font-weight: 700; font-size: 14px; color: var(--slate-900); margin-bottom: 16px; }
+    .skrows { display: flex; flex-direction: column; gap: 10px; }
+    .skrow { display: flex; align-items: center; gap: 10px; }
+    .skname { font-size: 12px; color: var(--slate-700); font-weight: 500; width: 88px; flex-shrink: 0; }
+    .skbar { height: 4px; flex: 1; background: var(--slate-100); border-radius: 2px; overflow: hidden; }
+    .skfill { height: 100%; border-radius: 2px; width: 0; transition: width 1.2s ease; }
+
+    /* Flow diagram */
+    .flow-box { background: #fff; border: 1px solid var(--slate-200); border-radius: 20px; padding: 32px; margin-top: 36px; }
+    .flow-box-title { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: .08em; color: var(--slate-500); text-align: center; margin-bottom: 24px; font-family: 'Inter',sans-serif; }
+    .flow-steps { display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 8px; }
+    .fstep { display: flex; flex-direction: column; align-items: center; gap: 3px; padding: 12px 14px; background: var(--slate-50); border: 1px solid var(--slate-200); border-radius: 12px; min-width: 88px; text-align: center; transition: all .2s; }
+    .fstep:hover { background: var(--indigo-50); border-color: var(--indigo-100); transform: translateY(-2px); }
+    .fstep-icon { font-size: 20px; }
+    .fstep-name { font-size: 11px; font-weight: 600; color: var(--slate-700); }
+    .fstep-sub { font-size: 10px; color: var(--slate-400); }
+    .farrow { color: var(--slate-300); font-size: 18px; }
+
+    /* ===== CLOSING ===== */
+    #closing { background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 100%); color: #fff; text-align: center; }
+    .closing-wrap { max-width: 580px; margin: 0 auto; }
+    .closing-title { font-size: clamp(30px,5vw,44px); font-weight: 800; letter-spacing: -.03em; margin-bottom: 14px; }
+    .closing-sub { font-size: 15px; color: rgba(255,255,255,.6); margin-bottom: 40px; line-height: 1.75; }
+    .closing-btns { display: flex; flex-wrap: wrap; gap: 14px; justify-content: center; margin-bottom: 40px; }
+    .clink { display: inline-flex; align-items: center; gap: 8px; padding: 12px 24px; border-radius: 12px; font-weight: 600; font-size: 14px; transition: transform .2s, box-shadow .2s; }
+    .clink.p { background: var(--indigo); color: #fff; box-shadow: 0 4px 16px rgba(79,70,229,.4); }
+    .clink.p:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(79,70,229,.5); }
+    .clink.s { background: rgba(255,255,255,.1); color: #fff; border: 1px solid rgba(255,255,255,.2); }
+    .clink.s:hover { background: rgba(255,255,255,.15); transform: translateY(-2px); }
+    .closing-contacts { display: flex; flex-wrap: wrap; gap: 24px; justify-content: center; margin-bottom: 44px; }
+    .cc { font-size: 13px; color: rgba(255,255,255,.55); }
+    .closing-quote { font-size: 12px; color: rgba(255,255,255,.3); letter-spacing: .02em; line-height: 1.8; }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="nav">
+  <div class="nav-inner">
+    <div class="nav-logo">高彦 <em>·</em> Portfolio</div>
+    <ul class="nav-links">
+      <li><a href="#hero" class="nav-link">首页</a></li>
+      <li><a href="#about" class="nav-link">关于我</a></li>
+      <li><a href="#product-intro" class="nav-link">食事预报局</a></li>
+      <li><a href="#product-showcase" class="nav-link">功能展示</a></li>
+      <li><a href="#skills" class="nav-link">技能</a></li>
+      <li><a href="#closing" class="nav-link">联系</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-bg" id="hero-bg"></div>
+  <div class="hero-inner">
+    <div>
+      <div class="hero-eyebrow">✦ AI Product Manager Portfolio</div>
+      <h1 class="hero-name"><span class="cn">高彦</span><span class="dot"> · </span>Yan Gao</h1>
+      <p class="hero-role">AI 产品经理</p>
+      <p class="hero-sub">Technical Understanding × Product Design × Rapid Deployment</p>
+      <div class="hero-pills">
+        <span class="pill">🤖 AI需求转化</span>
+        <span class="pill">🚀 MVP快速落地</span>
+        <span class="pill">📊 数据建模分析</span>
+        <span class="pill">🌐 独立全流程部署</span>
+        <span class="pill">🗺️ 跨部门协作</span>
+      </div>
+      <div class="hero-btns">
+        <a href="https://shishi-forecast.vercel.app/" target="_blank" class="btn-p">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+          体验食事预报局
+        </a>
+        <a href="#product-intro" class="btn-o">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+          查看作品详情
+        </a>
+      </div>
+      <div class="hero-contacts">
+        <span class="hc">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.64 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l.81-.81a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 17v-.08z"/></svg>
+          18943734655
+        </span>
+        <span class="hc">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          yan.gao01@outlook.com
+        </span>
+      </div>
+    </div>
+    <div class="hero-phone">
+      <img src="./screenshots/首页.png" alt="食事预报局首页" loading="eager">
+    </div>
+  </div>
+  <div class="scroll-hint">
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+    SCROLL
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="container">
+    <div class="fade-in">
+      <p class="section-label">About Me</p>
+      <h2 class="section-title">关于我</h2>
+      <p class="section-sub">理工科背景 × 产品思维，技术理解力与用户洞察力兼备</p>
+    </div>
+    <div class="about-grid">
+      <div class="fade-in d1">
+        <p style="font-size:11px;font-weight:700;color:var(--slate-500);text-transform:uppercase;letter-spacing:.08em;margin-bottom:20px;font-family:'Inter',sans-serif;">Education · 教育背景</p>
+        <div class="edu-list">
+          <div class="edu-item">
+            <div class="edu-dot">🎓</div>
+            <div class="edu-body">
+              <p class="edu-period">2023.9 — 2026.6（预计毕业）</p>
+              <p class="edu-school">自然资源部第二海洋研究所</p>
+              <p class="edu-major">地球探测与信息技术</p>
+              <span class="edu-badge">工学硕士</span>
+            </div>
+          </div>
+          <div class="edu-item">
+            <div class="edu-dot">🏫</div>
+            <div class="edu-body">
+              <p class="edu-period">2019.9 — 2023.6</p>
+              <p class="edu-school">吉林大学</p>
+              <p class="edu-major">勘查技术与工程（应用地球物理）</p>
+              <span class="edu-badge">工学学士</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="fade-in d2">
+        <div class="highlight-box">
+          <p class="quote-text">理工硕士，具备扎实的技术理解与数据分析能力，半天独立完成食事预报局 AI 健康工具 Demo 开发并部署上线，兼具趣味化 + 实用性的产品设计思维。</p>
+          <p class="tag-label">Core Skills · 核心能力</p>
+          <div class="tag-wrap">
+            <span class="stag hi">AI需求转化</span>
+            <span class="stag hi">MVP快速落地</span>
+            <span class="stag">数据建模</span>
+            <span class="stag">独立部署</span>
+            <span class="stag">流程规划</span>
+            <span class="stag">CET-6 英语</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- PRODUCT INTRO -->
+<section id="product-intro">
+  <div class="container">
+    <div class="fade-in">
+      <p class="section-label">Core Project · 核心项目</p>
+      <h2 class="section-title">食事预报局</h2>
+      <p class="section-sub">AI 健康工具 Demo — 将用户日常饮食行为转化为可量化的身体节律预测</p>
+    </div>
+    <div class="product-hero fade-in d1">
+      <div>
+        <p class="ph-eyebrow">食事预报局 · Shishi Forecast</p>
+        <h3 class="ph-title">喝什么吃什么，<br>身体后续一手掌握</h3>
+        <p class="ph-sub">基于多模态 AI 的个人代谢节律预测工具，面向关注健康的年轻用户群体</p>
+        <div class="ph-tags">
+          <span class="ph-tag">🧠 智谱 GLM-4V 多模态</span>
+          <span class="ph-tag">📱 移动端 Web</span>
+          <span class="ph-tag">⚡ 半天独立完成</span>
+          <span class="ph-tag">🌐 已部署上线</span>
+        </div>
+      </div>
+      <div class="product-hero-phone">
+        <img src="./screenshots/首页.png" alt="食事预报局首页" loading="lazy">
+      </div>
+    </div>
+    <div class="value-row">
+      <div class="vcard fade-in d1">
+        <div class="vcard-icon">⚡</div>
+        <p class="vcard-title">轻量零门槛</p>
+        <p class="vcard-desc">网页端直接访问，无需下载，拍照或文字描述即可获得预测结果</p>
+      </div>
+      <div class="vcard fade-in d2">
+        <div class="vcard-icon">🎯</div>
+        <p class="vcard-title">个性化预测</p>
+        <p class="vcard-desc">依据用户咖啡因耐受度、肠胃类型等个人体质，输出定制化结果</p>
+      </div>
+      <div class="vcard fade-in d3">
+        <div class="vcard-icon">🎨</div>
+        <p class="vcard-title">趣味化呈现</p>
+        <p class="vcard-desc">评分、进度环、黄金时间窗口等可视化方式，告别枯燥数据堆砌</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- DESIGN THINKING -->
+<section id="product-design">
+  <div class="container">
+    <div class="fade-in">
+      <p class="section-label">Design Thinking · 产品设计</p>
+      <h2 class="section-title">从痛点到功能</h2>
+      <p class="section-sub">以用户核心需求为起点，拆解三大痛点，精准映射两大 AI 功能模块</p>
+    </div>
+    <div class="pain-row">
+      <div class="pcard fade-in d1">
+        <span class="pnum">01</span>
+        <div class="picon">😵</div>
+        <p class="ptitle">健康认知门槛高</p>
+        <p class="pdesc">专业健康数据难以理解，用户无法将日常饮食与身体反应直接关联</p>
+      </div>
+      <div class="pcard fade-in d2">
+        <span class="pnum">02</span>
+        <div class="picon">🔮</div>
+        <p class="ptitle">缺乏个性化预判工具</p>
+        <p class="pdesc">市面上无法根据个体体质，预测特定食物/饮品对睡眠和消化的具体影响</p>
+      </div>
+      <div class="pcard fade-in d3">
+        <span class="pnum">03</span>
+        <div class="picon">📲</div>
+        <p class="ptitle">轻量级工具缺失</p>
+        <p class="pdesc">现有健康 App 功能臃肿，需注册登录、持续打卡，使用成本过高</p>
+      </div>
+    </div>
+    <div class="arrow-row fade-in">↓ &nbsp;对应设计两大核心 AI 预测功能</div>
+    <div class="sol-row">
+      <div class="scard a fade-in d1">
+        <div style="font-size:26px;margin-bottom:10px;">😴</div>
+        <p class="sname">熬夜预警机</p>
+        <p class="sdesc">拍摄或描述所喝饮品，结合饮用时间与个人咖啡因耐受度，AI 预测今晚入睡时间、失眠风险与次日状态评分</p>
+      </div>
+      <div class="scard e fade-in d2">
+        <div style="font-size:26px;margin-bottom:10px;">🚽</div>
+        <p class="sname">如厕预测官</p>
+        <p class="sdesc">拍摄或描述所吃食物，结合进食时间与肠胃类型，AI 预测消化通畅度、黄金如厕时间及便秘/腹泻风险</p>
+      </div>
+    </div>
+    <div class="arch-box fade-in">
+      <p class="arch-label">产品功能架构 · Product Architecture</p>
+      <div class="arch-row">
+        <div class="anode n1">
+          <p class="anode-title">📥 输入模块</p>
+          <ul>
+            <li>📷 图片上传（多模态）</li>
+            <li>📝 文字描述（自然语言）</li>
+            <li>⏰ 时间参数（摄入时刻）</li>
+            <li>👤 个人体质（耐受/肠胃）</li>
+          </ul>
+        </div>
+        <div class="aarrow">→</div>
+        <div class="anode n2">
+          <p class="anode-title">🧠 AI 分析引擎</p>
+          <ul>
+            <li>🖼️ GLM-4V 视觉理解</li>
+            <li>💬 GLM-4-Flash 推理</li>
+            <li>🔧 结构化 JSON 解析</li>
+            <li>⚙️ 数值规范化处理</li>
+          </ul>
+        </div>
+        <div class="aarrow">→</div>
+        <div class="anode n3">
+          <p class="anode-title">📊 结果输出</p>
+          <ul>
+            <li>😴 失眠风险 / 代谢节律</li>
+            <li>🚽 通畅度 / 黄金时间窗</li>
+            <li>📈 可视化评分与图表</li>
+            <li>💡 个性化健康建议</li>
+          </ul>
+        </div>
+      </div>
+      <p class="arch-foot">🔒 隐私优先：预测历史本地存储，数据不上传服务器</p>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- DEVELOPMENT -->
+<section id="product-dev">
+  <div class="container">
+    <div class="fade-in">
+      <p class="section-label">Development · 开发落地</p>
+      <h2 class="section-title">从 0 到上线</h2>
+      <p class="section-sub">独立完成产品设计、AI 对接、前端开发与云端部署全流程，快速验证产品价值</p>
+    </div>
+    <div class="stat-row">
+      <div class="sstat fade-in d1">
+        <p class="sstat-num ind">½ 天</p>
+        <p class="sstat-lbl">完成核心 Demo 全流程开发</p>
+      </div>
+      <div class="sstat fade-in d2">
+        <p class="sstat-num amb">2</p>
+        <p class="sstat-lbl">大 AI 预测功能模块独立落地</p>
+      </div>
+    </div>
+    <div class="tech-box fade-in d1">
+      <p class="tech-box-title">技术栈 · Tech Stack</p>
+      <div class="tech-grid">
+        <div class="titem">
+          <span class="ticon">⚡</span>
+          <div><p class="tname">Next.js 16 + TypeScript</p><p class="trole">前端框架 + 类型安全</p></div>
+        </div>
+        <div class="titem">
+          <span class="ticon">🧠</span>
+          <div><p class="tname">智谱 GLM-4V / Flash</p><p class="trole">多模态 AI 分析引擎</p></div>
+        </div>
+        <div class="titem">
+          <span class="ticon">🎨</span>
+          <div><p class="tname">Tailwind CSS v4</p><p class="trole">响应式 UI 设计</p></div>
+        </div>
+        <div class="titem">
+          <span class="ticon">🌐</span>
+          <div><p class="tname">Vercel 全球 CDN</p><p class="trole">一键部署 + 自动 CI/CD</p></div>
+        </div>
+        <div class="titem">
+          <span class="ticon">🔒</span>
+          <div><p class="tname">LocalStorage</p><p class="trole">本地存储（隐私优先）</p></div>
+        </div>
+        <div class="titem">
+          <span class="ticon">📦</span>
+          <div><p class="tname">Canvas API</p><p class="trole">客户端图片压缩优化</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- SHOWCASE -->
+<section id="product-showcase">
+  <div class="container">
+    <div class="fade-in">
+      <p class="section-label">Feature Showcase · 功能展示</p>
+      <h2 class="section-title">产品实际效果</h2>
+      <p class="section-sub">两大核心功能模块，覆盖「喝什么」与「吃什么」两大高频生活场景</p>
+    </div>
+
+    <!-- 熬夜预警机 -->
+    <div class="mod-block">
+      <div class="fade-in">
+        <span class="mod-tag a">😴 模块一</span>
+        <p class="mod-name">熬夜预警机</p>
+        <p class="mod-sub">拍摄 / 描述饮品 → AI 分析咖啡因含量 → 预测今晚睡眠节律</p>
+      </div>
+      <div class="sc-grid fade-in d1">
+        <div class="phones-wrap">
+          <div>
+            <div class="phone-frame">
+              <img src="./screenshots/熬夜预警机的输入界面.png" alt="熬夜预警机输入" loading="lazy">
+            </div>
+            <p class="ph-lbl">输入界面</p>
+          </div>
+          <div class="ph-arrow">→</div>
+          <div>
+            <div class="phone-frame">
+              <img src="./screenshots/熬夜预警机的输出界面.png" alt="熬夜预警机结果" loading="lazy">
+            </div>
+            <p class="ph-lbl">预测结果</p>
+          </div>
+        </div>
+        <div class="feat-list" style="padding-top:8px;">
+          <div class="feat-item">
+            <div class="feat-dot a">📷</div>
+            <div>
+              <p class="feat-title">多模态输入设计</p>
+              <p class="feat-desc">支持拍照上传（GLM-4V 视觉识别）或文字描述，图文二选一，操作门槛极低</p>
+            </div>
+          </div>
+          <div class="feat-item">
+            <div class="feat-dot a">👤</div>
+            <div>
+              <p class="feat-title">个性化体质参数</p>
+              <p class="feat-desc">结合饮用时间与咖啡因耐受度（低 / 中 / 高），输出个性化预测而非通用结论</p>
+            </div>
+          </div>
+          <div class="feat-item">
+            <div class="feat-dot a">📊</div>
+            <div>
+              <p class="feat-title">四维可视化结果</p>
+              <p class="feat-desc">预计入睡时间、夜间清醒次数、失眠风险百分比、次日状态评分，一屏清晰展示</p>
+            </div>
+          </div>
+          <div class="feat-item">
+            <div class="feat-dot a">💡</div>
+            <div>
+              <p class="feat-title">可操作补救建议</p>
+              <p class="feat-desc">基于当次预测给出 3 条针对性睡眠补救建议，而非泛泛健康提示</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 如厕预测官 -->
+    <div class="mod-block">
+      <div class="fade-in">
+        <span class="mod-tag e">🚽 模块二</span>
+        <p class="mod-name">如厕预测官</p>
+        <p class="mod-sub">拍摄 / 描述食物 → AI 分析消化影响 → 预测黄金如厕时间窗</p>
+      </div>
+      <div class="sc-grid rev fade-in d1">
+        <div class="feat-list" style="padding-top:8px;">
+          <div class="feat-item">
+            <div class="feat-dot e">🍱</div>
+            <div>
+              <p class="feat-title">食物智能识别</p>
+              <p class="feat-desc">上传食物图片或粘贴外卖订单，AI 自动识别食材成分并分析消化属性</p>
+            </div>
+          </div>
+          <div class="feat-item">
+            <div class="feat-dot e">⏰</div>
+            <div>
+              <p class="feat-title">黄金时间窗预测</p>
+              <p class="feat-desc">结合进食时间与肠胃类型，精准预测最佳如厕时间区间，告别焦虑等待</p>
+            </div>
+          </div>
+          <div class="feat-item">
+            <div class="feat-dot e">📈</div>
+            <div>
+              <p class="feat-title">通畅度评分可视化</p>
+              <p class="feat-desc">0–100 通畅度环形评分 + 便秘 / 腹泻双维度风险量化，直观易懂</p>
+            </div>
+          </div>
+          <div class="feat-item">
+            <div class="feat-dot e">🥗</div>
+            <div>
+              <p class="feat-title">饮食搭配建议</p>
+              <p class="feat-desc">针对本次饮食的具体成分，给出个性化饮食调整优化建议</p>
+            </div>
+          </div>
+        </div>
+        <div class="phones-wrap">
+          <div>
+            <div class="phone-frame">
+              <img src="./screenshots/如厕预测官的输入界面.png" alt="如厕预测官输入" loading="lazy">
+            </div>
+            <p class="ph-lbl">输入界面</p>
+          </div>
+          <div class="ph-arrow">→</div>
+          <div>
+            <div class="phone-frame">
+              <img src="./screenshots/如厕预测官的输出界面.png" alt="如厕预测官结果" loading="lazy">
+            </div>
+            <p class="ph-lbl">预测结果</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ROADMAP -->
+<section id="product-roadmap">
+  <div class="container">
+    <div class="fade-in">
+      <p class="section-label">Product Review · 产品复盘</p>
+      <h2 class="section-title">现状与迭代规划</h2>
+      <p class="section-sub">基于 MVP 思路完成核心闭环，明确下一步迭代方向</p>
+    </div>
+    <div class="rm-row">
+      <div class="rmcard c fade-in d1">
+        <p class="rm-period">Current · 当前成果</p>
+        <p class="rm-title">核心 Demo 已上线</p>
+        <ul class="rm-items">
+          <li>两大 AI 预测功能完整闭环</li>
+          <li>移动端网页可正常访问</li>
+          <li>历史记录本地持久化存储</li>
+          <li>多模态（图文双通道）输入</li>
+          <li>客户端自动图片压缩优化</li>
+        </ul>
+      </div>
+      <div class="rmcard s fade-in d2">
+        <p class="rm-period">Short-term · 短期（1–2周）</p>
+        <p class="rm-title">体验优化与数据完善</p>
+        <ul class="rm-items">
+          <li>接入常见饮品咖啡因数据库</li>
+          <li>增加用户反馈收集模块</li>
+          <li>优化数据可视化呈现方式</li>
+          <li>增加预测结果分享功能</li>
+          <li>完善错误处理与加载体验</li>
+        </ul>
+      </div>
+      <div class="rmcard l fade-in d3">
+        <p class="rm-period">Long-term · 长期（1个月+）</p>
+        <p class="rm-title">数据驱动与功能扩展</p>
+        <ul class="rm-items">
+          <li>基于用户数据持续优化模型</li>
+          <li>增加睡眠节律个性化匹配</li>
+          <li>引入本地化食物成分数据库</li>
+          <li>开发用户健康周报功能</li>
+          <li>探索微信小程序端适配</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- SKILLS -->
+<section id="skills">
+  <div class="container">
+    <div class="fade-in">
+      <p class="section-label">Skills & Tools · 技能图谱</p>
+      <h2 class="section-title">能力全景</h2>
+      <p class="section-sub">产品能力 × 技术能力 × 工具能力，全维度支撑 AI 产品落地</p>
+    </div>
+    <div class="skills-row">
+      <div class="skcat fade-in d1">
+        <div class="skcat-icon">🎯</div>
+        <p class="skcat-title">产品能力</p>
+        <div class="skrows">
+          <div class="skrow"><span class="skname">AI 需求转化</span><div class="skbar"><div class="skfill" data-w="90" style="background:var(--indigo)"></div></div></div>
+          <div class="skrow"><span class="skname">MVP 规划落地</span><div class="skbar"><div class="skfill" data-w="88" style="background:var(--indigo)"></div></div></div>
+          <div class="skrow"><span class="skname">用户场景分析</span><div class="skbar"><div class="skfill" data-w="82" style="background:var(--indigo)"></div></div></div>
+          <div class="skrow"><span class="skname">功能优先级</span><div class="skbar"><div class="skfill" data-w="78" style="background:var(--indigo)"></div></div></div>
+        </div>
+      </div>
+      <div class="skcat fade-in d2">
+        <div class="skcat-icon">⚙️</div>
+        <p class="skcat-title">技术能力</p>
+        <div class="skrows">
+          <div class="skrow"><span class="skname">Python / MATLAB</span><div class="skbar"><div class="skfill" data-w="85" style="background:#7c3aed"></div></div></div>
+          <div class="skrow"><span class="skname">AI API 集成</span><div class="skbar"><div class="skfill" data-w="80" style="background:#7c3aed"></div></div></div>
+          <div class="skrow"><span class="skname">数值建模仿真</span><div class="skbar"><div class="skfill" data-w="88" style="background:#7c3aed"></div></div></div>
+          <div class="skrow"><span class="skname">Web 开发部署</span><div class="skbar"><div class="skfill" data-w="72" style="background:#7c3aed"></div></div></div>
+        </div>
+      </div>
+      <div class="skcat fade-in d3">
+        <div class="skcat-icon">🛠️</div>
+        <p class="skcat-title">工具能力</p>
+        <div class="skrows">
+          <div class="skrow"><span class="skname">Visio / XMind</span><div class="skbar"><div class="skfill" data-w="85" style="background:var(--emerald)"></div></div></div>
+          <div class="skrow"><span class="skname">Office 数据分析</span><div class="skbar"><div class="skfill" data-w="88" style="background:var(--emerald)"></div></div></div>
+          <div class="skrow"><span class="skname">Vercel CI/CD</span><div class="skbar"><div class="skfill" data-w="78" style="background:var(--emerald)"></div></div></div>
+          <div class="skrow"><span class="skname">英语（CET-6）</span><div class="skbar"><div class="skfill" data-w="75" style="background:var(--emerald)"></div></div></div>
+        </div>
+      </div>
+    </div>
+    <div class="flow-box fade-in">
+      <p class="flow-box-title">AI 产品经理工作流 · PM Workflow</p>
+      <div class="flow-steps">
+        <div class="fstep"><span class="fstep-icon">🔍</span><span class="fstep-name">用户调研</span><span class="fstep-sub">需求挖掘</span></div>
+        <span class="farrow">›</span>
+        <div class="fstep"><span class="fstep-icon">📋</span><span class="fstep-name">需求拆解</span><span class="fstep-sub">PRD 规划</span></div>
+        <span class="farrow">›</span>
+        <div class="fstep"><span class="fstep-icon">🧠</span><span class="fstep-name">AI 方案设计</span><span class="fstep-sub">技术边界评估</span></div>
+        <span class="farrow">›</span>
+        <div class="fstep"><span class="fstep-icon">🛠️</span><span class="fstep-name">MVP 开发</span><span class="fstep-sub">快速验证</span></div>
+        <span class="farrow">›</span>
+        <div class="fstep"><span class="fstep-icon">🚀</span><span class="fstep-name">上线部署</span><span class="fstep-sub">持续迭代</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CLOSING -->
+<section id="closing">
+  <div class="container">
+    <div class="closing-wrap">
+      <div class="fade-in">
+        <h2 class="closing-title">让我们聊聊 👋</h2>
+        <p class="closing-sub">如果你正在寻找一位兼具技术理解力与产品直觉、能快速将 AI 能力转化为用户价值的产品经理，欢迎联系我</p>
+      </div>
+      <div class="closing-btns fade-in d1">
+        <a href="https://shishi-forecast.vercel.app/" target="_blank" class="clink p">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+          立即体验食事预报局
+        </a>
+      </div>
+      <div class="closing-contacts fade-in d2">
+        <span class="cc">📱 18943734655</span>
+        <span class="cc">✉️ yan.gao01@outlook.com</span>
+      </div>
+      <p class="closing-quote fade-in d3">
+        「懂技术的 AI 产品经理，不是会写代码，<br>
+        而是知道 AI 能做什么、不能做什么、以及如何用它解决真实问题。」
+      </p>
+    </div>
+  </div>
+</section>
+
+<script>
+  // Fade-in on scroll
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.08, rootMargin: '0px 0px -32px 0px' });
+  document.querySelectorAll('.fade-in').forEach(el => io.observe(el));
+
+  // Skill bar animation
+  const skio = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.querySelectorAll('.skfill').forEach(bar => {
+          setTimeout(() => { bar.style.width = bar.dataset.w + '%'; }, 150);
+        });
+        skio.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.3 });
+  document.querySelectorAll('.skcat').forEach(el => skio.observe(el));
+
+  // Nav behavior
+  const nav = document.getElementById('nav');
+  const navLinks = document.querySelectorAll('.nav-link');
+  const sections = document.querySelectorAll('section[id]');
+
+  let ticking = false;
+  window.addEventListener('scroll', () => {
+    if (!ticking) {
+      requestAnimationFrame(() => {
+        const sy = window.scrollY;
+        // Shadow
+        nav.classList.toggle('scrolled', sy > 10);
+        // Parallax hero bg
+        const bg = document.getElementById('hero-bg');
+        if (bg && sy < window.innerHeight) bg.style.transform = `translateY(${sy * 0.32}px)`;
+        // Active link
+        let cur = '';
+        sections.forEach(s => { if (sy >= s.offsetTop - 90) cur = s.id; });
+        navLinks.forEach(a => a.classList.toggle('active', a.getAttribute('href') === '#' + cur));
+        ticking = false;
+      });
+      ticking = true;
+    }
+  }, { passive: true });
+
+  // Hero entrance
+  const hc = document.querySelector('.hero-inner');
+  hc.style.cssText = 'opacity:0;transform:translateY(18px)';
+  setTimeout(() => {
+    hc.style.transition = 'opacity .85s ease, transform .85s ease';
+    hc.style.opacity = '1';
+    hc.style.transform = 'none';
+  }, 80);
+</script>
+</body>
+</html>
