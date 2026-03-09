@@ -5,17 +5,35 @@ export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs))
 }
 
-// 将File对象转为base64字符串
+// 将File对象压缩后转为base64字符串（最长边不超过1024px，JPEG质量0.82）
 export function fileToBase64(file: File): Promise<string> {
   return new Promise((resolve, reject) => {
     const reader = new FileReader()
-    reader.onload = () => {
-      const result = reader.result as string
-      // 返回去掉前缀 "data:image/jpeg;base64," 的纯base64
-      const base64 = result.split(',')[1]
-      resolve(base64)
-    }
     reader.onerror = reject
+    reader.onload = () => {
+      const img = new Image()
+      img.onerror = reject
+      img.onload = () => {
+        const MAX = 1024
+        let { width, height } = img
+        if (width > MAX || height > MAX) {
+          if (width >= height) {
+            height = Math.round((height * MAX) / width)
+            width = MAX
+          } else {
+            width = Math.round((width * MAX) / height)
+            height = MAX
+          }
+        }
+        const canvas = document.createElement('canvas')
+        canvas.width = width
+        canvas.height = height
+        canvas.getContext('2d')!.drawImage(img, 0, 0, width, height)
+        const dataUrl = canvas.toDataURL('image/jpeg', 0.82)
+        resolve(dataUrl.split(',')[1])
+      }
+      img.src = reader.result as string
+    }
     reader.readAsDataURL(file)
   })
 }

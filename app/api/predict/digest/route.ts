@@ -86,9 +86,16 @@ export async function POST(req: NextRequest) {
     prediction.goldenTimeStart = toStr(prediction.goldenTimeStart)
     prediction.goldenTimeEnd = toStr(prediction.goldenTimeEnd)
     prediction.analysis = toStr(prediction.analysis)
-    prediction.smoothnessScore = Math.min(100, Math.max(0, Math.round(Number(prediction.smoothnessScore)))) || 0
-    prediction.constipationRisk = Math.min(100, Math.max(0, Math.round(Number(prediction.constipationRisk)))) || 0
-    prediction.diarrheaRisk = Math.min(100, Math.max(0, Math.round(Number(prediction.diarrheaRisk)))) || 0
+    const toNum = (val: unknown): number => {
+      const n = Math.round(Number(val))
+      return Number.isFinite(n) ? Math.min(100, Math.max(0, n)) : NaN
+    }
+    prediction.constipationRisk = toNum(prediction.constipationRisk) || 0
+    prediction.diarrheaRisk = toNum(prediction.diarrheaRisk) || 0
+    const rawSmoothnessScore = toNum(prediction.smoothnessScore)
+    prediction.smoothnessScore = Number.isFinite(rawSmoothnessScore) && rawSmoothnessScore > 0
+      ? rawSmoothnessScore
+      : Math.max(0, 100 - Math.max(prediction.constipationRisk, prediction.diarrheaRisk))
 
     return NextResponse.json({ success: true, data: prediction })
   } catch (error) {
