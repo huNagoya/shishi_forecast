@@ -1,0 +1,21 @@
+{
+  "name": "食事预报局",
+  "short_name": "食事预报",
+  "description": "咖啡因睡眠预测 + 饮食消化预测",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#fafaf8",
+  "theme_color": "#f59e0b",
+  "icons": [
+    {
+      "src": "/icon.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/icon.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

@@ -1,0 +1,51 @@
+@import "tailwindcss";
+
+:root {
+  --foreground: #1a1a1a;
+}
+
+body {
+  /* 方案A：暖米色→纯白→淡薄荷三段渐变，玻璃效果在此背景上清晰可见 */
+  background: linear-gradient(160deg, #fff8e8 0%, #f8f8f6 50%, #edfdf5 100%);
+  min-height: 100vh;
+  color: var(--foreground);
+  font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+.safe-area-bottom {
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+
+.main-content {
+  padding-bottom: 5rem;
+}
+
+/* 通用磨砂卡片 */
+.glass-card {
+  background: rgba(255,255,255,0.78);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255,255,255,0.9);
+  box-shadow: 0 4px 28px rgba(0,0,0,0.08), inset 0 1px 0 rgba(255,255,255,0.9);
+}
+
+/* 带琥珀色顶部描边（熬夜/咖啡因主题） */
+.glass-card-amber {
+  background: rgba(255,255,255,0.78);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255,255,255,0.9);
+  border-top: 2.5px solid rgba(251,191,36,0.55);
+  box-shadow: 0 4px 28px rgba(251,191,36,0.08), inset 0 1px 0 rgba(255,255,255,0.9);
+}
+
+/* 带绿色顶部描边（如厕/消化主题） */
+.glass-card-emerald {
+  background: rgba(255,255,255,0.78);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255,255,255,0.9);
+  border-top: 2.5px solid rgba(52,211,153,0.55);
+  box-shadow: 0 4px 28px rgba(52,211,153,0.08), inset 0 1px 0 rgba(255,255,255,0.9);
+}
