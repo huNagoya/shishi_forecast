@@ -56,6 +56,10 @@ export default function DigestPage() {
         }),
       })
 
+      if (res.status === 413) {
+        throw new Error('图片文件太大，请选择更小的图片（建议2MB以内）')
+      }
+
       const data = await res.json()
 
       if (!data.success) {

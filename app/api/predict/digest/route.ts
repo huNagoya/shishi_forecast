@@ -86,9 +86,9 @@ export async function POST(req: NextRequest) {
     prediction.goldenTimeStart = toStr(prediction.goldenTimeStart)
     prediction.goldenTimeEnd = toStr(prediction.goldenTimeEnd)
     prediction.analysis = toStr(prediction.analysis)
-    prediction.smoothnessScore = Math.min(100, Math.max(0, Math.round(Number(prediction.smoothnessScore))))
-    prediction.constipationRisk = Math.min(100, Math.max(0, Math.round(Number(prediction.constipationRisk))))
-    prediction.diarrheaRisk = Math.min(100, Math.max(0, Math.round(Number(prediction.diarrheaRisk))))
+    prediction.smoothnessScore = Math.min(100, Math.max(0, Math.round(Number(prediction.smoothnessScore)))) || 0
+    prediction.constipationRisk = Math.min(100, Math.max(0, Math.round(Number(prediction.constipationRisk)))) || 0
+    prediction.diarrheaRisk = Math.min(100, Math.max(0, Math.round(Number(prediction.diarrheaRisk)))) || 0
 
     return NextResponse.json({ success: true, data: prediction })
   } catch (error) {
