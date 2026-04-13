@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { callZhipu, extractJSON } from '@/lib/zhipu'
 import { DigestPrediction } from '@/lib/types'
+import { supabase } from '@/lib/db'
 
 function toStringArray(val: unknown): string[] {
   if (Array.isArray(val)) {
@@ -96,6 +97,14 @@ export async function POST(req: NextRequest) {
     prediction.smoothnessScore = Number.isFinite(rawSmoothnessScore) && rawSmoothnessScore > 0
       ? rawSmoothnessScore
       : Math.max(0, 100 - Math.max(prediction.constipationRisk, prediction.diarrheaRisk))
+
+    // 埋点：写入 predictions 表，失败不影响主流程
+    supabase.from('predictions').insert({
+      type: 'digest',
+      input_method: imageBase64 ? 'image' : 'text',
+      food_name: prediction.foodName,
+      result_score: prediction.smoothnessScore,
+    }).then(({ error }) => { if (error) console.warn('埋点写入失败:', error.message) })
 
     return NextResponse.json({ success: true, data: prediction })
   } catch (error) {

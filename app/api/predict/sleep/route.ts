@@ -1,6 +1,8 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { callZhipu, extractJSON } from '@/lib/zhipu'
 import { SleepPrediction } from '@/lib/types'
+import { buildKnowledgeHint } from '@/lib/caffeine-lookup'
+import { supabase } from '@/lib/db'
 
 function toStr(val: unknown): string {
   if (typeof val === 'string') return val
@@ -52,7 +54,22 @@ export async function POST(req: NextRequest) {
     let rawResponse: string
 
     if (imageBase64 && imageMimeType) {
-      const prompt = `你是专业营养师。请识别图片中的饮品，分析其咖啡因含量对睡眠的影响。
+      // 图片模式：先让 AI 识别饮品名，再查知识库注入精确咖啡因值
+      const identifyPrompt = `请识别图片中的饮品品牌和产品名称，只返回名称，不要其他内容。例如：霸王茶姬伯牙绝弦`
+      const identifiedName = await callZhipu([
+        {
+          role: 'user',
+          content: [
+            { type: 'image_url', image_url: { url: `data:${imageMimeType};base64,${imageBase64}` } },
+            { type: 'text', text: identifyPrompt },
+          ],
+        },
+      ], 'glm-4v')
+
+      const knowledgeHint = buildKnowledgeHint(identifiedName.trim()) ?? '暂无该饮品的精确数据，请根据饮品类型合理估算咖啡因含量。'
+
+      const prompt = `你是专业营养师。请分析图片中饮品对睡眠的影响。
+${knowledgeHint}
 饮用时间：${drinkTimeText}，当前时间：${currentTime}，咖啡因耐受度：${toleranceText}
 请用中文，只返回以下格式的JSON：
 {"drinkName":"饮品名称","caffeineContent":数字,"estimatedSleepTime":"xx:xx-xx:xx","insomniaRisk":数字0到100,"wakeTimes":数字0到5,"nextDayScore":数字0到100,"analysis":"50字内分析",${tipsFormat}}
@@ -68,7 +85,11 @@ export async function POST(req: NextRequest) {
         },
       ], 'glm-4v')
     } else {
+      // 文字模式：直接查知识库
+      const knowledgeHint = buildKnowledgeHint(drinkDesc) ?? '暂无该饮品的精确数据，请根据饮品类型合理估算咖啡因含量。'
+
       const prompt = `你是专业营养师。用户喝了"${drinkDesc}"，分析对今晚睡眠的影响。
+${knowledgeHint}
 饮用时间：${drinkTimeText}，当前时间：${currentTime}，咖啡因耐受度：${toleranceText}
 请用中文，只返回以下格式的JSON：
 {"drinkName":"饮品名称","caffeineContent":数字,"estimatedSleepTime":"xx:xx-xx:xx","insomniaRisk":数字0到100,"wakeTimes":数字0到5,"nextDayScore":数字0到100,"analysis":"50字内分析",${tipsFormat}}
@@ -92,6 +113,14 @@ export async function POST(req: NextRequest) {
     prediction.nextDayScore = Math.min(100, Math.max(0, Math.round(Number(prediction.nextDayScore))))
     prediction.wakeTimes = Math.min(5, Math.max(0, Math.round(Number(prediction.wakeTimes))))
     prediction.caffeineContent = Math.max(0, Math.round(Number(prediction.caffeineContent)))
+
+    // 埋点：写入 predictions 表，失败不影响主流程
+    supabase.from('predictions').insert({
+      type: 'sleep',
+      input_method: imageBase64 ? 'image' : 'text',
+      drink_name: prediction.drinkName,
+      result_score: prediction.insomniaRisk,
+    }).then(({ error }) => { if (error) console.warn('埋点写入失败:', error.message) })
 
     return NextResponse.json({ success: true, data: prediction })
   } catch (error) {

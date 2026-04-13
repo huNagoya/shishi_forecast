@@ -2,6 +2,7 @@
 
 import { SleepPrediction } from '@/lib/types'
 import { getRiskColor, getRiskLabel } from '@/lib/utils'
+import FeedbackWidget from '@/components/FeedbackWidget'
 
 interface SleepResultProps {
   data: SleepPrediction
@@ -86,10 +87,11 @@ export default function SleepResult({ data }: SleepResultProps) {
         </ul>
       </div>
 
-      {/* 免责声明 */}
+      {/* 免责声明 + 反馈 */}
       <p className="text-xs text-center text-gray-300">
         基于通用模型，个体差异存在偏差，仅供参考
       </p>
+      <FeedbackWidget type="sleep" drinkName={data.drinkName} />
     </div>
   )
 }
