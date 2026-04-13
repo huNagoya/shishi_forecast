@@ -73,10 +73,10 @@ export default function FeedbackWidget({ type, drinkName, foodName }: FeedbackWi
       {/* 半屏弹窗遮罩 */}
       {open && (
         <div
-          className="fixed inset-0 z-50 flex items-end"
+          className="fixed inset-0 z-[60] flex items-end"
           onClick={(e) => { if (e.target === e.currentTarget) setOpen(false) }}
         >
-          <div className="w-full max-w-lg mx-auto bg-white rounded-t-3xl p-6 shadow-2xl">
+          <div className="w-full max-w-lg mx-auto bg-white rounded-t-3xl p-6 pb-24 shadow-2xl">
             <div className="w-10 h-1 bg-gray-200 rounded-full mx-auto mb-5" />
             <p className="font-semibold text-gray-800 mb-4">哪里不准？</p>
 
