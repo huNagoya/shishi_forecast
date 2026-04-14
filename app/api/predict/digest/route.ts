@@ -99,13 +99,14 @@ export async function POST(req: NextRequest) {
       ? rawSmoothnessScore
       : Math.max(0, 100 - Math.max(prediction.constipationRisk, prediction.diarrheaRisk))
 
-    // 埋点：写入 predictions 表，失败不影响主流程
-    supabase.from('predictions').insert({
+    // 埋点：写入 predictions 表（await 确保 serverless 函数关闭前完成）
+    const { error: dbError } = await supabase.from('predictions').insert({
       type: 'digest',
       input_method: imageBase64 ? 'image' : 'text',
       food_name: prediction.foodName,
       result_score: prediction.smoothnessScore,
-    }).then(({ error }) => { if (error) console.warn('埋点写入失败:', error.message) })
+    })
+    if (dbError) console.warn('埋点写入失败:', dbError.message)
 
     return NextResponse.json({ success: true, data: prediction })
   } catch (error) {

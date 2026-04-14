@@ -114,13 +114,14 @@ ${knowledgeHint}
     prediction.wakeTimes = Math.min(5, Math.max(0, Math.round(Number(prediction.wakeTimes))))
     prediction.caffeineContent = Math.max(0, Math.round(Number(prediction.caffeineContent)))
 
-    // 埋点：写入 predictions 表，失败不影响主流程
-    supabase.from('predictions').insert({
+    // 埋点：写入 predictions 表（await 确保 serverless 函数关闭前完成）
+    const { error: dbError } = await supabase.from('predictions').insert({
       type: 'sleep',
       input_method: imageBase64 ? 'image' : 'text',
       drink_name: prediction.drinkName,
       result_score: prediction.insomniaRisk,
-    }).then(({ error }) => { if (error) console.warn('埋点写入失败:', error.message) })
+    })
+    if (dbError) console.warn('埋点写入失败:', dbError.message)
 
     return NextResponse.json({ success: true, data: prediction })
   } catch (error) {
