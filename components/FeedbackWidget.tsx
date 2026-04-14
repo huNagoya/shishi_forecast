@@ -32,7 +32,7 @@ export default function FeedbackWidget({ type, drinkName, foodName }: FeedbackWi
     if (!selected) return
     setLoading(true)
     try {
-      await fetch('/api/feedback', {
+      const res = await fetch('/api/feedback', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
@@ -43,7 +43,14 @@ export default function FeedbackWidget({ type, drinkName, foodName }: FeedbackWi
           correctValue: correctValue.trim() || null,
         }),
       })
-      setSubmitted(true)
+      const data = await res.json()
+      if (data.success) {
+        setSubmitted(true)
+      } else {
+        alert('提交失败，请稍后重试')
+      }
+    } catch {
+      alert('网络错误，请稍后重试')
     } finally {
       setLoading(false)
     }
