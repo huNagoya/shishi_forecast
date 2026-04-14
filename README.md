@@ -26,17 +26,3 @@
 
 内置 137 条中国常见饮品咖啡因数据，覆盖霸王茶姬（69款）、卡旺卡（16款）、星巴克、瑞幸、蜜雪冰城等主流品牌，数据来源于品牌官方小程序及消费者委员会检测报告。
 
-## 本地运行
-
-```bash
-npm install
-npm run dev
-```
-
-需要在 `.env.local` 配置：
-
-```
-ZHIPU_API_KEY=your_key
-NEXT_PUBLIC_SUPABASE_URL=your_url
-NEXT_PUBLIC_SUPABASE_ANON_KEY=your_key
-```
