@@ -27,6 +27,7 @@ function toStringArray(val: unknown): string[] {
 function toStr(val: unknown): string {
   if (typeof val === 'string') return val
   if (typeof val === 'number') return String(val)
+  if (Array.isArray(val)) return val.filter(Boolean).join('、')
   return ''
 }
 
@@ -55,7 +56,7 @@ export async function POST(req: NextRequest) {
       const prompt = `你是专业营养师。请识别图片中的食物，分析对消化排便的影响。${extraText}
 进食时间：${eatTimeText}，当前时间：${currentTime}，肠胃类型：${gutText}
 请用中文，只返回以下格式的JSON：
-{"foodName":"食物概括","smoothnessScore":数字0到100,"goldenTimeStart":"如明早7:00","goldenTimeEnd":"如明早9:00","constipationRisk":数字0到100,"diarrheaRisk":数字0到100,"analysis":"50字内分析",${suggestionsFormat}}
+{"foodName":"食物简短概括（用顿号连接多种食物，如麻辣烫+奶茶，不要用数组）","smoothnessScore":数字0到100,"goldenTimeStart":"如明早7:00","goldenTimeEnd":"如明早9:00","constipationRisk":数字0到100,"diarrheaRisk":数字0到100,"analysis":"50字内分析",${suggestionsFormat}}
 不要其他文字。`
 
       rawResponse = await callZhipu([
@@ -72,7 +73,7 @@ export async function POST(req: NextRequest) {
       const prompt = `你是专业营养师。用户吃了"${foodDesc}"，分析对消化排便的影响。
 进食时间：${eatTimeText}，当前时间：${currentTime}，肠胃类型：${gutText}
 请用中文，只返回以下格式的JSON：
-{"foodName":"食物概括","smoothnessScore":数字0到100,"goldenTimeStart":"如明早7:00","goldenTimeEnd":"如明早9:00","constipationRisk":数字0到100,"diarrheaRisk":数字0到100,"analysis":"50字内分析",${suggestionsFormat}}
+{"foodName":"食物简短概括（用顿号连接多种食物，如麻辣烫+奶茶，不要用数组）","smoothnessScore":数字0到100,"goldenTimeStart":"如明早7:00","goldenTimeEnd":"如明早9:00","constipationRisk":数字0到100,"diarrheaRisk":数字0到100,"analysis":"50字内分析",${suggestionsFormat}}
 不要其他文字。`
 
       rawResponse = await callZhipu([
