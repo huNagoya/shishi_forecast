@@ -1,6 +1,7 @@
 'use client'
 
 import { useState } from 'react'
+import { getDeviceId } from '@/lib/device-id'
 
 interface FeedbackWidgetProps {
   type: 'sleep' | 'digest'
@@ -21,20 +22,40 @@ const DIGEST_ISSUES = [
   { value: 'other', label: '以上都不是' },
 ]
 
+const DIRECTION_OPTIONS = {
+  sleep: [
+    { value: 'up', label: '比预测更严重，实际更难入睡' },
+    { value: 'down', label: '比预测轻，实际睡得还不错' },
+  ],
+  digest: [
+    { value: 'up', label: '比预测更不舒服' },
+    { value: 'down', label: '比预测轻，消化挺好' },
+  ],
+}
+
 export default function FeedbackWidget({ type, drinkName, foodName }: FeedbackWidgetProps) {
   const [open, setOpen] = useState(false)
   const [selected, setSelected] = useState<string | null>(null)
+  const [direction, setDirection] = useState<'up' | 'down' | null>(null)
   const [correctValue, setCorrectValue] = useState('')
   const [customText, setCustomText] = useState('')
   const [submitted, setSubmitted] = useState(false)
+  const [profileUpdated, setProfileUpdated] = useState(false)
   const [loading, setLoading] = useState(false)
 
   const issues = type === 'sleep' ? SLEEP_ISSUES : DIGEST_ISSUES
+  const directionOptions = DIRECTION_OPTIONS[type]
+
+  const isSubmitDisabled =
+    !selected ||
+    (selected === 'wrong_prediction' && !direction) ||
+    loading
 
   const handleSubmit = async () => {
-    if (!selected) return
+    if (isSubmitDisabled) return
     setLoading(true)
     try {
+      const deviceId = getDeviceId()
       const res = await fetch('/api/feedback', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -43,12 +64,24 @@ export default function FeedbackWidget({ type, drinkName, foodName }: FeedbackWi
           drinkName,
           foodName,
           issue: selected,
+          direction: selected === 'wrong_prediction' ? direction : null,
+          deviceId,
           correctValue: correctValue.trim() || null,
           customText: selected === 'other' ? customText.trim() || null : null,
         }),
       })
       const data = await res.json()
       if (data.success) {
+        // EWMA 触发时更新 localStorage
+        if (data.updatedProfile) {
+          const raw = localStorage.getItem('shishi_user_profile')
+          const current = raw ? JSON.parse(raw) : {}
+          localStorage.setItem('shishi_user_profile', JSON.stringify({
+            ...current,
+            ...data.updatedProfile,
+          }))
+          setProfileUpdated(true)
+        }
         setSubmitted(true)
       } else {
         alert('提交失败，请稍后重试')
@@ -63,14 +96,13 @@ export default function FeedbackWidget({ type, drinkName, foodName }: FeedbackWi
   if (submitted) {
     return (
       <p className="text-center text-xs text-gray-400 mt-1">
-        感谢反馈，我们会持续改进 ✓
+        {profileUpdated ? '体质档案已根据反馈更新 ✓' : '感谢反馈，我们会持续改进 ✓'}
       </p>
     )
   }
 
   return (
     <>
-      {/* 触发入口 */}
       <p className="text-center text-xs text-gray-300 mt-1">
         结果有误？
         <button
@@ -81,7 +113,6 @@ export default function FeedbackWidget({ type, drinkName, foodName }: FeedbackWi
         </button>
       </p>
 
-      {/* 半屏弹窗遮罩 */}
       {open && (
         <div
           className="fixed inset-0 z-[60] flex items-end"
@@ -95,7 +126,7 @@ export default function FeedbackWidget({ type, drinkName, foodName }: FeedbackWi
               {issues.map((item) => (
                 <button
                   key={item.value}
-                  onClick={() => setSelected(item.value)}
+                  onClick={() => { setSelected(item.value); setDirection(null) }}
                   className={`w-full text-left px-4 py-3 rounded-2xl border-2 text-sm transition-all ${
                     selected === item.value
                       ? 'border-amber-400 bg-amber-50 text-amber-700 font-medium'
@@ -107,7 +138,29 @@ export default function FeedbackWidget({ type, drinkName, foodName }: FeedbackWi
               ))}
             </div>
 
-            {/* 咖啡因数值不对时，追加数字输入框 */}
+            {/* 预测不准 → 追加方向选择（触发 EWMA） */}
+            {selected === 'wrong_prediction' && (
+              <div className="mb-4">
+                <p className="text-xs text-gray-500 mb-2">实际情况是？</p>
+                <div className="space-y-2">
+                  {directionOptions.map((opt) => (
+                    <button
+                      key={opt.value}
+                      onClick={() => setDirection(opt.value as 'up' | 'down')}
+                      className={`w-full text-left px-4 py-2.5 rounded-xl border-2 text-sm transition-all ${
+                        direction === opt.value
+                          ? 'border-violet-400 bg-violet-50 text-violet-700 font-medium'
+                          : 'border-gray-100 text-gray-500'
+                      }`}
+                    >
+                      {opt.label}
+                    </button>
+                  ))}
+                </div>
+              </div>
+            )}
+
+            {/* 咖啡因数值不对 → mg 输入 */}
             {selected === 'wrong_caffeine' && (
               <div className="mb-4">
                 <p className="text-xs text-gray-500 mb-2">实际大约多少 mg？（可选）</p>
@@ -124,7 +177,7 @@ export default function FeedbackWidget({ type, drinkName, foodName }: FeedbackWi
               </div>
             )}
 
-            {/* 以上都不是时，展开文字输入框 */}
+            {/* 以上都不是 → 文字输入 */}
             {selected === 'other' && (
               <div className="mb-4">
                 <p className="text-xs text-gray-500 mb-2">能告诉我哪里不对吗？（可选）</p>
@@ -140,7 +193,7 @@ export default function FeedbackWidget({ type, drinkName, foodName }: FeedbackWi
 
             <button
               onClick={handleSubmit}
-              disabled={!selected || loading}
+              disabled={isSubmitDisabled}
               className="w-full bg-gray-800 text-white font-medium py-3 rounded-2xl text-sm disabled:opacity-40 active:scale-95 transition-transform"
             >
               {loading ? '提交中...' : '提交反馈'}
