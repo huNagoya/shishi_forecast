@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import Image from 'next/image'
+import OnboardingModal from '@/components/OnboardingModal'
 
 export default function HomePage() {
   return (
@@ -73,5 +74,6 @@ export default function HomePage() {
         由千问 Qwen 驱动 · 结果仅供参考
       </p>
     </div>
+    <OnboardingModal />
   )
 }
