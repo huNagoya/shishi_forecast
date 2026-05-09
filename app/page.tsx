@@ -4,6 +4,7 @@ import OnboardingModal from '@/components/OnboardingModal'
 
 export default function HomePage() {
   return (
+    <>
     <div className="px-4 pt-8 pb-4">
       <div className="text-center mb-8">
         <div className="flex justify-center mb-3">
@@ -75,5 +76,6 @@ export default function HomePage() {
       </p>
     </div>
     <OnboardingModal />
+    </>
   )
 }
