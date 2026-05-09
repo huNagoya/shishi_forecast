@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server'
-import { callZhipu, extractJSON } from '@/lib/zhipu'
+import { callZhipu, callQwen, extractJSON } from '@/lib/zhipu'
 import { SleepPrediction } from '@/lib/types'
 import { buildKnowledgeHint } from '@/lib/caffeine-lookup'
 import { supabase } from '@/lib/db'
@@ -54,9 +54,18 @@ export async function POST(req: NextRequest) {
     let rawResponse: string
 
     if (imageBase64 && imageMimeType) {
-      // 图片模式：先让 AI 识别饮品名，再查知识库注入精确咖啡因值
-      const identifyPrompt = `请识别图片中的饮品品牌和产品名称，只返回名称，不要其他内容。例如：霸王茶姬伯牙绝弦`
-      const identifiedName = await callZhipu([
+      // 第一步：用 Qwen 视觉模型优先读取杯身文字标签识别品名
+      const identifyPrompt = `请识别图片中饮品杯子或包装上的品牌名和产品名。
+
+识别规则（按优先级严格执行）：
+1. 如果杯身/包装上有清晰可读的品牌名和产品名文字 → 以文字为准，直接返回文字内容
+2. 如果文字模糊或完全无法识别 → 根据杯子外观、颜色、配料判断品类
+3. 如果视觉外观和文字标签矛盾（看起来像A但文字写B）→ 以文字为准，文字比视觉更可靠
+
+只返回"品牌+产品名"，例如：霸王茶姬伯牙绝弦
+不要返回任何其他内容。`
+
+      const identifiedName = await callQwen([
         {
           role: 'user',
           content: [
@@ -64,18 +73,19 @@ export async function POST(req: NextRequest) {
             { type: 'text', text: identifyPrompt },
           ],
         },
-      ], 'glm-4v')
+      ], 'qwen-vl-max-latest')
 
       const knowledgeHint = buildKnowledgeHint(identifiedName.trim()) ?? '暂无该饮品的精确数据，请根据饮品类型合理估算咖啡因含量。'
 
       const prompt = `你是专业营养师。请分析图片中饮品对睡眠的影响。
+识别到的饮品：${identifiedName.trim()}
 ${knowledgeHint}
 饮用时间：${drinkTimeText}，当前时间：${currentTime}，咖啡因耐受度：${toleranceText}
 请用中文，只返回以下格式的JSON：
 {"drinkName":"饮品名称","caffeineContent":数字,"estimatedSleepTime":"xx:xx-xx:xx","insomniaRisk":数字0到100,"wakeTimes":数字0到5,"nextDayScore":数字0到100,"analysis":"50字内分析",${tipsFormat}}
 不要其他文字。`
 
-      rawResponse = await callZhipu([
+      rawResponse = await callQwen([
         {
           role: 'user',
           content: [
@@ -83,7 +93,7 @@ ${knowledgeHint}
             { type: 'text', text: prompt },
           ],
         },
-      ], 'glm-4v')
+      ], 'qwen-vl-max-latest')
     } else {
       // 文字模式：直接查知识库
       const knowledgeHint = buildKnowledgeHint(drinkDesc) ?? '暂无该饮品的精确数据，请根据饮品类型合理估算咖啡因含量。'

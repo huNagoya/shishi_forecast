@@ -4,7 +4,7 @@ import { supabase } from '@/lib/db'
 export async function POST(req: NextRequest) {
   try {
     const body = await req.json()
-    const { type, drinkName, foodName, issue, correctValue } = body
+    const { type, drinkName, foodName, issue, correctValue, customText } = body
 
     if (!type || !issue) {
       return NextResponse.json({ success: false, error: '缺少必要字段' }, { status: 400 })
@@ -16,6 +16,7 @@ export async function POST(req: NextRequest) {
       food_name: foodName ?? null,
       issue,
       correct_value: correctValue ?? null,
+      custom_text: customText ?? null,
     })
 
     if (error) throw error

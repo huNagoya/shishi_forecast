@@ -12,17 +12,20 @@ const SLEEP_ISSUES = [
   { value: 'wrong_name', label: '饮品识别错了' },
   { value: 'wrong_caffeine', label: '咖啡因数值不对' },
   { value: 'wrong_prediction', label: '预测结果感觉不准' },
+  { value: 'other', label: '以上都不是' },
 ]
 
 const DIGEST_ISSUES = [
   { value: 'wrong_name', label: '食物识别错了' },
   { value: 'wrong_prediction', label: '预测结果感觉不准' },
+  { value: 'other', label: '以上都不是' },
 ]
 
 export default function FeedbackWidget({ type, drinkName, foodName }: FeedbackWidgetProps) {
   const [open, setOpen] = useState(false)
   const [selected, setSelected] = useState<string | null>(null)
   const [correctValue, setCorrectValue] = useState('')
+  const [customText, setCustomText] = useState('')
   const [submitted, setSubmitted] = useState(false)
   const [loading, setLoading] = useState(false)
 
@@ -41,6 +44,7 @@ export default function FeedbackWidget({ type, drinkName, foodName }: FeedbackWi
           foodName,
           issue: selected,
           correctValue: correctValue.trim() || null,
+          customText: selected === 'other' ? customText.trim() || null : null,
         }),
       })
       const data = await res.json()
@@ -103,7 +107,7 @@ export default function FeedbackWidget({ type, drinkName, foodName }: FeedbackWi
               ))}
             </div>
 
-            {/* 咖啡因数值不对时，追加输入框 */}
+            {/* 咖啡因数值不对时，追加数字输入框 */}
             {selected === 'wrong_caffeine' && (
               <div className="mb-4">
                 <p className="text-xs text-gray-500 mb-2">实际大约多少 mg？（可选）</p>
@@ -117,6 +121,20 @@ export default function FeedbackWidget({ type, drinkName, foodName }: FeedbackWi
                   />
                   <span className="text-sm text-gray-400">mg</span>
                 </div>
+              </div>
+            )}
+
+            {/* 以上都不是时，展开文字输入框 */}
+            {selected === 'other' && (
+              <div className="mb-4">
+                <p className="text-xs text-gray-500 mb-2">能告诉我哪里不对吗？（可选）</p>
+                <textarea
+                  value={customText}
+                  onChange={(e) => setCustomText(e.target.value)}
+                  placeholder="随便写，帮助我们改进..."
+                  rows={3}
+                  className="w-full border border-gray-200 rounded-xl px-3 py-2 text-sm focus:outline-none focus:border-amber-400 resize-none"
+                />
               </div>
             )}
 
