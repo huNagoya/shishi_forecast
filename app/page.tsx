@@ -70,7 +70,7 @@ export default function HomePage() {
       </Link>
 
       <p className="text-center text-xs text-gray-300 mt-8">
-        由智谱 GLM-4V 驱动 · 结果仅供参考
+        由千问 Qwen 驱动 · 结果仅供参考
       </p>
     </div>
   )
