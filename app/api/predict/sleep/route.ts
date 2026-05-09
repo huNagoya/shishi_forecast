@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server'
-import { callZhipu, callQwen, extractJSON } from '@/lib/zhipu'
+import { callQwen, extractJSON } from '@/lib/zhipu'
 import { SleepPrediction } from '@/lib/types'
 import { buildKnowledgeHint } from '@/lib/caffeine-lookup'
 import { supabase } from '@/lib/db'
@@ -105,9 +105,9 @@ ${knowledgeHint}
 {"drinkName":"饮品名称","caffeineContent":数字,"estimatedSleepTime":"xx:xx-xx:xx","insomniaRisk":数字0到100,"wakeTimes":数字0到5,"nextDayScore":数字0到100,"analysis":"50字内分析",${tipsFormat}}
 不要其他文字。`
 
-      rawResponse = await callZhipu([
+      rawResponse = await callQwen([
         { role: 'user', content: prompt },
-      ], 'glm-4-flash')
+      ], 'qwen-plus-latest')
     }
 
     const prediction = extractJSON(rawResponse) as SleepPrediction

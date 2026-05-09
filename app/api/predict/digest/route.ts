@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server'
-import { callZhipu, extractJSON } from '@/lib/zhipu'
+import { callQwen, extractJSON } from '@/lib/zhipu'
 import { DigestPrediction } from '@/lib/types'
 import { supabase } from '@/lib/db'
 
@@ -59,7 +59,7 @@ export async function POST(req: NextRequest) {
 {"foodName":"食物简短概括（用顿号连接多种食物，如麻辣烫+奶茶，不要用数组）","smoothnessScore":数字0到100,"goldenTimeStart":"如明早7:00","goldenTimeEnd":"如明早9:00","constipationRisk":数字0到100,"diarrheaRisk":数字0到100,"analysis":"50字内分析",${suggestionsFormat}}
 不要其他文字。`
 
-      rawResponse = await callZhipu([
+      rawResponse = await callQwen([
         {
           role: 'user',
           content: [
@@ -67,7 +67,7 @@ export async function POST(req: NextRequest) {
             { type: 'text', text: prompt },
           ],
         },
-      ], 'glm-4v')
+      ], 'qwen-vl-max-latest')
     } else {
       const foodDesc = foodText?.trim() || '普通外卖套餐'
       const prompt = `你是专业营养师。用户吃了"${foodDesc}"，分析对消化排便的影响。
@@ -76,9 +76,9 @@ export async function POST(req: NextRequest) {
 {"foodName":"食物简短概括（用顿号连接多种食物，如麻辣烫+奶茶，不要用数组）","smoothnessScore":数字0到100,"goldenTimeStart":"如明早7:00","goldenTimeEnd":"如明早9:00","constipationRisk":数字0到100,"diarrheaRisk":数字0到100,"analysis":"50字内分析",${suggestionsFormat}}
 不要其他文字。`
 
-      rawResponse = await callZhipu([
+      rawResponse = await callQwen([
         { role: 'user', content: prompt },
-      ], 'glm-4-flash')
+      ], 'qwen-plus-latest')
     }
 
     const prediction = extractJSON(rawResponse) as DigestPrediction
