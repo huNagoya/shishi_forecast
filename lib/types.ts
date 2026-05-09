@@ -36,6 +36,7 @@ export interface HistoryItem {
     imagePreview?: string // base64缩略图（可选）
   }
   result: SleepPrediction | DigestPrediction
+  ewmaRating?: 'up' | 'neutral' | 'down' // 事后验证反馈
 }
 
 // 用户设置

@@ -56,3 +56,13 @@ export function getSettings(): UserSettings {
 export function saveSettings(settings: UserSettings): void {
   localStorage.setItem(SETTINGS_KEY, JSON.stringify(settings))
 }
+
+// 更新单条历史记录的 EWMA 评分
+export function updateHistoryItemRating(id: string, rating: 'up' | 'neutral' | 'down'): void {
+  const history = getHistory()
+  const idx = history.findIndex((item) => item.id === id)
+  if (idx !== -1) {
+    history[idx] = { ...history[idx], ewmaRating: rating }
+    localStorage.setItem(HISTORY_KEY, JSON.stringify(history))
+  }
+}

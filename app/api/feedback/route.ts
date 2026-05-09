@@ -24,8 +24,8 @@ export async function POST(req: NextRequest) {
 
     if (error) throw error
 
-    // EWMA 更新：仅在 wrong_prediction + 方向明确 + 有 deviceId 时触发
-    if (issue === 'wrong_prediction' && direction && deviceId) {
+    // EWMA 更新：方向明确 + 有 deviceId 时触发（wrong_prediction 和 prediction_outcome 均适用）
+    if (direction && direction !== 'neutral' && deviceId) {
       const { data: profile } = await supabase
         .from('user_profiles')
         .select('caffeine_sensitivity, gi_sensitivity, feedback_count')
