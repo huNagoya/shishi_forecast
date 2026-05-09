@@ -43,6 +43,9 @@ export default function DigestPage() {
         imageMimeType = imageFile.type
       }
 
+      const rawProfile = localStorage.getItem('shishi_user_profile')
+      const userProfile = rawProfile ? JSON.parse(rawProfile) : null
+
       const res = await fetch('/api/predict/digest', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -53,6 +56,7 @@ export default function DigestPage() {
           eatTime,
           gutType,
           noImage: !imageFile,
+          userProfile,
         }),
       })
 

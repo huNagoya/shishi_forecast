@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { callQwen, extractJSON } from '@/lib/zhipu'
 import { DigestPrediction } from '@/lib/types'
+import { buildUserHint } from '@/lib/user-hint'
 import { supabase } from '@/lib/db'
 
 function toStringArray(val: unknown): string[] {
@@ -34,7 +35,8 @@ function toStr(val: unknown): string {
 export async function POST(req: NextRequest) {
   try {
     const body = await req.json()
-    const { imageBase64, imageMimeType, eatTime, gutType, foodText } = body
+    const { imageBase64, imageMimeType, eatTime, gutType, foodText, userProfile } = body
+    const userHint = buildUserHint(userProfile, 'digest')
 
     const now = new Date()
     const currentTime = `${now.getHours()}:${String(now.getMinutes()).padStart(2, '0')}`
@@ -54,7 +56,7 @@ export async function POST(req: NextRequest) {
     if (imageBase64 && imageMimeType) {
       const extraText = foodText?.trim() ? `\n用户备注：${foodText.trim()}` : ''
       const prompt = `你是专业营养师。请识别图片中的食物，分析对消化排便的影响。${extraText}
-进食时间：${eatTimeText}，当前时间：${currentTime}，肠胃类型：${gutText}
+进食时间：${eatTimeText}，当前时间：${currentTime}，肠胃类型：${gutText}${userHint ? '\n' + userHint : ''}
 请用中文，只返回以下格式的JSON：
 {"foodName":"食物简短概括（用顿号连接多种食物，如麻辣烫+奶茶，不要用数组）","smoothnessScore":数字0到100,"goldenTimeStart":"如明早7:00","goldenTimeEnd":"如明早9:00","constipationRisk":数字0到100,"diarrheaRisk":数字0到100,"analysis":"50字内分析",${suggestionsFormat}}
 不要其他文字。`
@@ -71,7 +73,7 @@ export async function POST(req: NextRequest) {
     } else {
       const foodDesc = foodText?.trim() || '普通外卖套餐'
       const prompt = `你是专业营养师。用户吃了"${foodDesc}"，分析对消化排便的影响。
-进食时间：${eatTimeText}，当前时间：${currentTime}，肠胃类型：${gutText}
+进食时间：${eatTimeText}，当前时间：${currentTime}，肠胃类型：${gutText}${userHint ? '\n' + userHint : ''}
 请用中文，只返回以下格式的JSON：
 {"foodName":"食物简短概括（用顿号连接多种食物，如麻辣烫+奶茶，不要用数组）","smoothnessScore":数字0到100,"goldenTimeStart":"如明早7:00","goldenTimeEnd":"如明早9:00","constipationRisk":数字0到100,"diarrheaRisk":数字0到100,"analysis":"50字内分析",${suggestionsFormat}}
 不要其他文字。`

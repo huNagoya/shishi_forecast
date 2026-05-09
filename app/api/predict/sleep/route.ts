@@ -2,6 +2,7 @@ import { NextRequest, NextResponse } from 'next/server'
 import { callQwen, extractJSON } from '@/lib/zhipu'
 import { SleepPrediction } from '@/lib/types'
 import { buildKnowledgeHint } from '@/lib/caffeine-lookup'
+import { buildUserHint } from '@/lib/user-hint'
 import { supabase } from '@/lib/db'
 
 function toStr(val: unknown): string {
@@ -35,7 +36,8 @@ function toStringArray(val: unknown): string[] {
 export async function POST(req: NextRequest) {
   try {
     const body = await req.json()
-    const { imageBase64, imageMimeType, drinkDesc, drinkTime, tolerance } = body
+    const { imageBase64, imageMimeType, drinkDesc, drinkTime, tolerance, userProfile } = body
+    const userHint = buildUserHint(userProfile, 'sleep')
 
     const now = new Date()
     const currentTime = `${now.getHours()}:${String(now.getMinutes()).padStart(2, '0')}`
@@ -80,7 +82,7 @@ export async function POST(req: NextRequest) {
       const prompt = `你是专业营养师。请分析图片中饮品对睡眠的影响。
 识别到的饮品：${identifiedName.trim()}
 ${knowledgeHint}
-饮用时间：${drinkTimeText}，当前时间：${currentTime}，咖啡因耐受度：${toleranceText}
+饮用时间：${drinkTimeText}，当前时间：${currentTime}，咖啡因耐受度：${toleranceText}${userHint ? '\n' + userHint : ''}
 请用中文，只返回以下格式的JSON：
 {"drinkName":"饮品名称","caffeineContent":数字,"estimatedSleepTime":"xx:xx-xx:xx","insomniaRisk":数字0到100,"wakeTimes":数字0到5,"nextDayScore":数字0到100,"analysis":"50字内分析",${tipsFormat}}
 不要其他文字。`
@@ -100,7 +102,7 @@ ${knowledgeHint}
 
       const prompt = `你是专业营养师。用户喝了"${drinkDesc}"，分析对今晚睡眠的影响。
 ${knowledgeHint}
-饮用时间：${drinkTimeText}，当前时间：${currentTime}，咖啡因耐受度：${toleranceText}
+饮用时间：${drinkTimeText}，当前时间：${currentTime}，咖啡因耐受度：${toleranceText}${userHint ? '\n' + userHint : ''}
 请用中文，只返回以下格式的JSON：
 {"drinkName":"饮品名称","caffeineContent":数字,"estimatedSleepTime":"xx:xx-xx:xx","insomniaRisk":数字0到100,"wakeTimes":数字0到5,"nextDayScore":数字0到100,"analysis":"50字内分析",${tipsFormat}}
 不要其他文字。`

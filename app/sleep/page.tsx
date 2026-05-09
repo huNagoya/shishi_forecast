@@ -45,6 +45,9 @@ export default function SleepPage() {
         imageMimeType = imageFile.type
       }
 
+      const rawProfile = localStorage.getItem('shishi_user_profile')
+      const userProfile = rawProfile ? JSON.parse(rawProfile) : null
+
       const res = await fetch('/api/predict/sleep', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -54,6 +57,7 @@ export default function SleepPage() {
           drinkDesc: drinkDesc.trim(),
           drinkTime,
           tolerance,
+          userProfile,
         }),
       })
 
