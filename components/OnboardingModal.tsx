@@ -165,8 +165,8 @@ export default function OnboardingModal() {
 
   if (isDone) {
     return (
-      <div className="fixed inset-0 z-[80] flex items-end bg-black/40 backdrop-blur-sm">
-        <div className="w-full max-w-lg mx-auto bg-white rounded-t-3xl p-8 pb-20 text-center shadow-2xl">
+      <div className="fixed inset-0 z-[80] flex items-end sm:items-center justify-center bg-black/40 backdrop-blur-sm">
+        <div className="w-full max-w-lg mx-auto bg-white rounded-t-3xl sm:rounded-3xl p-8 pb-20 sm:pb-8 text-center shadow-2xl">
           <div className="text-5xl mb-4">🎉</div>
           <p className="font-bold text-gray-800 text-lg mb-2">体质档案已建立！</p>
           <p className="text-sm text-gray-400 mb-6">预测结果会根据你的体质持续优化</p>
@@ -182,9 +182,9 @@ export default function OnboardingModal() {
   }
 
   return (
-    <div className="fixed inset-0 z-[80] flex items-end bg-black/40 backdrop-blur-sm">
-      <div className="w-full max-w-lg mx-auto bg-white rounded-t-3xl p-6 pb-10 shadow-2xl">
-        <div className="w-10 h-1 bg-gray-200 rounded-full mx-auto mb-5" />
+    <div className="fixed inset-0 z-[80] flex items-end sm:items-center justify-center bg-black/40 backdrop-blur-sm">
+      <div className="w-full max-w-lg mx-auto bg-white rounded-t-3xl sm:rounded-3xl p-6 pb-10 sm:pb-6 shadow-2xl">
+        <div className="w-10 h-1 bg-gray-200 rounded-full mx-auto mb-5 sm:hidden" />
 
         {/* Progress */}
         <div className="flex gap-1 mb-5">
