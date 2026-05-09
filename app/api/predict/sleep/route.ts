@@ -84,7 +84,7 @@ export async function POST(req: NextRequest) {
 ${knowledgeHint}
 饮用时间：${drinkTimeText}，当前时间：${currentTime}，咖啡因耐受度：${toleranceText}${userHint ? '\n' + userHint : ''}
 请用中文，只返回以下格式的JSON：
-{"drinkName":"饮品名称","caffeineContent":数字,"estimatedSleepTime":"xx:xx-xx:xx","insomniaRisk":数字0到100,"wakeTimes":数字0到5,"nextDayScore":数字0到100,"analysis":"50字内分析",${tipsFormat}}
+{"drinkName":"饮品名称","caffeineContent":数字,"estimatedSleepTime":"预计能入睡的时间段如23:30-01:00（1-2小时范围）","insomniaRisk":数字0到100,"wakeTimes":数字0到5,"nextDayScore":数字0到100,"analysis":"50字内分析",${tipsFormat}}
 不要其他文字。`
 
       rawResponse = await callQwen([
@@ -104,7 +104,7 @@ ${knowledgeHint}
 ${knowledgeHint}
 饮用时间：${drinkTimeText}，当前时间：${currentTime}，咖啡因耐受度：${toleranceText}${userHint ? '\n' + userHint : ''}
 请用中文，只返回以下格式的JSON：
-{"drinkName":"饮品名称","caffeineContent":数字,"estimatedSleepTime":"xx:xx-xx:xx","insomniaRisk":数字0到100,"wakeTimes":数字0到5,"nextDayScore":数字0到100,"analysis":"50字内分析",${tipsFormat}}
+{"drinkName":"饮品名称","caffeineContent":数字,"estimatedSleepTime":"预计能入睡的时间段如23:30-01:00（1-2小时范围）","insomniaRisk":数字0到100,"wakeTimes":数字0到5,"nextDayScore":数字0到100,"analysis":"50字内分析",${tipsFormat}}
 不要其他文字。`
 
       rawResponse = await callQwen([

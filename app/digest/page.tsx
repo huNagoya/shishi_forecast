@@ -3,23 +3,26 @@
 import { useState, useEffect } from 'react'
 import ImageUpload from '@/components/ImageUpload'
 import DigestResult from '@/components/DigestResult'
-import { DigestPrediction, UserSettings } from '@/lib/types'
+import { DigestPrediction } from '@/lib/types'
 import { fileToBase64 } from '@/lib/utils'
-import { saveHistory, getSettings } from '@/lib/storage'
+import { saveHistory } from '@/lib/storage'
+
+function deriveGutType(giSensitivity: number): 'constipation' | 'normal' | 'diarrhea' {
+  if (giSensitivity >= 60) return 'diarrhea'
+  if (giSensitivity <= 30) return 'constipation'
+  return 'normal'
+}
 
 export default function DigestPage() {
   const [imageFile, setImageFile] = useState<File | null>(null)
   const [imagePreview, setImagePreview] = useState<string | null>(null)
   const [foodText, setFoodText] = useState('')
   const [eatTime, setEatTime] = useState('')
-  const [gutType, setGutType] = useState<'constipation' | 'diarrhea' | 'normal'>('normal')
   const [isLoading, setIsLoading] = useState(false)
   const [result, setResult] = useState<DigestPrediction | null>(null)
   const [error, setError] = useState<string | null>(null)
 
   useEffect(() => {
-    const s: UserSettings = getSettings()
-    setGutType(s.gutType)
     const now = new Date()
     setEatTime(`${String(now.getHours()).padStart(2, '0')}:${String(now.getMinutes()).padStart(2, '0')}`)
   }, [])
@@ -45,6 +48,7 @@ export default function DigestPage() {
 
       const rawProfile = localStorage.getItem('shishi_user_profile')
       const userProfile = rawProfile ? JSON.parse(rawProfile) : null
+      const gutType = deriveGutType(userProfile?.giSensitivity ?? 50)
 
       const res = await fetch('/api/predict/digest', {
         method: 'POST',
@@ -72,7 +76,7 @@ export default function DigestPage() {
         id: Date.now().toString(),
         type: 'digest',
         createdAt: new Date().toISOString(),
-        input: { eatTime, gutType, foodText: foodText.trim() },
+        input: { eatTime, foodText: foodText.trim() },
         result: data.data,
       })
     } catch (err) {
@@ -137,31 +141,9 @@ export default function DigestPage() {
           />
         </div>
 
-        <div>
-          <label className="text-sm font-medium text-gray-700 mb-2 block">
-            第三步：你的肠胃类型
-          </label>
-          <div className="grid grid-cols-3 gap-2">
-            {[
-              { value: 'constipation', label: '易便秘', icon: '😣' },
-              { value: 'normal', label: '正常', icon: '😊' },
-              { value: 'diarrhea', label: '易腹泻', icon: '💨' },
-            ].map((item) => (
-              <button
-                key={item.value}
-                onClick={() => setGutType(item.value as 'constipation' | 'diarrhea' | 'normal')}
-                className={`rounded-2xl p-3 text-center border-2 transition-all ${
-                  gutType === item.value
-                    ? 'border-emerald-400 bg-emerald-50'
-                    : 'border-emerald-100/50 bg-white/60'
-                }`}
-              >
-                <div className="text-xl mb-1">{item.icon}</div>
-                <div className="text-xs font-semibold text-gray-800">{item.label}</div>
-              </button>
-            ))}
-          </div>
-        </div>
+        <p className="text-xs text-emerald-600/70 text-center py-1">
+          🧬 基于你的体质档案分析 · <a href="/settings" className="underline underline-offset-2">查看档案</a>
+        </p>
       </div>
 
       {/* 预测按钮 */}

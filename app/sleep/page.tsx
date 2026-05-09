@@ -3,23 +3,26 @@
 import { useState, useEffect } from 'react'
 import ImageUpload from '@/components/ImageUpload'
 import SleepResult from '@/components/SleepResult'
-import { SleepPrediction, UserSettings } from '@/lib/types'
+import { SleepPrediction } from '@/lib/types'
 import { fileToBase64 } from '@/lib/utils'
-import { saveHistory, getSettings } from '@/lib/storage'
+import { saveHistory } from '@/lib/storage'
+
+function deriveTolerance(caffeineSensitivity: number): 'low' | 'medium' | 'high' {
+  if (caffeineSensitivity >= 60) return 'low'
+  if (caffeineSensitivity <= 40) return 'high'
+  return 'medium'
+}
 
 export default function SleepPage() {
   const [imageFile, setImageFile] = useState<File | null>(null)
   const [imagePreview, setImagePreview] = useState<string | null>(null)
   const [drinkDesc, setDrinkDesc] = useState('')
   const [drinkTime, setDrinkTime] = useState('')
-  const [tolerance, setTolerance] = useState<'low' | 'medium' | 'high'>('medium')
   const [isLoading, setIsLoading] = useState(false)
   const [result, setResult] = useState<SleepPrediction | null>(null)
   const [error, setError] = useState<string | null>(null)
 
   useEffect(() => {
-    const s: UserSettings = getSettings()
-    setTolerance(s.tolerance)
     const now = new Date()
     setDrinkTime(`${String(now.getHours()).padStart(2, '0')}:${String(now.getMinutes()).padStart(2, '0')}`)
   }, [])
@@ -47,6 +50,7 @@ export default function SleepPage() {
 
       const rawProfile = localStorage.getItem('shishi_user_profile')
       const userProfile = rawProfile ? JSON.parse(rawProfile) : null
+      const tolerance = deriveTolerance(userProfile?.caffeineSensitivity ?? 50)
 
       const res = await fetch('/api/predict/sleep', {
         method: 'POST',
@@ -69,7 +73,7 @@ export default function SleepPage() {
         id: Date.now().toString(),
         type: 'sleep',
         createdAt: new Date().toISOString(),
-        input: { drinkTime, tolerance },
+        input: { drinkTime },
         result: data.data,
       })
     } catch (err) {
@@ -141,32 +145,9 @@ export default function SleepPage() {
           />
         </div>
 
-        <div>
-          <label className="text-sm font-medium text-gray-700 mb-2 block">
-            第三步：咖啡因耐受度
-          </label>
-          <div className="grid grid-cols-3 gap-2">
-            {[
-              { value: 'low', label: '低', desc: '敏感型', icon: '🫖' },
-              { value: 'medium', label: '中', desc: '普通型', icon: '☕' },
-              { value: 'high', label: '高', desc: '耐受型', icon: '⚡' },
-            ].map((item) => (
-              <button
-                key={item.value}
-                onClick={() => setTolerance(item.value as 'low' | 'medium' | 'high')}
-                className={`rounded-2xl p-3 text-center border-2 transition-all ${
-                  tolerance === item.value
-                    ? 'border-amber-400 bg-amber-50'
-                    : 'border-amber-100/50 bg-white/60'
-                }`}
-              >
-                <div className="text-xl mb-1">{item.icon}</div>
-                <div className="text-sm font-semibold text-gray-800">{item.label}</div>
-                <div className="text-xs text-gray-400">{item.desc}</div>
-              </button>
-            ))}
-          </div>
-        </div>
+        <p className="text-xs text-amber-600/70 text-center py-1">
+          🧬 基于你的体质档案分析 · <a href="/settings" className="underline underline-offset-2">查看档案</a>
+        </p>
       </div>
 
       {/* 预测按钮 */}

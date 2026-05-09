@@ -35,18 +35,11 @@ export default function SleepResult({ data }: SleepResultProps) {
 
       {/* 核心指标 */}
       <div className="grid grid-cols-2 gap-3">
-        {/* 预计入睡时间 */}
-        <div className="bg-white border border-gray-100 rounded-2xl p-4 text-center shadow-sm">
+        {/* 预计入睡时间 — 跨两列 */}
+        <div className="col-span-2 bg-white border border-gray-100 rounded-2xl p-4 text-center shadow-sm">
           <div className="text-3xl mb-1">🌙</div>
-          <p className="text-xs text-gray-400 mb-1">预计入睡</p>
-          <p className="font-bold text-gray-800 text-sm">{data.estimatedSleepTime}</p>
-        </div>
-
-        {/* 夜间清醒次数 */}
-        <div className="bg-white border border-gray-100 rounded-2xl p-4 text-center shadow-sm">
-          <div className="text-3xl mb-1">😵</div>
-          <p className="text-xs text-gray-400 mb-1">夜间清醒</p>
-          <p className="font-bold text-gray-800 text-sm">{data.wakeTimes} 次</p>
+          <p className="text-xs text-gray-400 mb-1">预计入睡时间</p>
+          <p className="font-bold text-gray-800 text-lg">{data.estimatedSleepTime}</p>
         </div>
 
         {/* 失眠风险 */}
