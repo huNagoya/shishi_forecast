@@ -68,8 +68,7 @@
       position:absolute; inset:-80px; will-change:transform;
       background:
         radial-gradient(ellipse 65% 55% at 15% 25%, rgba(224,231,255,.75) 0%, transparent 65%),
-        radial-gradient(ellipse 50% 40% at 85% 75%, rgba(209,250,229,.5) 0%, transparent 65%),
-        radial-gradient(ellipse 45% 50% at 65% 10%, rgba(254,243,199,.4) 0%, transparent 65%);
+        radial-gradient(ellipse 50% 40% at 85% 75%, rgba(209,250,229,.5) 0%, transparent 65%);
     }
     .hero-inner {
       position:relative; z-index:1; max-width:var(--max-w); margin:0 auto; padding:80px 24px;
@@ -86,16 +85,13 @@
     .hero-name .cn { font-family:'Noto Sans SC',sans-serif; }
     .hero-name .dot { color:var(--indigo); }
     .hero-role { font-size:clamp(18px,2.5vw,24px); font-weight:600; color:var(--indigo); font-family:'Inter',sans-serif; margin-bottom:6px; }
-    .hero-typing { font-size:15px; color:var(--s500); margin-bottom:28px; min-height:22px; }
-    .hero-typing .cursor { display:inline-block; width:2px; height:1em; background:var(--indigo); margin-left:2px; animation:blink .7s step-end infinite; vertical-align:text-bottom; }
-    @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0} }
     .hero-pills { display:flex; flex-wrap:wrap; gap:8px; margin-bottom:32px; }
     .pill {
       background:#fff; border:1px solid var(--s200); border-radius:100px;
       padding:6px 15px; font-size:13px; color:var(--s700);
       box-shadow:0 1px 4px rgba(0,0,0,.04); transition:all .25s; cursor:default;
     }
-    .pill:hover { border-color:var(--indigo); transform:translateY(-2px); box-shadow:0 6px 16px rgba(79,70,229,.13); }
+    .pill:hover { border-color:var(--indigo); box-shadow:0 6px 16px rgba(79,70,229,.13); }
     .hero-btns { display:flex; flex-wrap:wrap; gap:10px; margin-bottom:36px; }
     .btn-p {
       display:inline-flex; align-items:center; gap:7px; background:var(--indigo); color:#fff;
@@ -121,13 +117,13 @@
       letter-spacing:.1em; text-transform:uppercase; animation:bob 2s ease-in-out infinite;
     }
     @keyframes bob { 0%,100%{transform:translateX(-50%) translateY(0)} 50%{transform:translateX(-50%) translateY(7px)} }
-    .hero-phone-wrap { flex-shrink:0; }
+    .hero-phone-wrap { flex-shrink:0; perspective:1000px; }
     .hero-phone {
-      width:220px; border-radius:44px; border:7px solid var(--s800);
-      box-shadow:0 0 0 1px rgba(0,0,0,.08),0 32px 80px rgba(0,0,0,.18),inset 0 0 0 1px rgba(255,255,255,.1);
+      width:240px; border-radius:44px; border:7px solid var(--s800);
+      box-shadow:-8px 32px 80px rgba(0,0,0,.22),-4px 8px 20px rgba(0,0,0,.1),inset 0 0 0 1px rgba(255,255,255,.1);
       overflow:hidden; animation:floatPhone 4s ease-in-out infinite;
     }
-    @keyframes floatPhone { 0%,100%{transform:translateY(0) rotate(1deg)} 50%{transform:translateY(-12px) rotate(1deg)} }
+    @keyframes floatPhone { 0%,100%{transform:translateY(0) rotateY(-12deg) rotateX(4deg)} 50%{transform:translateY(-14px) rotateY(-10deg) rotateX(2deg)} }
     .hero-phone img { width:100%; display:block; }
 
     /* ── SHARED ── */
@@ -398,6 +394,16 @@
     .anode.p2 .anode-title { color:var(--emerald); }
     .anode.p3 .anode-title { color:var(--amber); }
     @media(max-width:640px){ .preview-card { min-width:unset; max-width:100%; } }
+
+    /* ── PRODUCT-INTRO 3D PHONE ── */
+    #product-intro .product-hero-phone {
+      box-shadow:-8px 28px 70px rgba(0,0,0,.38),-4px 8px 20px rgba(0,0,0,.2);
+      animation:floatProductPhone 4s ease-in-out infinite;
+    }
+    @keyframes floatProductPhone {
+      0%,100%{transform:perspective(1000px) translateY(0) rotateY(-12deg) rotateX(4deg)}
+      50%{transform:perspective(1000px) translateY(-14px) rotateY(-10deg) rotateX(2deg)}
+    }
   </style>
 </head>
 <body>
@@ -428,7 +434,7 @@
       <div class="hero-eyebrow">✦ AI Product Manager Portfolio</div>
       <h1 class="hero-name"><span class="cn">高彦</span><span class="dot"> · </span>Yan Gao</h1>
       <p class="hero-role">AI 产品经理</p>
-      <p class="hero-typing"><span id="typing-text"></span><span class="cursor"></span></p>
+      <p style="font-size:15px;color:var(--s500);margin-bottom:28px;">地球物理 × 神经网络 → AI 产品经理</p>
       <div class="hero-pills">
         <span class="pill">🤖 AI需求转化</span>
         <span class="pill">🚀 MVP快速落地</span>
@@ -556,8 +562,11 @@
           <span class="ph-tag">🌐 已部署上线</span>
         </div>
       </div>
-      <div class="product-hero-phone">
-        <img src="https://shishi-forecast.gaoyan.me/screenshots/首页.png" alt="食事预报局首页" loading="lazy">
+      <div class="product-hero-phone" style="cursor:ns-resize;">
+        <div class="scroll-viewport" style="height:280px;">
+          <img src="https://shishi-forecast.gaoyan.me/screenshots/熬夜预警机的输出界面.png" alt="食事预报局预测结果" class="scroll-img" loading="lazy">
+          <div class="scroll-badge">🖱 滚轮查看</div>
+        </div>
       </div>
     </div>
     <div class="value-row">
@@ -1176,27 +1185,6 @@ document.querySelectorAll('.btn-p, .btn-o, .clink').forEach(btn => {
   });
 });
 
-// ── 9. Typing effect in hero
-const lines = [
-  'Technical Understanding × Product Design × Rapid Deployment',
-  '技术理解 × 产品设计 × 快速落地',
-  '让 AI 能力真正解决用户问题',
-];
-let li = 0, ci = 0, del = false;
-const tel = document.getElementById('typing-text');
-function type() {
-  const txt = lines[li];
-  if (!del) {
-    tel.textContent = txt.slice(0, ++ci);
-    if (ci === txt.length) { del = true; setTimeout(type, 2400); return; }
-    setTimeout(type, ci === 1 ? 500 : 55);
-  } else {
-    tel.textContent = txt.slice(0, --ci);
-    if (ci === 0) { del = false; li = (li + 1) % lines.length; setTimeout(type, 400); return; }
-    setTimeout(type, 28);
-  }
-}
-setTimeout(type, 800);
 
 // ── 11. Phone wheel + touch scroll
 document.querySelectorAll('.scroll-viewport').forEach(vp => {
