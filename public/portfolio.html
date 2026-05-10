@@ -648,10 +648,10 @@
         <div class="anode n2">
           <p class="anode-title">🧠 AI 分析引擎</p>
           <ul>
-            <li>🖼️ GLM-4V 视觉理解</li>
-            <li>💬 GLM-4-Flash 推理</li>
-            <li>🔧 结构化 JSON 解析</li>
-            <li>⚙️ 数值规范化处理</li>
+            <li>🖼️ Qwen2.5-VL OCR 优先识别</li>
+            <li>💬 Qwen-Plus 场景推理</li>
+            <li>📚 咖啡因知识库条件注入</li>
+            <li>🎯 体质参数条件注入</li>
           </ul>
         </div>
         <div class="aarrow">→</div>
@@ -665,7 +665,7 @@
           </ul>
         </div>
       </div>
-      <p class="arch-foot">🔒 隐私优先：预测历史本地存储，数据不上传服务器</p>
+      <p class="arch-foot">🗄️ 数据双轨：体质档案存储本设备，预测行为 Supabase 埋点分析</p>
     </div>
   </div>
 </section>
@@ -693,11 +693,11 @@
     <div class="tech-box fade-in d1">
       <p class="tech-box-title">技术栈 · Tech Stack</p>
       <div class="tech-grid">
-        <div class="titem"><span class="ticon">⚡</span><div><p class="tname">Next.js 16 + TypeScript</p><p class="trole">前端框架 + 类型安全</p></div></div>
-        <div class="titem"><span class="ticon">🧠</span><div><p class="tname">智谱 GLM-4V / Flash</p><p class="trole">多模态 AI 分析引擎</p></div></div>
+        <div class="titem"><span class="ticon">⚡</span><div><p class="tname">Next.js 14 + TypeScript</p><p class="trole">前端框架 + 类型安全</p></div></div>
+        <div class="titem"><span class="ticon">🧠</span><div><p class="tname">阿里云百炼 Qwen2.5-VL</p><p class="trole">OCR + 多模态分析引擎</p></div></div>
         <div class="titem"><span class="ticon">🎨</span><div><p class="tname">Tailwind CSS v4</p><p class="trole">响应式 UI 设计</p></div></div>
         <div class="titem"><span class="ticon">🌐</span><div><p class="tname">Vercel 全球 CDN</p><p class="trole">一键部署 + 自动 CI/CD</p></div></div>
-        <div class="titem"><span class="ticon">🔒</span><div><p class="tname">LocalStorage</p><p class="trole">本地存储（隐私优先）</p></div></div>
+        <div class="titem"><span class="ticon">🗄️</span><div><p class="tname">Supabase + LocalStorage</p><p class="trole">预测埋点 + 体质档案本地存储</p></div></div>
         <div class="titem"><span class="ticon">📦</span><div><p class="tname">Canvas API</p><p class="trole">客户端图片压缩优化</p></div></div>
       </div>
     </div>
@@ -747,8 +747,11 @@
             <div><p class="feat-title">多模态输入设计</p><p class="feat-desc">支持拍照上传（GLM-4V 视觉识别）或文字描述，图文二选一，操作门槛极低</p></div>
           </div>
           <div class="feat-item">
-            <div class="feat-dot a">👤</div>
-            <div><p class="feat-title">个性化体质参数</p><p class="feat-desc">结合饮用时间与咖啡因耐受度（低/中/高），输出个性化预测而非通用结论</p></div>
+            <div class="feat-dot a">🧬</div>
+            <div>
+              <p class="feat-title">EWMA 个性化学习引擎</p>
+              <p class="feat-desc">5 题 Onboarding 问卷初始化 0-100 分体质档案；每次使用后在历史页对预测结果打分，触发 EWMA（α=0.3）动态更新敏感度，5 次反馈后解锁精准模式</p>
+            </div>
           </div>
           <div class="feat-item">
             <div class="feat-dot a">📊</div>
@@ -804,6 +807,62 @@
               </div>
             </div>
             <p class="ph-lbl">预测结果（滚轮查看）</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- EWMA 个性化学习引擎 -->
+    <div class="mod-block fade-in">
+      <div class="fade-in">
+        <span class="mod-tag" style="background:var(--purple-100);color:var(--purple);">🧬 模块三</span>
+        <p class="mod-name">EWMA 个性化学习引擎</p>
+        <p class="mod-sub">Onboarding 建档 → 体质参数注入预测 → 历史页事后反馈 → EWMA 动态更新</p>
+      </div>
+      <div class="sc-grid fade-in d1" style="margin-top:28px;">
+        <div class="phones-wrap">
+          <div>
+            <div class="phone-frame sm">
+              <img src="https://shishi-forecast.gaoyan.me/screenshots/onboarding.png" alt="Onboarding 问卷" loading="lazy">
+            </div>
+            <p class="ph-lbl">① 5 题建立体质档案</p>
+          </div>
+          <div class="ph-arrow">→</div>
+          <div>
+            <div class="phone-frame sm">
+              <img src="https://shishi-forecast.gaoyan.me/screenshots/体质档案.png" alt="体质档案" loading="lazy">
+            </div>
+            <p class="ph-lbl">② 0-100 分可视化档案</p>
+          </div>
+          <div class="ph-arrow">→</div>
+          <div>
+            <div class="phone-frame sm">
+              <img src="https://shishi-forecast.gaoyan.me/screenshots/历史反馈.png" alt="历史页事后反馈" loading="lazy">
+            </div>
+            <p class="ph-lbl">③ 历史页事后验证反馈</p>
+          </div>
+        </div>
+        <div class="feat-list" style="padding-top:8px;">
+          <div class="feat-item">
+            <div class="feat-dot" style="background:var(--purple-100);">📋</div>
+            <div>
+              <p class="feat-title">为什么反馈在历史页，不在结果页？</p>
+              <p class="feat-desc">预测验证有时间差——喝完咖啡要几小时后才知道几点睡着。在结果页收集反馈时用户还没有答案，移至历史 Tab 后用户睡醒自然回来评价，收到的才是真实事后数据</p>
+            </div>
+          </div>
+          <div class="feat-item">
+            <div class="feat-dot" style="background:var(--purple-100);">⚖️</div>
+            <div>
+              <p class="feat-title">EWMA α=0.3 的设计依据</p>
+              <p class="feat-desc">每次反馈调整约 6 分，5 次后分值漂移约 25%——既有感知又不过拟合。分值在 45-55 区间时不注入 Prompt，避免无意义参数带来 token 浪费和噪声</p>
+            </div>
+          </div>
+          <div class="feat-item">
+            <div class="feat-dot" style="background:var(--purple-100);">🔒</div>
+            <div>
+              <p class="feat-title">隐私优先的匿名化方案</p>
+              <p class="feat-desc">用 crypto.randomUUID() 生成设备 ID 存 localStorage，无需注册账号。体质档案本地存储，预测行为数据写入 Supabase 用于产品分析</p>
+            </div>
           </div>
         </div>
       </div>
