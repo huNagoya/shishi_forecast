@@ -819,8 +819,8 @@
         <p class="mod-name">EWMA 个性化学习引擎</p>
         <p class="mod-sub">Onboarding 建档 → 体质参数注入预测 → 历史页事后反馈 → EWMA 动态更新</p>
       </div>
-      <div class="sc-grid fade-in d1" style="margin-top:28px;">
-        <div class="phones-wrap">
+      <div style="margin-top:28px;">
+        <div class="phones-wrap" style="justify-content:center;margin-bottom:36px;">
           <div>
             <div class="phone-frame sm">
               <img src="https://shishi-forecast.gaoyan.me/screenshots/onboarding.png" alt="Onboarding 问卷" loading="lazy">
@@ -842,27 +842,18 @@
             <p class="ph-lbl">③ 历史页事后验证反馈</p>
           </div>
         </div>
-        <div class="feat-list" style="padding-top:8px;">
-          <div class="feat-item">
-            <div class="feat-dot" style="background:var(--purple-100);">📋</div>
-            <div>
-              <p class="feat-title">为什么反馈在历史页，不在结果页？</p>
-              <p class="feat-desc">预测验证有时间差——喝完咖啡要几小时后才知道几点睡着。在结果页收集反馈时用户还没有答案，移至历史 Tab 后用户睡醒自然回来评价，收到的才是真实事后数据</p>
-            </div>
+        <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px;">
+          <div style="padding:20px;background:var(--purple-50);border-radius:14px;border-left:3px solid var(--purple);">
+            <p style="font-weight:700;font-size:14px;color:var(--s900);margin-bottom:8px;">为什么反馈在历史页，不在结果页？</p>
+            <p style="font-size:13px;color:var(--s600);line-height:1.75;">预测验证有时间差——喝完咖啡要几小时后才知道几点睡着。移至历史 Tab 后用户睡醒自然回来评价，收到的才是真实事后数据</p>
           </div>
-          <div class="feat-item">
-            <div class="feat-dot" style="background:var(--purple-100);">⚖️</div>
-            <div>
-              <p class="feat-title">EWMA α=0.3 的设计依据</p>
-              <p class="feat-desc">每次反馈调整约 6 分，5 次后分值漂移约 25%——既有感知又不过拟合。分值在 45-55 区间时不注入 Prompt，避免无意义参数带来 token 浪费和噪声</p>
-            </div>
+          <div style="padding:20px;background:var(--amber-50);border-radius:14px;border-left:3px solid var(--amber);">
+            <p style="font-weight:700;font-size:14px;color:var(--s900);margin-bottom:8px;">EWMA α=0.3 的设计依据</p>
+            <p style="font-size:13px;color:var(--s600);line-height:1.75;">每次反馈调整约 6 分，5 次后分值漂移约 25%。分值在 45-55 区间不注入 Prompt，避免无意义参数带来 token 浪费和噪声</p>
           </div>
-          <div class="feat-item">
-            <div class="feat-dot" style="background:var(--purple-100);">🔒</div>
-            <div>
-              <p class="feat-title">隐私优先的匿名化方案</p>
-              <p class="feat-desc">用 crypto.randomUUID() 生成设备 ID 存 localStorage，无需注册账号。体质档案本地存储，预测行为数据写入 Supabase 用于产品分析</p>
-            </div>
+          <div style="padding:20px;background:var(--emerald-50);border-radius:14px;border-left:3px solid var(--emerald);">
+            <p style="font-weight:700;font-size:14px;color:var(--s900);margin-bottom:8px;">隐私优先的匿名化方案</p>
+            <p style="font-size:13px;color:var(--s600);line-height:1.75;">crypto.randomUUID() 生成设备 ID 存 localStorage，无需注册账号。体质档案本地存储，预测行为写入 Supabase 用于产品分析</p>
           </div>
         </div>
       </div>
