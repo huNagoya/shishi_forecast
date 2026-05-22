@@ -19,7 +19,7 @@
     a { text-decoration: none; color: inherit; }
 
     :root {
-      --indigo: #4f46e5; --indigo-50: #eef2ff; --indigo-100: #e0e7ff;
+      --indigo: #d97706; --indigo-50: #fffbeb; --indigo-100: #fef3c7;
       --amber: #d97706; --amber-50: #fffbeb; --amber-100: #fef3c7;
       --emerald: #059669; --emerald-50: #ecfdf5; --emerald-100: #d1fae5;
       --s900: #0f172a; --s800: #1e293b; --s700: #334155; --s600: #475569;
@@ -27,21 +27,21 @@
       --s100: #f1f5f9; --s50: #f8fafc; --max-w: 920px;
       --purple: #7c3aed; --purple-50: #f5f3ff; --purple-100: #ede9fe;
       --rose: #f43f5e; --sky: #0ea5e9;
-      --grad: linear-gradient(135deg,#6366f1 0%,#a855f7 50%,#ec4899 100%);
-      --grad-btn: linear-gradient(135deg,#6366f1 0%,#8b5cf6 100%);
+      --grad: linear-gradient(135deg,#d97706 0%,#f59e0b 50%,#fb923c 100%);
+      --grad-btn: linear-gradient(135deg,#d97706 0%,#f59e0b 100%);
     }
 
     /* ── PROGRESS BAR ── */
     #prog {
       position: fixed; top: 0; left: 0; height: 3px; z-index: 300;
-      background: linear-gradient(90deg, var(--indigo), #818cf8, #a78bfa);
+      background: linear-gradient(90deg, var(--indigo), #f59e0b, #fb923c);
       width: 0; transition: width .08s linear;
     }
 
     /* ── CURSOR GLOW ── */
     #cursor-glow {
       position: fixed; width: 360px; height: 360px; border-radius: 50%;
-      background: radial-gradient(circle, rgba(79,70,229,.07) 0%, transparent 70%);
+      background: radial-gradient(circle, rgba(217,119,6,.07) 0%, transparent 70%);
       pointer-events: none; z-index: 9; transition: opacity .4s;
       transform: translate(-50%,-50%); top: 0; left: 0; opacity: 0;
     }
@@ -70,19 +70,23 @@
     .hero-bg {
       position:absolute; inset:-80px; will-change:transform;
       background:
-        radial-gradient(ellipse 55% 50% at 10% 20%, rgba(224,231,255,.7) 0%, transparent 60%),
+        radial-gradient(ellipse 55% 50% at 10% 20%, rgba(254,243,199,.7) 0%, transparent 60%),
         radial-gradient(ellipse 45% 40% at 88% 80%, rgba(209,250,229,.45) 0%, transparent 60%),
-        radial-gradient(ellipse 40% 35% at 65% 8%, rgba(251,207,232,.55) 0%, transparent 60%);
+        radial-gradient(ellipse 40% 35% at 65% 8%, rgba(255,237,213,.55) 0%, transparent 60%);
     }
     .hero-inner {
       position:relative; z-index:1; max-width:var(--max-w); margin:0 auto; padding:80px 24px;
       display:grid; grid-template-columns:1fr auto; gap:48px; align-items:center;
     }
-    @media(max-width:700px){ .hero-inner{grid-template-columns:1fr} .hero-chat-wrap{display:none} }
+    @media(max-width:700px){
+      .hero-inner{grid-template-columns:1fr; gap:32px; padding:60px 20px 40px}
+      .hero-chat-wrap{width:100%}
+      .chat-card{height:460px}
+    }
     .hero-eyebrow {
       display:inline-flex; align-items:center; gap:6px;
-      background:linear-gradient(135deg,rgba(99,102,241,.07),rgba(168,85,247,.07),rgba(236,72,153,.07));
-      border:1px solid rgba(168,85,247,.25); color:#a855f7;
+      background:linear-gradient(135deg,rgba(217,119,6,.07),rgba(245,158,11,.07),rgba(251,146,60,.07));
+      border:1px solid rgba(217,119,6,.25); color:#d97706;
       border-radius:100px; padding:4px 14px; font-size:11px; font-weight:700;
       font-family:'Inter',sans-serif; letter-spacing:.08em; text-transform:uppercase; margin-bottom:20px;
     }
@@ -96,15 +100,15 @@
       padding:6px 15px; font-size:13px; color:var(--s700);
       box-shadow:0 1px 4px rgba(0,0,0,.04); transition:all .25s; cursor:default;
     }
-    .pill:hover { border-color:var(--indigo); box-shadow:0 6px 16px rgba(79,70,229,.13); }
+    .pill:hover { border-color:var(--indigo); box-shadow:0 6px 16px rgba(217,119,6,.13); }
     .hero-btns { display:flex; flex-wrap:wrap; gap:10px; margin-bottom:36px; }
     .btn-p {
       display:inline-flex; align-items:center; gap:7px; background:var(--grad-btn); color:#fff;
       padding:13px 24px; border-radius:12px; font-weight:600; font-size:15px;
-      box-shadow:0 4px 16px rgba(139,92,246,.35); transition:transform .2s,box-shadow .2s,filter .2s;
+      box-shadow:0 4px 16px rgba(217,119,6,.35); transition:transform .2s,box-shadow .2s,filter .2s;
       position:relative; overflow:hidden;
     }
-    .btn-p:hover { transform:translateY(-2px); box-shadow:0 8px 24px rgba(139,92,246,.45); filter:brightness(1.08); }
+    .btn-p:hover { transform:translateY(-2px); box-shadow:0 8px 24px rgba(217,119,6,.45); filter:brightness(1.08); }
     .btn-o {
       display:inline-flex; align-items:center; gap:7px; background:#fff; color:var(--s700);
       padding:13px 24px; border-radius:12px; font-weight:600; font-size:15px;
@@ -125,10 +129,10 @@
     /* ── HERO AI CHAT CARD ── */
     .hero-chat-wrap { flex-shrink:0; width:320px; }
     .chat-card {
-      background:linear-gradient(160deg,#0f0c29 0%,#1a0a3e 45%,#1e0a2a 100%);
-      border-radius:24px; border:1px solid rgba(168,85,247,.2);
-      box-shadow:-8px 32px 80px rgba(0,0,0,.25),0 0 0 1px rgba(255,255,255,.04),0 0 60px rgba(168,85,247,.08);
-      overflow:hidden; display:flex; flex-direction:column; height:440px;
+      background:linear-gradient(160deg,#050d18 0%,#0a1628 45%,#0d1b2e 100%);
+      border-radius:24px; border:1px solid rgba(245,158,11,.2);
+      box-shadow:-8px 32px 80px rgba(0,0,0,.25),0 0 0 1px rgba(255,255,255,.04),0 0 60px rgba(245,158,11,.08);
+      overflow:hidden; display:flex; flex-direction:column; height:560px;
     }
     .chat-header {
       padding:14px 18px; border-bottom:1px solid rgba(255,255,255,.08);
@@ -160,7 +164,7 @@
       border:1px solid rgba(255,255,255,.12); border-radius:100px; padding:4px 10px;
       cursor:pointer; transition:all .2s; white-space:nowrap;
     }
-    .chat-chip:hover { background:rgba(79,70,229,.4); border-color:rgba(79,70,229,.6); color:#fff; }
+    .chat-chip:hover { background:rgba(217,119,6,.4); border-color:rgba(217,119,6,.6); color:#fff; }
     .chat-input-row {
       padding:10px 12px; border-top:1px solid rgba(255,255,255,.08);
       display:flex; gap:8px; align-items:center; flex-shrink:0;
@@ -171,7 +175,7 @@
       outline:none; font-family:inherit; transition:border-color .2s;
     }
     .chat-input::placeholder { color:rgba(255,255,255,.3); }
-    .chat-input:focus { border-color:rgba(79,70,229,.6); background:rgba(255,255,255,.1); }
+    .chat-input:focus { border-color:rgba(217,119,6,.6); background:rgba(255,255,255,.1); }
     .chat-send {
       width:34px; height:34px; border-radius:9px; background:var(--grad-btn);
       border:none; cursor:pointer; display:flex; align-items:center; justify-content:center;
@@ -207,7 +211,7 @@
     .edu-major { font-size:14px; color:var(--s500); margin-bottom:6px; }
     .edu-badge { display:inline-block; font-size:12px; background:var(--indigo-50); color:var(--indigo); padding:2px 10px; border-radius:5px; font-weight:600; font-family:'Inter',sans-serif; }
     .highlight-box { background:#fff; border-radius:20px; padding:28px; border:1px solid var(--s200); box-shadow:0 4px 24px rgba(0,0,0,.04); transition:box-shadow .3s; }
-    .highlight-box:hover { box-shadow:0 8px 40px rgba(79,70,229,.1); }
+    .highlight-box:hover { box-shadow:0 8px 40px rgba(217,119,6,.1); }
     .quote-text { font-size:15px; line-height:1.85; color:var(--s700); border-left:3px solid var(--indigo); padding-left:16px; margin-bottom:24px; }
     .tag-label { font-size:11px; font-weight:700; letter-spacing:.08em; text-transform:uppercase; color:var(--s500); font-family:'Inter',sans-serif; margin-bottom:12px; }
     .tag-wrap { display:flex; flex-wrap:wrap; gap:8px; }
@@ -218,13 +222,13 @@
     /* ── PRODUCT INTRO ── */
     #product-intro { background:#fff; }
     .product-hero {
-      background:linear-gradient(135deg, #0f172a 0%, #1e1b4b 100%);
+      background:linear-gradient(135deg, #0f172a 0%, #0a1e35 100%);
       border-radius:24px; padding:52px 48px; color:#fff; margin:40px 0;
       position:relative; overflow:hidden;
       display:grid; grid-template-columns:1fr auto; gap:32px; align-items:center;
     }
     @media(max-width:640px){ .product-hero{grid-template-columns:1fr;padding:32px 24px} .product-hero-phone{display:none} }
-    .product-hero::before { content:''; position:absolute; top:-60px; right:200px; width:280px; height:280px; background:radial-gradient(circle,rgba(79,70,229,.25) 0%,transparent 70%); border-radius:50%; }
+    .product-hero::before { content:''; position:absolute; top:-60px; right:200px; width:280px; height:280px; background:radial-gradient(circle,rgba(217,119,6,.25) 0%,transparent 70%); border-radius:50%; }
     .ph-eyebrow { font-size:11px; font-weight:700; color:rgba(255,255,255,.4); letter-spacing:.1em; text-transform:uppercase; font-family:'Inter',sans-serif; margin-bottom:12px; }
     .ph-title { font-size:clamp(26px,3.5vw,38px); font-weight:800; letter-spacing:-.025em; line-height:1.15; margin-bottom:14px; }
     .ph-sub { font-size:16px; color:rgba(255,255,255,.65); margin-bottom:28px; }
@@ -392,21 +396,21 @@
     .flow-box-title { font-size:11px; font-weight:700; text-transform:uppercase; letter-spacing:.08em; color:var(--s500); text-align:center; margin-bottom:24px; font-family:'Inter',sans-serif; }
     .flow-steps { display:flex; align-items:center; justify-content:center; flex-wrap:wrap; gap:8px; }
     .fstep { display:flex; flex-direction:column; align-items:center; gap:4px; padding:14px 16px; background:var(--s50); border:1px solid var(--s200); border-radius:13px; min-width:92px; text-align:center; transition:all .25s; }
-    .fstep:hover { background:var(--indigo-50); border-color:var(--indigo-100); transform:translateY(-3px); box-shadow:0 6px 16px rgba(79,70,229,.12); }
+    .fstep:hover { background:var(--indigo-50); border-color:var(--indigo-100); transform:translateY(-3px); box-shadow:0 6px 16px rgba(217,119,6,.12); }
     .fstep-icon { font-size:22px; }
     .fstep-name { font-size:12px; font-weight:600; color:var(--s700); }
     .fstep-sub { font-size:11px; color:var(--s400); }
     .farrow { color:var(--s300); font-size:20px; }
 
     /* ── CLOSING ── */
-    #closing { background:linear-gradient(135deg, #0f0c29 0%, #1a0635 45%, #0a1628 100%); color:#fff; text-align:center; }
+    #closing { background:linear-gradient(135deg, #050d18 0%, #0a1628 45%, #071525 100%); color:#fff; text-align:center; }
     .closing-wrap { max-width:580px; margin:0 auto; }
     .closing-title { font-size:clamp(30px,5vw,44px); font-weight:800; letter-spacing:-.03em; margin-bottom:14px; }
     .closing-sub { font-size:16px; color:rgba(255,255,255,.6); margin-bottom:40px; line-height:1.8; }
     .closing-btns { display:flex; flex-wrap:wrap; gap:14px; justify-content:center; margin-bottom:40px; }
     .clink { display:inline-flex; align-items:center; gap:8px; padding:13px 26px; border-radius:12px; font-weight:600; font-size:15px; transition:all .25s; position:relative; overflow:hidden; }
-    .clink.p { background:var(--indigo); color:#fff; box-shadow:0 4px 16px rgba(79,70,229,.4); }
-    .clink.p:hover { transform:translateY(-2px); box-shadow:0 8px 24px rgba(79,70,229,.5); }
+    .clink.p { background:var(--indigo); color:#fff; box-shadow:0 4px 16px rgba(217,119,6,.4); }
+    .clink.p:hover { transform:translateY(-2px); box-shadow:0 8px 24px rgba(217,119,6,.5); }
     .clink.s { background:rgba(255,255,255,.1); color:#fff; border:1px solid rgba(255,255,255,.2); }
     .clink.s:hover { background:rgba(255,255,255,.15); transform:translateY(-2px); }
     .closing-contacts { display:flex; flex-wrap:wrap; gap:24px; justify-content:center; margin-bottom:44px; }
@@ -486,9 +490,9 @@
   <div class="hero-inner" id="hero-inner">
     <div>
       <div class="hero-eyebrow">✦ AI Product Manager Portfolio</div>
-      <h1 class="hero-name"><span class="cn">高彦</span><span class="dot"> · </span>Yan Gao</h1>
+      <h1 class="hero-name"><span class="cn">高彦</span><span class="dot"> · </span><span style="white-space:nowrap">Yan Gao</span></h1>
       <p class="hero-role">AI 产品经理</p>
-      <p style="font-size:15px;color:var(--s500);margin-bottom:28px;">地球物理 × 神经网络 → AI 产品经理</p>
+      <p style="font-size:15px;color:var(--s500);margin-bottom:28px;">技术理解力 × 产品思维 × AI全栈落地</p>
       <div class="hero-pills">
         <span class="pill">🤖 AI需求转化</span>
         <span class="pill">🚀 MVP快速落地</span>
@@ -501,7 +505,7 @@
           <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
           体验食事预报局
         </a>
-        <a href="https://selector.gaoyan.me" target="_blank" class="btn-p" style="background:var(--purple);">
+        <a href="https://selector.gaoyan.me" target="_blank" class="btn-p" style="background:linear-gradient(135deg,#0369a1 0%,#0ea5e9 100%);box-shadow:0 4px 16px rgba(3,105,161,.35);">
           <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
           体验跨境选品分析师
         </a>
