@@ -60,6 +60,7 @@ export async function callQwen(messages: Message[], model = 'qwen3-vl-plus'): Pr
       messages,
       temperature: 0.1,
       max_tokens: 2000,
+      enable_thinking: false,
     }),
   })
 
@@ -69,7 +70,9 @@ export async function callQwen(messages: Message[], model = 'qwen3-vl-plus'): Pr
   }
 
   const data = await response.json()
-  return data.choices[0].message.content as string
+  const content = data.choices[0].message.content as string
+  // 剥离 qwen3 系列可能输出的 <think>...</think> 深度思考块
+  return content.replace(/<think>[\s\S]*?<\/think>/g, '').trim()
 }
 
 // 从AI返回的文本中提取JSON
