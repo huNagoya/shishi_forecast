@@ -44,8 +44,8 @@ export async function callZhipu(messages: Message[], model = 'glm-4-flash'): Pro
 }
 
 // 千问视觉模型（OCR 能力更强，用于图片识别场景）
-// model: 'qwen2.5-vl-max-latest'（视觉）或 'qwen-plus-latest'（纯文字）
-export async function callQwen(messages: Message[], model = 'qwen2.5-vl-max-latest'): Promise<string> {
+// model: 'qwen3-vl-plus'（视觉）或 'qwen-plus-latest'（纯文字）
+export async function callQwen(messages: Message[], model = 'qwen3-vl-plus'): Promise<string> {
   const apiKey = process.env.QWEN_API_KEY
   if (!apiKey) throw new Error('未配置 QWEN_API_KEY，请在 .env.local 和 Vercel 环境变量中添加')
 

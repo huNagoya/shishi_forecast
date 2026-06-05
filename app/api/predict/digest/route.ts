@@ -69,7 +69,7 @@ export async function POST(req: NextRequest) {
             { type: 'text', text: prompt },
           ],
         },
-      ], 'qwen2.5-vl-max-latest')
+      ], 'qwen3-vl-plus')
     } else {
       const foodDesc = foodText?.trim() || '普通外卖套餐'
       const prompt = `你是专业营养师。用户吃了"${foodDesc}"，分析对消化排便的影响。
