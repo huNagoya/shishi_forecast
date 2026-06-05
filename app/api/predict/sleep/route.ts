@@ -75,7 +75,7 @@ export async function POST(req: NextRequest) {
             { type: 'text', text: identifyPrompt },
           ],
         },
-      ], 'qwen-vl-max-latest')
+      ], 'qwen2.5-vl-max-latest')
 
       const knowledgeHint = buildKnowledgeHint(identifiedName.trim()) ?? '暂无该饮品的精确数据，请根据饮品类型合理估算咖啡因含量。'
 
@@ -95,7 +95,7 @@ ${knowledgeHint}
             { type: 'text', text: prompt },
           ],
         },
-      ], 'qwen-vl-max-latest')
+      ], 'qwen2.5-vl-max-latest')
     } else {
       // 文字模式：直接查知识库
       const knowledgeHint = buildKnowledgeHint(drinkDesc) ?? '暂无该饮品的精确数据，请根据饮品类型合理估算咖啡因含量。'
