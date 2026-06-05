@@ -8,9 +8,9 @@ export default function HomePage() {
     <div className="px-4 pt-8 pb-4">
       <div className="text-center mb-8">
         <div className="flex justify-center mb-3">
-          <Image src="/icon.png" alt="食事预报局" width={64} height={64} className="rounded-2xl shadow-md" />
+          <Image src="/icon.png" alt="食事预报站" width={64} height={64} className="rounded-2xl shadow-md" />
         </div>
-        <h1 className="text-2xl font-bold text-gray-800 mb-1">食事预报局</h1>
+        <h1 className="text-2xl font-bold text-gray-800 mb-1">食事预报站</h1>
         <p className="text-sm text-gray-400">喝什么吃什么，身体后续一手掌握</p>
       </div>
 
