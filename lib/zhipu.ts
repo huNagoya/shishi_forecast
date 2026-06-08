@@ -59,7 +59,7 @@ export async function callQwen(messages: Message[], model = 'qwen3-vl-plus'): Pr
       model,
       messages,
       temperature: 0.1,
-      max_tokens: 2000,
+      max_tokens: 4000,
       enable_thinking: false,
     }),
   })
