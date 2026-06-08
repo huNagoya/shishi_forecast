@@ -91,7 +91,7 @@ export default function DigestPage() {
       <div className="flex items-center gap-2 mb-6">
         <span className="text-3xl">🚽</span>
         <div>
-          <h1 className="text-xl font-bold text-gray-800">如厕预测官</h1>
+          <h1 className="text-xl font-bold text-gray-800">消化预测官</h1>
           <p className="text-xs text-gray-400">分析你的食物，预测消化节律</p>
         </div>
       </div>

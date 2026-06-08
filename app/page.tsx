@@ -44,7 +44,7 @@ export default function HomePage() {
             <div className="absolute top-4 right-20 w-6 h-6 bg-white/15 rounded-full" />
             <div className="relative flex items-center justify-between mb-3">
               <div>
-                <h2 className="text-xl font-bold mb-1">如厕预测官</h2>
+                <h2 className="text-xl font-bold mb-1">消化预测官</h2>
                 <p className="text-emerald-100 text-sm">拍食物，预测排便时机</p>
               </div>
               <span className="text-5xl drop-shadow-sm">🚽</span>
