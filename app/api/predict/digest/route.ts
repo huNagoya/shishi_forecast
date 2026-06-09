@@ -49,7 +49,7 @@ export async function POST(req: NextRequest) {
     const gutText = gutTypeMap[gutType] || gutTypeMap['normal']
     const eatTimeText = eatTime || currentTime
 
-    const suggestionsFormat = '"suggestions": ["第一条建议文字", "第二条建议文字", "第三条建议文字"]'
+    const suggestionsFormat = '"suggestions": ["建议1（15字内）", "建议2（15字内）", "建议3（15字内）"]'
 
     let rawResponse: string
 

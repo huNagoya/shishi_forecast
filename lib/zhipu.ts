@@ -112,5 +112,5 @@ export function extractJSON(text: string): unknown {
     }
   }
 
-  throw new Error(`AI响应格式异常。原始内容：${text.substring(0, 200)}`)
+  throw new Error(`AI响应格式异常。原始内容：${text.substring(0, 500)}`)
 }

@@ -51,7 +51,7 @@ export async function POST(req: NextRequest) {
     const drinkTimeText = drinkTime || currentTime
 
     // 明确要求tips是字符串数组
-    const tipsFormat = '"tips": ["第一条建议文字", "第二条建议文字", "第三条建议文字"]'
+    const tipsFormat = '"tips": ["建议1（15字内）", "建议2（15字内）", "建议3（15字内）"]'
 
     let rawResponse: string
 
