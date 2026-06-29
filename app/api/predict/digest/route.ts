@@ -3,6 +3,7 @@ import { callQwen, extractJSON } from '@/lib/zhipu'
 import { DigestPrediction } from '@/lib/types'
 import { buildUserHint } from '@/lib/user-hint'
 import { supabase } from '@/lib/db'
+import { getClientKey, checkRateLimit } from '@/lib/rate-limit'
 
 function toStringArray(val: unknown): string[] {
   if (Array.isArray(val)) {
@@ -35,7 +36,18 @@ function toStr(val: unknown): string {
 export async function POST(req: NextRequest) {
   try {
     const body = await req.json()
-    const { imageBase64, imageMimeType, eatTime, gutType, foodText, userProfile } = body
+    const { imageBase64, imageMimeType, eatTime, gutType, foodText, userProfile, clientId } = body
+
+    // 限频：超出当日上限直接拒绝，不调用模型（防刷烧 token）
+    const clientKey = getClientKey(clientId, req)
+    const rl = await checkRateLimit(clientKey)
+    if (!rl.allowed) {
+      return NextResponse.json(
+        { success: false, error: `今日预测次数已达上限（${rl.limit} 次），请明天再来～` },
+        { status: 429 }
+      )
+    }
+
     const userHint = buildUserHint(userProfile, 'digest')
 
     const now = new Date()
@@ -107,6 +119,7 @@ export async function POST(req: NextRequest) {
       input_method: imageBase64 ? 'image' : 'text',
       food_name: prediction.foodName,
       result_score: prediction.smoothnessScore,
+      client_id: clientKey,
     })
     if (dbError) console.warn('埋点写入失败:', dbError.message)
 

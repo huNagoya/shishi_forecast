@@ -9,6 +9,11 @@ interface CaffeineEntry {
   source: string
   aliases: string[]
   notes?: string
+  size_ml?: number | null
+  size_label?: string
+  original_unit?: string
+  dosing_model?: string
+  source_url?: string
 }
 
 type DB = Record<string, CaffeineEntry>
@@ -68,14 +73,27 @@ export function buildKnowledgeHint(drinkName: string): string | null {
     official: '官方公布数据',
     tested:   '第三方检测数据',
     reported: '媒体报道数据',
-    estimated: '推算数据',
+    estimated: '推算数据（仅供参考）',
   }
 
-  return [
+  const lines = [
     `【知识库命中】`,
     `饮品：${entry.product_name}（${entry.brand}）`,
     `咖啡因含量：${entry.caffeine_mg}mg/杯（${confidenceLabel[entry.confidence] || entry.confidence}）`,
     `数据来源：${entry.source}`,
-    `请以此数值为准，不要自行估算咖啡因含量。`,
-  ].join('\n')
+  ]
+
+  // estimated 是按茶底+容量推算（±20mg），不可当权威值；其余为官方/检测/媒体口径，以此为准
+  if (entry.confidence === 'estimated') {
+    lines.push(`注意：该值为基于茶底类型与容量的推算（误差约±20mg），请向用户说明为估算、仅供参考，可结合常识合理判断。`)
+  } else {
+    lines.push(`请以此数值为准，不要自行估算咖啡因含量。`)
+  }
+
+  // fill_to_line 品牌（如霸王茶姬）去冰/热饮会补更多茶汤、咖啡因偏高，提示用户
+  if (entry.dosing_model === 'fill_to_line') {
+    lines.push(`提示：该品牌为定容到刻度，去冰/少冰/热饮会补更多茶汤，实际咖啡因可能高于上述标准冰口径。`)
+  }
+
+  return lines.join('\n')
 }

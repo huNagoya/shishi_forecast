@@ -1,11 +1,11 @@
 # 食事预报局 — Claude 工作备忘
 
 ## 项目路径
-`C:\Users\lenovo\shishi-forecast`（Next.js 14 + Supabase + Vercel）
+`D:\shishi-forecast`（Next.js 14 + Supabase + Vercel）；小程序 Taro 端在 `D:\shishi-forecast-mp`
 
 ## 技术栈
 - 前端：Next.js App Router、Tailwind CSS
-- AI：智谱 GLM（文字）/ 千问 Qwen-VL（图片 OCR）
+- AI：千问 Qwen（文字 `qwen-plus-latest` + 图片 OCR `qwen3-vl-plus`）；`lib/zhipu.ts` 内函数名仍叫 callQwen（历史命名，已全部走千问）
 - DB：Supabase（predictions、feedbacks 表）
 - 部署：Vercel（`vercel.json` 配置 cron keep-alive）
 
@@ -16,11 +16,16 @@
 - P1-5：GitHub README 更新
 - P1-4：反馈选项加「以上都不是」+ textarea（FeedbackWidget + API + DB custom_text 列）
 - OCR Prompt 优化：identifyPrompt 加显式冲突解决规则（文字优先于视觉）
+- 咖啡因知识库扩充：batch1（18品牌131条入库）+ batch2（茶颜悦色5款 + CoCo都可7款，全 estimated），最终 278 条；详见 memory `caffeine-db-enrichment`
+- option C：sleep 预测对估算值显示「估算值·仅供参考」徽标（API 返回 `caffeineEstimated`，小程序 sleep 页渲染）
 
 ## 待完成任务（按优先级）
 
-### 本周
-- [ ] 换 Qwen2.5-VL 模型 — `app/api/predict/sleep/route.ts` 改 model 名为 `qwen2.5-vl-max-latest`（当前是 `qwen-vl-max-latest`）
+### 本周 — 小程序上线前
+- [x] request 合法域名白名单（已配 `https://shishiforecast.gaoyan.me`，已备案）
+- [ ] 《用户隐私保护指引》后台填写 + `chooseMedia` 隐私授权（采集照片→上传→转千问，必填，否则发布被拒）
+- [ ] API 限频防刷（按设备/IP 每日次数上限，公开后防烧 token）
+- [ ] 服务类目避开「医疗」+ 健康免责文案（已有「仅供参考」disclaimer）
 
 ### P2 — 个性化系统
 - [ ] #7 Supabase 新增 `user_profiles` 表（见下方 DDL）
@@ -72,7 +77,7 @@ ALTER TABLE feedbacks ADD COLUMN custom_text text;
 - 用户反馈 → EWMA 更新：new_val = α × feedback_signal + (1-α) × old_val，α=0.3
 - feedback_count < 5 时前端显示"预测准确度随使用次数提升，当前基于通用数据"
 
-## 关于模型切换
-- 图片识别：digest 用 `glm-4v`，sleep 用 `qwen-vl-max-latest`（已改）
-- 文字预测：都用 `glm-4-flash`
-- 计划换 Qwen2.5-VL-Max 进一步提升 OCR 准确率
+## 关于模型（2026-06 现状）
+- 图片识别：digest 和 sleep 都用 `qwen3-vl-plus`
+- 文字预测：digest 和 sleep 都用 `qwen-plus-latest`
+- 已是较新千问，无进一步切换计划

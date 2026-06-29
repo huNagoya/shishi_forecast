@@ -1,9 +1,10 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { callQwen, extractJSON } from '@/lib/zhipu'
 import { SleepPrediction } from '@/lib/types'
-import { buildKnowledgeHint } from '@/lib/caffeine-lookup'
+import { buildKnowledgeHint, lookupCaffeine } from '@/lib/caffeine-lookup'
 import { buildUserHint } from '@/lib/user-hint'
 import { supabase } from '@/lib/db'
+import { getClientKey, checkRateLimit } from '@/lib/rate-limit'
 
 function toStr(val: unknown): string {
   if (typeof val === 'string') return val
@@ -36,7 +37,18 @@ function toStringArray(val: unknown): string[] {
 export async function POST(req: NextRequest) {
   try {
     const body = await req.json()
-    const { imageBase64, imageMimeType, drinkDesc, drinkTime, tolerance, userProfile } = body
+    const { imageBase64, imageMimeType, drinkDesc, drinkTime, tolerance, userProfile, clientId } = body
+
+    // 限频：超出当日上限直接拒绝，不调用模型（防刷烧 token）
+    const clientKey = getClientKey(clientId, req)
+    const rl = await checkRateLimit(clientKey)
+    if (!rl.allowed) {
+      return NextResponse.json(
+        { success: false, error: `今日预测次数已达上限（${rl.limit} 次），请明天再来～` },
+        { status: 429 }
+      )
+    }
+
     const userHint = buildUserHint(userProfile, 'sleep')
 
     const now = new Date()
@@ -54,6 +66,7 @@ export async function POST(req: NextRequest) {
     const tipsFormat = '"tips": ["建议1（15字内）", "建议2（15字内）", "建议3（15字内）"]'
 
     let rawResponse: string
+    let lookupName = ''
 
     if (imageBase64 && imageMimeType) {
       // 第一步：用 Qwen 视觉模型优先读取杯身文字标签识别品名
@@ -77,7 +90,8 @@ export async function POST(req: NextRequest) {
         },
       ], 'qwen3-vl-plus')
 
-      const knowledgeHint = buildKnowledgeHint(identifiedName.trim()) ?? '暂无该饮品的精确数据，请根据饮品类型合理估算咖啡因含量。'
+      lookupName = identifiedName.trim()
+      const knowledgeHint = buildKnowledgeHint(lookupName) ?? '暂无该饮品的精确数据，请根据饮品类型合理估算咖啡因含量。'
 
       const prompt = `你是专业营养师。请分析图片中饮品对睡眠的影响。
 识别到的饮品：${identifiedName.trim()}
@@ -98,7 +112,8 @@ ${knowledgeHint}
       ], 'qwen3-vl-plus')
     } else {
       // 文字模式：直接查知识库
-      const knowledgeHint = buildKnowledgeHint(drinkDesc) ?? '暂无该饮品的精确数据，请根据饮品类型合理估算咖啡因含量。'
+      lookupName = drinkDesc
+      const knowledgeHint = buildKnowledgeHint(lookupName) ?? '暂无该饮品的精确数据，请根据饮品类型合理估算咖啡因含量。'
 
       const prompt = `你是专业营养师。用户喝了"${drinkDesc}"，分析对今晚睡眠的影响。
 ${knowledgeHint}
@@ -126,12 +141,18 @@ ${knowledgeHint}
     prediction.wakeTimes = Math.min(5, Math.max(0, Math.round(Number(prediction.wakeTimes))))
     prediction.caffeineContent = Math.max(0, Math.round(Number(prediction.caffeineContent)))
 
+    // 咖啡因数据可信度：命中官方/检测/媒体口径则视为可信；命中 estimated 或库未命中（纯模型猜）则标"估算·仅供参考"
+    const matched = lookupCaffeine(lookupName)
+    prediction.caffeineConfidence = matched?.confidence ?? 'ai'
+    prediction.caffeineEstimated = !matched || matched.confidence === 'estimated'
+
     // 埋点：写入 predictions 表（await 确保 serverless 函数关闭前完成）
     const { error: dbError } = await supabase.from('predictions').insert({
       type: 'sleep',
       input_method: imageBase64 ? 'image' : 'text',
       drink_name: prediction.drinkName,
       result_score: prediction.insomniaRisk,
+      client_id: clientKey,
     })
     if (dbError) console.warn('埋点写入失败:', dbError.message)
 

@@ -1,7 +1,7 @@
 {
   "_meta": {
-    "version": "2.0.0",
-    "description": "中国常见饮品咖啡因含量知识库（基于实时搜索数据）",
+    "version": "2.2.0",
+    "description": "中国常见饮品咖啡因含量知识库（2026-06 Batch2：新增茶颜悦色/CoCo都可热销款，全部茶底估算）",
     "confidence_levels": {
       "official": "品牌官方小程序/官网公布数据",
       "tested": "消费者委员会或第三方机构检测报告",
@@ -20,9 +20,8 @@
       "卡旺卡": "公开资料极少，无法找到产品咖啡因数据，仅提供通用区间估算",
       "茶话弄": "公开资料极少，无法找到产品咖啡因数据，仅提供通用区间估算"
     },
-    "last_updated": "2026-04"
+    "last_updated": "2026-06"
   },
-
   "星巴克美式_中杯": {
     "caffeine_mg": 169,
     "brand": "星巴克",
@@ -32,7 +31,12 @@
     "category": "咖啡",
     "confidence": "reported",
     "source": "援引星巴克官网数据（中国官网未独立公布，参考台湾及国际数据）",
-    "aliases": ["星巴克美式", "星巴克美式中杯", "Starbucks Americano Tall", "美式咖啡中杯"]
+    "aliases": [
+      "星巴克美式",
+      "星巴克美式中杯",
+      "Starbucks Americano Tall",
+      "美式咖啡中杯"
+    ]
   },
   "星巴克美式_大杯": {
     "caffeine_mg": 225,
@@ -43,7 +47,11 @@
     "category": "咖啡",
     "confidence": "reported",
     "source": "援引星巴克官网数据，3份浓缩",
-    "aliases": ["星巴克美式大杯", "Starbucks Americano Grande", "大杯美式"]
+    "aliases": [
+      "星巴克美式大杯",
+      "Starbucks Americano Grande",
+      "大杯美式"
+    ]
   },
   "星巴克美式_超大杯": {
     "caffeine_mg": 300,
@@ -54,7 +62,11 @@
     "category": "咖啡",
     "confidence": "reported",
     "source": "援引星巴克官网数据，4份浓缩",
-    "aliases": ["星巴克美式超大杯", "Starbucks Americano Venti", "超大杯美式"]
+    "aliases": [
+      "星巴克美式超大杯",
+      "Starbucks Americano Venti",
+      "超大杯美式"
+    ]
   },
   "星巴克拿铁_中杯": {
     "caffeine_mg": 113,
@@ -65,7 +77,12 @@
     "category": "咖啡",
     "confidence": "reported",
     "source": "援引星巴克官网数据",
-    "aliases": ["星巴克拿铁", "星巴克拿铁中杯", "Starbucks Latte Tall", "拿铁咖啡中杯"]
+    "aliases": [
+      "星巴克拿铁",
+      "星巴克拿铁中杯",
+      "Starbucks Latte Tall",
+      "拿铁咖啡中杯"
+    ]
   },
   "星巴克拿铁_大杯": {
     "caffeine_mg": 150,
@@ -76,18 +93,27 @@
     "category": "咖啡",
     "confidence": "reported",
     "source": "援引星巴克官网数据",
-    "aliases": ["星巴克拿铁大杯", "Starbucks Latte Grande"]
+    "aliases": [
+      "星巴克拿铁大杯",
+      "Starbucks Latte Grande"
+    ]
   },
   "星巴克卡布奇诺_中杯": {
-    "caffeine_mg": 113,
+    "caffeine_mg": 75,
     "brand": "星巴克",
     "product_name": "卡布奇诺",
     "size_ml": 354,
     "size_label": "中杯(Tall)",
     "category": "咖啡",
     "confidence": "reported",
-    "source": "援引星巴克官网数据",
-    "aliases": ["卡布奇诺", "Cappuccino", "星巴克卡布奇诺"]
+    "source": "星巴克国际/美国官方口径（Tall=1 shot=75mg）",
+    "aliases": [
+      "卡布奇诺",
+      "Cappuccino",
+      "星巴克卡布奇诺"
+    ],
+    "source_url": "https://www.caffeineinformer.com/the-complete-guide-to-starbucks-caffeine",
+    "notes": "2026-06 覆盖更新：原值113mg疑为拿铁/双份口径，Tall卡布奇诺实为单份浓缩75mg。"
   },
   "星巴克冷萃_中杯": {
     "caffeine_mg": 154,
@@ -98,7 +124,11 @@
     "category": "咖啡",
     "confidence": "reported",
     "source": "援引星巴克官网数据",
-    "aliases": ["冷萃", "Cold Brew", "星巴克冷萃"]
+    "aliases": [
+      "冷萃",
+      "Cold Brew",
+      "星巴克冷萃"
+    ]
   },
   "星巴克冷萃_大杯": {
     "caffeine_mg": 200,
@@ -109,18 +139,27 @@
     "category": "咖啡",
     "confidence": "reported",
     "source": "援引星巴克官网数据",
-    "aliases": ["冷萃大杯", "Cold Brew Grande"]
+    "aliases": [
+      "冷萃大杯",
+      "Cold Brew Grande"
+    ]
   },
   "星巴克馥芮白_中杯": {
-    "caffeine_mg": 150,
+    "caffeine_mg": 130,
     "brand": "星巴克",
     "product_name": "馥芮白",
     "size_ml": 354,
     "size_label": "中杯(Tall)",
     "category": "咖啡",
-    "confidence": "estimated",
-    "source": "馥芮白使用双份Ristretto浓缩，推算值",
-    "aliases": ["馥芮白", "Flat White", "星巴克馥芮白"]
+    "confidence": "reported",
+    "source": "星巴克国际官方口径（双份ristretto）",
+    "aliases": [
+      "馥芮白",
+      "Flat White",
+      "星巴克馥芮白"
+    ],
+    "source_url": "https://www.caffeineinformer.com/the-complete-guide-to-starbucks-caffeine",
+    "notes": "2026-06 覆盖更新：由estimated 150改为reported 130（双份ristretto官方口径）。"
   },
   "星巴克抹茶拿铁_中杯": {
     "caffeine_mg": 55,
@@ -131,9 +170,12 @@
     "category": "茶咖",
     "confidence": "estimated",
     "source": "抹茶粉含量推算（非意式浓缩）",
-    "aliases": ["抹茶拿铁", "星巴克抹茶", "Matcha Latte"]
+    "aliases": [
+      "抹茶拿铁",
+      "星巴克抹茶",
+      "Matcha Latte"
+    ]
   },
-
   "瑞幸美式_大杯": {
     "caffeine_mg": 180,
     "brand": "瑞幸咖啡",
@@ -143,7 +185,11 @@
     "category": "咖啡",
     "confidence": "reported",
     "source": "深圳消委会2024测评区间（美式均值429.9mg/kg×0.48L）及媒体报道",
-    "aliases": ["瑞幸美式", "luckin美式", "瑞幸咖啡美式"]
+    "aliases": [
+      "瑞幸美式",
+      "luckin美式",
+      "瑞幸咖啡美式"
+    ]
   },
   "瑞幸生椰拿铁_大杯": {
     "caffeine_mg": 126,
@@ -154,7 +200,11 @@
     "category": "咖啡",
     "confidence": "reported",
     "source": "瑞幸App营养成分+媒体报道",
-    "aliases": ["生椰拿铁", "瑞幸生椰", "luckin生椰拿铁"]
+    "aliases": [
+      "生椰拿铁",
+      "瑞幸生椰",
+      "luckin生椰拿铁"
+    ]
   },
   "瑞幸厚乳拿铁_大杯": {
     "caffeine_mg": 150,
@@ -165,9 +215,12 @@
     "category": "咖啡",
     "confidence": "reported",
     "source": "瑞幸App营养成分",
-    "aliases": ["厚乳拿铁", "瑞幸厚乳", "luckin厚乳拿铁"]
+    "aliases": [
+      "厚乳拿铁",
+      "瑞幸厚乳",
+      "luckin厚乳拿铁"
+    ]
   },
-
   "麦咖啡美式_中杯": {
     "caffeine_mg": 142,
     "brand": "麦咖啡",
@@ -177,7 +230,11 @@
     "category": "咖啡",
     "confidence": "official",
     "source": "麦当劳中国官网营养计算器",
-    "aliases": ["麦咖啡美式", "麦当劳美式", "McCafe Americano"]
+    "aliases": [
+      "麦咖啡美式",
+      "麦当劳美式",
+      "McCafe Americano"
+    ]
   },
   "麦咖啡拿铁_中杯": {
     "caffeine_mg": 142,
@@ -188,9 +245,12 @@
     "category": "咖啡",
     "confidence": "official",
     "source": "麦当劳中国官网营养计算器",
-    "aliases": ["麦咖啡拿铁", "麦当劳拿铁", "McCafe Latte"]
+    "aliases": [
+      "麦咖啡拿铁",
+      "麦当劳拿铁",
+      "McCafe Latte"
+    ]
   },
-
   "库迪美式_大杯": {
     "caffeine_mg": 175,
     "brand": "库迪咖啡",
@@ -200,7 +260,11 @@
     "category": "咖啡",
     "confidence": "estimated",
     "source": "深圳消委会2024测评含库迪，美式均值429.9mg/kg×0.48L",
-    "aliases": ["库迪美式", "COTTI美式", "库迪咖啡美式"]
+    "aliases": [
+      "库迪美式",
+      "COTTI美式",
+      "库迪咖啡美式"
+    ]
   },
   "库迪拿铁_大杯": {
     "caffeine_mg": 150,
@@ -211,9 +275,11 @@
     "category": "咖啡",
     "confidence": "estimated",
     "source": "深圳消委会2024测评含库迪，拿铁均值推算",
-    "aliases": ["库迪拿铁", "COTTI拿铁"]
+    "aliases": [
+      "库迪拿铁",
+      "COTTI拿铁"
+    ]
   },
-
   "幸运咖美式_大杯": {
     "caffeine_mg": 120,
     "brand": "幸运咖",
@@ -223,89 +289,932 @@
     "category": "咖啡",
     "confidence": "estimated",
     "source": "蜜雪系品牌，杯量400ml，参考连锁均值估算",
-    "aliases": ["幸运咖美式", "蜜雪幸运咖美式"]
+    "aliases": [
+      "幸运咖美式",
+      "蜜雪幸运咖美式"
+    ]
   },
-
   "_chagee_note": "以下霸王茶姬数据来源：霸王茶姬官方小程序+消费者报道整理，共69款，数值为单杯咖啡因含量(mg)",
-
-  "霸王茶姬_归云南云漫普洱": { "caffeine_mg": 133, "brand": "霸王茶姬", "product_name": "归云南·云漫普洱", "size_ml": 400, "size_label": "小杯", "category": "原叶茶拿铁", "confidence": "official", "source": "霸王茶姬官方小程序+消费者报道", "aliases": ["归云南云漫普洱", "云漫普洱", "霸王茶姬云漫普洱"] },
-  "霸王茶姬_归云南云焦卡美罗": { "caffeine_mg": 126, "brand": "霸王茶姬", "product_name": "归云南·云焦卡美罗", "size_ml": 400, "size_label": "小杯", "category": "原叶茶拿铁", "confidence": "official", "source": "霸王茶姬官方小程序+消费者报道", "aliases": ["云焦卡美罗", "归云南云焦卡美罗"] },
-
-  "霸王茶姬_伯牙绝弦": { "caffeine_mg": 106, "brand": "霸王茶姬", "product_name": "伯牙绝弦", "size_ml": 470, "size_label": "中杯", "category": "原叶鲜奶茶", "confidence": "official", "source": "霸王茶姬官方小程序+消费者报道（原值105.9mg）", "aliases": ["伯牙绝弦", "霸王茶姬伯牙绝弦", "CHAGEE伯牙绝弦"] },
-  "霸王茶姬_一骑红尘": { "caffeine_mg": 140, "brand": "霸王茶姬", "product_name": "一骑红尘", "size_ml": 470, "size_label": "中杯", "category": "原叶鲜奶茶", "confidence": "official", "source": "霸王茶姬官方小程序+消费者报道（原值139.6mg）", "aliases": ["一骑红尘", "霸王茶姬一骑红尘"] },
-  "霸王茶姬_风荷曲苑": { "caffeine_mg": 142, "brand": "霸王茶姬", "product_name": "风荷曲苑", "size_ml": 470, "size_label": "中杯", "category": "原叶鲜奶茶", "confidence": "official", "source": "霸王茶姬官方小程序+消费者报道", "aliases": ["风荷曲苑"] },
-  "霸王茶姬_轻因花田乌龙": { "caffeine_mg": 38, "brand": "霸王茶姬", "product_name": "轻因·花田乌龙", "size_ml": 470, "size_label": "中杯", "category": "原叶鲜奶茶", "confidence": "official", "source": "霸王茶姬官方小程序+消费者报道（原值37.9mg）", "aliases": ["轻因花田乌龙", "轻因·花田乌龙"] },
-  "霸王茶姬_夏梦玫珑": { "caffeine_mg": 112, "brand": "霸王茶姬", "product_name": "夏梦玫珑", "size_ml": 470, "size_label": "中杯", "category": "原叶鲜奶茶", "confidence": "official", "source": "霸王茶姬官方小程序+消费者报道（原值112.1mg）", "aliases": ["夏梦玫珑"] },
-  "霸王茶姬_万象春和": { "caffeine_mg": 159, "brand": "霸王茶姬", "product_name": "万象春和", "size_ml": 470, "size_label": "中杯", "category": "原叶鲜奶茶", "confidence": "official", "source": "霸王茶姬官方小程序+消费者报道", "aliases": ["万象春和", "霸王茶姬万象春"] },
-  "霸王茶姬_寻香山茶": { "caffeine_mg": 92, "brand": "霸王茶姬", "product_name": "寻香山茶", "size_ml": 470, "size_label": "中杯", "category": "原叶鲜奶茶", "confidence": "official", "source": "霸王茶姬官方小程序+消费者报道（原值91.6mg）", "aliases": ["寻香山茶"] },
-  "霸王茶姬_轻因伯牙绝弦": { "caffeine_mg": 45, "brand": "霸王茶姬", "product_name": "轻因·伯牙绝弦", "size_ml": 470, "size_label": "中杯", "category": "原叶鲜奶茶", "confidence": "official", "source": "霸王茶姬官方小程序+消费者报道（原值45.2mg）", "aliases": ["轻因伯牙绝弦", "轻因版伯牙绝弦", "霸王茶姬轻因"] },
-  "霸王茶姬_醒时春山": { "caffeine_mg": 134, "brand": "霸王茶姬", "product_name": "醒时春山", "size_ml": 470, "size_label": "中杯", "category": "原叶鲜奶茶", "confidence": "official", "source": "霸王茶姬官方小程序+消费者报道（原值133.9mg）", "aliases": ["醒时春山"] },
-  "霸王茶姬_桂馥兰香": { "caffeine_mg": 106, "brand": "霸王茶姬", "product_name": "桂馥兰香", "size_ml": 470, "size_label": "中杯", "category": "原叶鲜奶茶", "confidence": "official", "source": "霸王茶姬官方小程序+消费者报道（原值105.8mg）", "aliases": ["桂馥兰香"] },
-  "霸王茶姬_玫瑰丛中": { "caffeine_mg": 88, "brand": "霸王茶姬", "product_name": "玫瑰丛中", "size_ml": 470, "size_label": "中杯", "category": "原叶鲜奶茶", "confidence": "official", "source": "霸王茶姬官方小程序+消费者报道（原值87.6mg）", "aliases": ["玫瑰丛中"] },
-  "霸王茶姬_花田乌龙": { "caffeine_mg": 75, "brand": "霸王茶姬", "product_name": "花田乌龙", "size_ml": 470, "size_label": "中杯", "category": "原叶鲜奶茶", "confidence": "official", "source": "霸王茶姬官方小程序+消费者报道（原值74.7mg）", "aliases": ["花田乌龙", "霸王茶姬花田乌龙"] },
-  "霸王茶姬_青青糯山": { "caffeine_mg": 68, "brand": "霸王茶姬", "product_name": "青青糯山", "size_ml": 470, "size_label": "中杯", "category": "原叶鲜奶茶", "confidence": "official", "source": "霸王茶姬官方小程序+消费者报道（原值67.7mg）", "aliases": ["青青糯山"] },
-  "霸王茶姬_白雾红尘": { "caffeine_mg": 84, "brand": "霸王茶姬", "product_name": "白雾红尘", "size_ml": 470, "size_label": "中杯", "category": "原叶鲜奶茶", "confidence": "official", "source": "霸王茶姬官方小程序+消费者报道（原值83.7mg）", "aliases": ["白雾红尘"] },
-  "霸王茶姬_万里木兰": { "caffeine_mg": 150, "brand": "霸王茶姬", "product_name": "万里木兰", "size_ml": 470, "size_label": "中杯", "category": "原叶鲜奶茶", "confidence": "official", "source": "霸王茶姬官方小程序+消费者报道（原值149.5mg）", "aliases": ["万里木兰", "霸王茶姬木兰"] },
-  "霸王茶姬_山野栀子": { "caffeine_mg": 135, "brand": "霸王茶姬", "product_name": "山野栀子", "size_ml": 470, "size_label": "中杯", "category": "原叶鲜奶茶", "confidence": "official", "source": "霸王茶姬官方小程序+消费者报道（原值134.8mg，mg/kg数据未公开）", "aliases": ["山野栀子"] },
-  "霸王茶姬_晴山栖谷": { "caffeine_mg": 117, "brand": "霸王茶姬", "product_name": "晴山栖谷", "size_ml": 470, "size_label": "中杯", "category": "原叶鲜奶茶", "confidence": "official", "source": "霸王茶姬官方小程序+消费者报道（原值116.6mg）", "aliases": ["晴山栖谷"] },
-  "霸王茶姬_去云南玫瑰普洱": { "caffeine_mg": 165, "brand": "霸王茶姬", "product_name": "去云南·玫瑰普洱", "size_ml": 470, "size_label": "中杯", "category": "原叶鲜奶茶", "confidence": "official", "source": "霸王茶姬官方小程序+消费者报道", "aliases": ["去云南玫瑰普洱", "玫瑰普洱霸王茶姬"] },
-  "霸王茶姬_金乌扶摇": { "caffeine_mg": 164, "brand": "霸王茶姬", "product_name": "金乌扶摇", "size_ml": 470, "size_label": "中杯", "category": "原叶鲜奶茶", "confidence": "official", "source": "霸王茶姬官方小程序+消费者报道（原值164.2mg）", "aliases": ["金乌扶摇"] },
-  "霸王茶姬_乾隆一号": { "caffeine_mg": 103, "brand": "霸王茶姬", "product_name": "乾隆一号", "size_ml": 470, "size_label": "中杯", "category": "原叶鲜奶茶", "confidence": "official", "source": "霸王茶姬官方小程序+消费者报道（原值103.1mg）", "aliases": ["乾隆一号"] },
-  "霸王茶姬_万山红金丝小种": { "caffeine_mg": 123, "brand": "霸王茶姬", "product_name": "万山红·金丝小种", "size_ml": 470, "size_label": "中杯", "category": "原叶鲜奶茶", "confidence": "official", "source": "霸王茶姬官方小程序+消费者报道（原值122.7mg）", "aliases": ["万山红金丝小种", "金丝小种霸王茶姬"] },
-  "霸王茶姬_赤霞跃金": { "caffeine_mg": 92, "brand": "霸王茶姬", "product_name": "赤霞跃金", "size_ml": 470, "size_label": "中杯", "category": "原叶鲜奶茶", "confidence": "official", "source": "霸王茶姬官方小程序+消费者报道（原值91.9mg）", "aliases": ["赤霞跃金"] },
-
-  "霸王茶姬_归云南云卷松风": { "caffeine_mg": 141, "brand": "霸王茶姬", "product_name": "归云南·云卷松风", "size_ml": 400, "size_label": "小杯", "category": "青云雪顶集", "confidence": "official", "source": "霸王茶姬官方小程序+消费者报道", "aliases": ["云卷松风", "归云南云卷松风"] },
-  "霸王茶姬_桂子飘飘": { "caffeine_mg": 94, "brand": "霸王茶姬", "product_name": "桂子飘飘", "size_ml": 500, "size_label": "中杯", "category": "青云雪顶集", "confidence": "official", "source": "霸王茶姬官方小程序+消费者报道", "aliases": ["桂子飘飘"] },
-  "霸王茶姬_玫瑰花园": { "caffeine_mg": 79, "brand": "霸王茶姬", "product_name": "玫瑰花园", "size_ml": 470, "size_label": "中杯", "category": "青云雪顶集", "confidence": "official", "source": "霸王茶姬官方小程序+消费者报道（原值79.4mg）", "aliases": ["玫瑰花园霸王茶姬"] },
-  "霸王茶姬_春日杧桃": { "caffeine_mg": 66, "brand": "霸王茶姬", "product_name": "春日杧桃", "size_ml": 470, "size_label": "中杯", "category": "青云雪顶集", "confidence": "official", "source": "霸王茶姬官方小程序+消费者报道（原值65.8mg）", "aliases": ["春日杧桃", "春日芒桃"] },
-  "霸王茶姬_关山木兰": { "caffeine_mg": 126, "brand": "霸王茶姬", "product_name": "关山木兰", "size_ml": 470, "size_label": "中杯", "category": "青云雪顶集", "confidence": "official", "source": "霸王茶姬官方小程序+消费者报道（原值125.5mg）", "aliases": ["关山木兰"] },
-  "霸王茶姬_千山雪金丝小种": { "caffeine_mg": 85, "brand": "霸王茶姬", "product_name": "千山雪·金丝小种", "size_ml": 500, "size_label": "中杯", "category": "青云雪顶集", "confidence": "official", "source": "霸王茶姬官方小程序+消费者报道（原值85.1mg）", "aliases": ["千山雪金丝小种"] },
-
-  "霸王茶姬_远山仙椰": { "caffeine_mg": 46, "brand": "霸王茶姬", "product_name": "远山仙椰", "size_ml": 470, "size_label": "中杯", "category": "活力轻果茶", "confidence": "official", "source": "霸王茶姬官方小程序+消费者报道", "aliases": ["远山仙椰"] },
-  "霸王茶姬_神仙椰水": { "caffeine_mg": 0, "brand": "霸王茶姬", "product_name": "神仙椰水", "size_ml": 470, "size_label": "中杯", "category": "活力轻果茶", "confidence": "official", "source": "霸王茶姬官方小程序+消费者报道（未检出咖啡因）", "aliases": ["神仙椰水"] },
-  "霸王茶姬_滇橄榄": { "caffeine_mg": 75, "brand": "霸王茶姬", "product_name": "滇橄榄", "size_ml": 535, "size_label": "大杯", "category": "活力轻果茶", "confidence": "official", "source": "霸王茶姬官方小程序+消费者报道（原值75.3mg）", "aliases": ["滇橄榄"] },
-  "霸王茶姬_醉红尘": { "caffeine_mg": 146, "brand": "霸王茶姬", "product_name": "醉红尘", "size_ml": 500, "size_label": "大杯", "category": "活力轻果茶", "confidence": "official", "source": "霸王茶姬官方小程序+消费者报道（原值145.8mg）", "aliases": ["醉红尘"] },
-  "霸王茶姬_七里香": { "caffeine_mg": 59, "brand": "霸王茶姬", "product_name": "七里香", "size_ml": 535, "size_label": "大杯", "category": "活力轻果茶", "confidence": "official", "source": "霸王茶姬官方小程序+消费者报道（原值58.9mg）", "aliases": ["七里香霸王茶姬"] },
-  "霸王茶姬_粉色乐": { "caffeine_mg": 77, "brand": "霸王茶姬", "product_name": "粉色乐", "size_ml": 535, "size_label": "大杯", "category": "活力轻果茶", "confidence": "official", "source": "霸王茶姬官方小程序+消费者报道", "aliases": ["粉色乐"] },
-  "霸王茶姬_琥珀光": { "caffeine_mg": 80, "brand": "霸王茶姬", "product_name": "琥珀光", "size_ml": 535, "size_label": "大杯", "category": "活力轻果茶", "confidence": "official", "source": "霸王茶姬官方小程序+消费者报道（原值80.4mg）", "aliases": ["琥珀光"] },
-  "霸王茶姬_千峰翠": { "caffeine_mg": 171, "brand": "霸王茶姬", "product_name": "千峰翠", "size_ml": 580, "size_label": "大杯", "category": "活力轻果茶", "confidence": "official", "source": "霸王茶姬官方小程序+消费者报道（原值171.4mg）", "aliases": ["千峰翠"] },
-  "霸王茶姬_橙香四季": { "caffeine_mg": 96, "brand": "霸王茶姬", "product_name": "橙香四季", "size_ml": 535, "size_label": "大杯", "category": "活力轻果茶", "confidence": "official", "source": "霸王茶姬官方小程序+消费者报道（原值95.8mg）", "aliases": ["橙香四季"] },
-
-  "霸王茶姬_归云南远山鲜沏": { "caffeine_mg": 111, "brand": "霸王茶姬", "product_name": "归云南（远山鲜沏）", "size_ml": 520, "size_label": "中杯", "category": "远山鲜沏", "confidence": "official", "source": "霸王茶姬官方小程序+消费者报道", "aliases": ["归云南远山鲜沏"] },
-  "霸王茶姬_轻因花田坞": { "caffeine_mg": 29, "brand": "霸王茶姬", "product_name": "轻因·花田坞", "size_ml": 500, "size_label": "中杯", "category": "远山鲜沏", "confidence": "official", "source": "霸王茶姬官方小程序+消费者报道（原值28.6mg）", "aliases": ["轻因花田坞"] },
-  "霸王茶姬_梦玫珑": { "caffeine_mg": 117, "brand": "霸王茶姬", "product_name": "梦玫珑", "size_ml": 500, "size_label": "中杯", "category": "远山鲜沏", "confidence": "official", "source": "霸王茶姬官方小程序+消费者报道（原值116.5mg）", "aliases": ["梦玫珑"] },
-  "霸王茶姬_万象春": { "caffeine_mg": 148, "brand": "霸王茶姬", "product_name": "万象春", "size_ml": 500, "size_label": "中杯", "category": "远山鲜沏", "confidence": "official", "source": "霸王茶姬官方小程序+消费者报道（原值147.9mg）", "aliases": ["万象春"] },
-  "霸王茶姬_玫瑰园": { "caffeine_mg": 71, "brand": "霸王茶姬", "product_name": "玫瑰园", "size_ml": 500, "size_label": "中杯", "category": "远山鲜沏", "confidence": "official", "source": "霸王茶姬官方小程序+消费者报道（原值71.4mg）", "aliases": ["玫瑰园霸王茶姬"] },
-  "霸王茶姬_山茶君": { "caffeine_mg": 98, "brand": "霸王茶姬", "product_name": "山茶君", "size_ml": 500, "size_label": "中杯", "category": "远山鲜沏", "confidence": "official", "source": "霸王茶姬官方小程序+消费者报道", "aliases": ["山茶君"] },
-  "霸王茶姬_轻因伯牙鲜沏": { "caffeine_mg": 69, "brand": "霸王茶姬", "product_name": "轻因·伯牙鲜沏", "size_ml": 500, "size_label": "中杯", "category": "远山鲜沏", "confidence": "official", "source": "霸王茶姬官方小程序+消费者报道", "aliases": ["轻因伯牙鲜沏"] },
-  "霸王茶姬_醒春山": { "caffeine_mg": 96, "brand": "霸王茶姬", "product_name": "醒春山", "size_ml": 500, "size_label": "中杯", "category": "远山鲜沏", "confidence": "official", "source": "霸王茶姬官方小程序+消费者报道（原值95.9mg）", "aliases": ["醒春山"] },
-  "霸王茶姬_花田坞": { "caffeine_mg": 94, "brand": "霸王茶姬", "product_name": "花田坞", "size_ml": 500, "size_label": "中杯", "category": "远山鲜沏", "confidence": "official", "source": "霸王茶姬官方小程序+消费者报道（原值93.5mg）", "aliases": ["花田坞"] },
-  "霸王茶姬_酌红袍": { "caffeine_mg": 74, "brand": "霸王茶姬", "product_name": "酌红袍", "size_ml": 500, "size_label": "中杯", "category": "远山鲜沏", "confidence": "official", "source": "霸王茶姬官方小程序+消费者报道（原值74.4mg）", "aliases": ["酌红袍"] },
-  "霸王茶姬_云中绿": { "caffeine_mg": 58, "brand": "霸王茶姬", "product_name": "云中绿", "size_ml": 500, "size_label": "中杯", "category": "远山鲜沏", "confidence": "official", "source": "霸王茶姬官方小程序+消费者报道", "aliases": ["云中绿"] },
-  "霸王茶姬_折桂令": { "caffeine_mg": 103, "brand": "霸王茶姬", "product_name": "折桂令", "size_ml": 500, "size_label": "中杯", "category": "远山鲜沏", "confidence": "official", "source": "霸王茶姬官方小程序+消费者报道（原值102.5mg）", "aliases": ["折桂令"] },
-  "霸王茶姬_野栀子": { "caffeine_mg": 88, "brand": "霸王茶姬", "product_name": "野栀子", "size_ml": 500, "size_label": "中杯", "category": "远山鲜沏", "confidence": "official", "source": "霸王茶姬官方小程序+消费者报道（原值87.9mg）", "aliases": ["野栀子"] },
-  "霸王茶姬_木兰辟": { "caffeine_mg": 148, "brand": "霸王茶姬", "product_name": "木兰辟", "size_ml": 500, "size_label": "中杯", "category": "远山鲜沏", "confidence": "official", "source": "霸王茶姬官方小程序+消费者报道", "aliases": ["木兰辟"] },
-  "霸王茶姬_扶摇起": { "caffeine_mg": 150, "brand": "霸王茶姬", "product_name": "扶摇起", "size_ml": 500, "size_label": "中杯", "category": "远山鲜沏", "confidence": "official", "source": "霸王茶姬官方小程序+消费者报道（原值149.6mg）", "aliases": ["扶摇起"] },
-  "霸王茶姬_东美人": { "caffeine_mg": 99, "brand": "霸王茶姬", "product_name": "东美人", "size_ml": 500, "size_label": "中杯", "category": "远山鲜沏", "confidence": "official", "source": "霸王茶姬官方小程序+消费者报道", "aliases": ["东美人"] },
-  "霸王茶姬_观音韵": { "caffeine_mg": 126, "brand": "霸王茶姬", "product_name": "观音韵", "size_ml": 500, "size_label": "中杯", "category": "远山鲜沏", "confidence": "official", "source": "霸王茶姬官方小程序+消费者报道（原值125.5mg）", "aliases": ["观音韵"] },
-  "霸王茶姬_观音翠": { "caffeine_mg": 96, "brand": "霸王茶姬", "product_name": "观音翠", "size_ml": 500, "size_label": "中杯", "category": "远山鲜沏", "confidence": "official", "source": "霸王茶姬官方小程序+消费者报道（原值95.6mg）", "aliases": ["观音翠"] },
-
-  "霸王茶姬_大红袍茶拿铁": { "caffeine_mg": 100, "brand": "霸王茶姬", "product_name": "大红袍茶拿铁", "size_ml": 360, "size_label": "标准杯", "category": "极萃茶拿铁", "confidence": "official", "source": "霸王茶姬官方小程序+消费者报道（原值100.1mg）", "aliases": ["大红袍茶拿铁", "大红袍拿铁霸王茶姬"] },
-  "霸王茶姬_陈柑普洱茶拿铁": { "caffeine_mg": 138, "brand": "霸王茶姬", "product_name": "陈柑普洱茶拿铁", "size_ml": 360, "size_label": "标准杯", "category": "极萃茶拿铁", "confidence": "official", "source": "霸王茶姬官方小程序+消费者报道（原值137.9mg）", "aliases": ["陈柑普洱茶拿铁", "陈柑普洱拿铁"] },
-  "霸王茶姬_正山小种茶拿铁": { "caffeine_mg": 96, "brand": "霸王茶姬", "product_name": "正山小种茶拿铁", "size_ml": 360, "size_label": "标准杯", "category": "极萃茶拿铁", "confidence": "official", "source": "霸王茶姬官方小程序+消费者报道（原值95.8mg）", "aliases": ["正山小种茶拿铁", "正山小种拿铁"] },
-
-  "霸王茶姬_焦糖大红袍普茶冰川": { "caffeine_mg": 92, "brand": "霸王茶姬", "product_name": "焦糖大红袍普茶冰川", "size_ml": 360, "size_label": "小杯", "category": "极萃茶冰川", "confidence": "official", "source": "霸王茶姬官方小程序+消费者报道（原值91.5mg）", "aliases": ["焦糖大红袍普茶冰川"] },
-  "霸王茶姬_奥利奥柑普茶冰川": { "caffeine_mg": 161, "brand": "霸王茶姬", "product_name": "奥利奥柑普茶冰川", "size_ml": 500, "size_label": "标准杯", "category": "极萃茶冰川", "confidence": "official", "source": "霸王茶姬官方小程序+消费者报道", "aliases": ["奥利奥柑普茶冰川"] },
-
-  "霸王茶姬_七萱茉莉茜芽": { "caffeine_mg": 46, "brand": "霸王茶姬", "product_name": "七萱·茉莉茜芽", "size_ml": 500, "size_label": "标准杯", "category": "东方冰茶", "confidence": "official", "source": "霸王茶姬官方小程序+消费者报道（原值45.5mg）", "aliases": ["七萱茉莉茜芽", "茉莉茜芽"] },
-  "霸王茶姬_轻醇金桂乌龙": { "caffeine_mg": 22, "brand": "霸王茶姬", "product_name": "轻醇·金桂乌龙", "size_ml": 500, "size_label": "标准杯", "category": "东方冰茶", "confidence": "official", "source": "霸王茶姬官方小程序+消费者报道（原值21.9mg）", "aliases": ["轻醇金桂乌龙", "金桂乌龙霸王茶姬"] },
-  "霸王茶姬_慢焙金观音": { "caffeine_mg": 45, "brand": "霸王茶姬", "product_name": "慢焙·金观音", "size_ml": 500, "size_label": "标准杯", "category": "东方冰茶", "confidence": "official", "source": "霸王茶姬官方小程序+消费者报道（原值45.2mg）", "aliases": ["慢焙金观音", "金观音霸王茶姬"] },
-  "霸王茶姬_生晒陈柑普洱": { "caffeine_mg": 75, "brand": "霸王茶姬", "product_name": "生晒·陈柑普洱", "size_ml": 500, "size_label": "标准杯", "category": "东方冰茶", "confidence": "official", "source": "霸王茶姬官方小程序+消费者报道（原值74.6mg）", "aliases": ["生晒陈柑普洱", "陈柑普洱东方冰茶"] },
-  "霸王茶姬_混搭精选绿茶": { "caffeine_mg": 32, "brand": "霸王茶姬", "product_name": "混搭·精选绿茶", "size_ml": 500, "size_label": "标准杯", "category": "东方冰茶", "confidence": "official", "source": "霸王茶姬官方小程序+消费者报道（原值31.8mg）", "aliases": ["混搭精选绿茶"] },
-
-  "霸王茶姬_浮光映橘橙": { "caffeine_mg": 31, "brand": "霸王茶姬", "product_name": "浮光映橘橙", "size_ml": 470, "size_label": "中杯", "category": "原叶特调茶", "confidence": "official", "source": "霸王茶姬官方小程序+消费者报道（原值30.8mg）", "aliases": ["浮光映橘橙"] },
-  "霸王茶姬_赤玉酌红袍": { "caffeine_mg": 39, "brand": "霸王茶姬", "product_name": "赤玉酌红袍", "size_ml": 500, "size_label": "中杯", "category": "原叶特调茶", "confidence": "official", "source": "霸王茶姬官方小程序+消费者报道（原值38.6mg）", "aliases": ["赤玉酌红袍"] },
-
+  "霸王茶姬_归云南云漫普洱": {
+    "caffeine_mg": 133,
+    "brand": "霸王茶姬",
+    "product_name": "归云南·云漫普洱",
+    "size_ml": 400,
+    "size_label": "小杯",
+    "category": "原叶茶拿铁",
+    "confidence": "official",
+    "source": "霸王茶姬官方小程序+消费者报道",
+    "aliases": [
+      "归云南云漫普洱",
+      "云漫普洱",
+      "霸王茶姬云漫普洱"
+    ]
+  },
+  "霸王茶姬_归云南云焦卡美罗": {
+    "caffeine_mg": 126,
+    "brand": "霸王茶姬",
+    "product_name": "归云南·云焦卡美罗",
+    "size_ml": 400,
+    "size_label": "小杯",
+    "category": "原叶茶拿铁",
+    "confidence": "official",
+    "source": "霸王茶姬官方小程序+消费者报道",
+    "aliases": [
+      "云焦卡美罗",
+      "归云南云焦卡美罗"
+    ]
+  },
+  "霸王茶姬_伯牙绝弦": {
+    "caffeine_mg": 106,
+    "brand": "霸王茶姬",
+    "product_name": "伯牙绝弦",
+    "size_ml": 470,
+    "size_label": "中杯",
+    "category": "原叶鲜奶茶",
+    "confidence": "official",
+    "source": "霸王茶姬官方小程序+消费者报道（原值105.9mg）",
+    "aliases": [
+      "伯牙绝弦",
+      "霸王茶姬伯牙绝弦",
+      "CHAGEE伯牙绝弦"
+    ]
+  },
+  "霸王茶姬_一骑红尘": {
+    "caffeine_mg": 140,
+    "brand": "霸王茶姬",
+    "product_name": "一骑红尘",
+    "size_ml": 470,
+    "size_label": "中杯",
+    "category": "原叶鲜奶茶",
+    "confidence": "official",
+    "source": "霸王茶姬官方小程序+消费者报道（原值139.6mg）",
+    "aliases": [
+      "一骑红尘",
+      "霸王茶姬一骑红尘"
+    ]
+  },
+  "霸王茶姬_风荷曲苑": {
+    "caffeine_mg": 142,
+    "brand": "霸王茶姬",
+    "product_name": "风荷曲苑",
+    "size_ml": 470,
+    "size_label": "中杯",
+    "category": "原叶鲜奶茶",
+    "confidence": "official",
+    "source": "霸王茶姬官方小程序+消费者报道",
+    "aliases": [
+      "风荷曲苑"
+    ]
+  },
+  "霸王茶姬_轻因花田乌龙": {
+    "caffeine_mg": 38,
+    "brand": "霸王茶姬",
+    "product_name": "轻因·花田乌龙",
+    "size_ml": 470,
+    "size_label": "中杯",
+    "category": "原叶鲜奶茶",
+    "confidence": "official",
+    "source": "霸王茶姬官方小程序+消费者报道（原值37.9mg）",
+    "aliases": [
+      "轻因花田乌龙",
+      "轻因·花田乌龙"
+    ]
+  },
+  "霸王茶姬_夏梦玫珑": {
+    "caffeine_mg": 112,
+    "brand": "霸王茶姬",
+    "product_name": "夏梦玫珑",
+    "size_ml": 470,
+    "size_label": "中杯",
+    "category": "原叶鲜奶茶",
+    "confidence": "official",
+    "source": "霸王茶姬官方小程序+消费者报道（原值112.1mg）",
+    "aliases": [
+      "夏梦玫珑"
+    ]
+  },
+  "霸王茶姬_万象春和": {
+    "caffeine_mg": 159,
+    "brand": "霸王茶姬",
+    "product_name": "万象春和",
+    "size_ml": 470,
+    "size_label": "中杯",
+    "category": "原叶鲜奶茶",
+    "confidence": "official",
+    "source": "霸王茶姬官方小程序+消费者报道",
+    "aliases": [
+      "万象春和",
+      "霸王茶姬万象春"
+    ]
+  },
+  "霸王茶姬_寻香山茶": {
+    "caffeine_mg": 92,
+    "brand": "霸王茶姬",
+    "product_name": "寻香山茶",
+    "size_ml": 470,
+    "size_label": "中杯",
+    "category": "原叶鲜奶茶",
+    "confidence": "official",
+    "source": "霸王茶姬官方小程序+消费者报道（原值91.6mg）",
+    "aliases": [
+      "寻香山茶"
+    ]
+  },
+  "霸王茶姬_轻因伯牙绝弦": {
+    "caffeine_mg": 45,
+    "brand": "霸王茶姬",
+    "product_name": "轻因·伯牙绝弦",
+    "size_ml": 470,
+    "size_label": "中杯",
+    "category": "原叶鲜奶茶",
+    "confidence": "official",
+    "source": "霸王茶姬官方小程序+消费者报道（原值45.2mg）",
+    "aliases": [
+      "轻因伯牙绝弦",
+      "轻因版伯牙绝弦",
+      "霸王茶姬轻因"
+    ]
+  },
+  "霸王茶姬_醒时春山": {
+    "caffeine_mg": 134,
+    "brand": "霸王茶姬",
+    "product_name": "醒时春山",
+    "size_ml": 470,
+    "size_label": "中杯",
+    "category": "原叶鲜奶茶",
+    "confidence": "official",
+    "source": "霸王茶姬官方小程序+消费者报道（原值133.9mg）",
+    "aliases": [
+      "醒时春山"
+    ]
+  },
+  "霸王茶姬_桂馥兰香": {
+    "caffeine_mg": 106,
+    "brand": "霸王茶姬",
+    "product_name": "桂馥兰香",
+    "size_ml": 470,
+    "size_label": "中杯",
+    "category": "原叶鲜奶茶",
+    "confidence": "official",
+    "source": "霸王茶姬官方小程序+消费者报道（原值105.8mg）",
+    "aliases": [
+      "桂馥兰香"
+    ]
+  },
+  "霸王茶姬_玫瑰丛中": {
+    "caffeine_mg": 88,
+    "brand": "霸王茶姬",
+    "product_name": "玫瑰丛中",
+    "size_ml": 470,
+    "size_label": "中杯",
+    "category": "原叶鲜奶茶",
+    "confidence": "official",
+    "source": "霸王茶姬官方小程序+消费者报道（原值87.6mg）",
+    "aliases": [
+      "玫瑰丛中"
+    ]
+  },
+  "霸王茶姬_花田乌龙": {
+    "caffeine_mg": 75,
+    "brand": "霸王茶姬",
+    "product_name": "花田乌龙",
+    "size_ml": 470,
+    "size_label": "中杯",
+    "category": "原叶鲜奶茶",
+    "confidence": "official",
+    "source": "霸王茶姬官方小程序+消费者报道（原值74.7mg）",
+    "aliases": [
+      "花田乌龙",
+      "霸王茶姬花田乌龙"
+    ]
+  },
+  "霸王茶姬_青青糯山": {
+    "caffeine_mg": 68,
+    "brand": "霸王茶姬",
+    "product_name": "青青糯山",
+    "size_ml": 470,
+    "size_label": "中杯",
+    "category": "原叶鲜奶茶",
+    "confidence": "official",
+    "source": "霸王茶姬官方小程序+消费者报道（原值67.7mg）",
+    "aliases": [
+      "青青糯山"
+    ]
+  },
+  "霸王茶姬_白雾红尘": {
+    "caffeine_mg": 84,
+    "brand": "霸王茶姬",
+    "product_name": "白雾红尘",
+    "size_ml": 470,
+    "size_label": "中杯",
+    "category": "原叶鲜奶茶",
+    "confidence": "official",
+    "source": "霸王茶姬官方小程序+消费者报道（原值83.7mg）",
+    "aliases": [
+      "白雾红尘"
+    ]
+  },
+  "霸王茶姬_万里木兰": {
+    "caffeine_mg": 150,
+    "brand": "霸王茶姬",
+    "product_name": "万里木兰",
+    "size_ml": 470,
+    "size_label": "中杯",
+    "category": "原叶鲜奶茶",
+    "confidence": "official",
+    "source": "霸王茶姬官方小程序+消费者报道（原值149.5mg）",
+    "aliases": [
+      "万里木兰",
+      "霸王茶姬木兰"
+    ]
+  },
+  "霸王茶姬_山野栀子": {
+    "caffeine_mg": 135,
+    "brand": "霸王茶姬",
+    "product_name": "山野栀子",
+    "size_ml": 470,
+    "size_label": "中杯",
+    "category": "原叶鲜奶茶",
+    "confidence": "official",
+    "source": "霸王茶姬官方小程序+消费者报道（原值134.8mg，mg/kg数据未公开）",
+    "aliases": [
+      "山野栀子"
+    ]
+  },
+  "霸王茶姬_晴山栖谷": {
+    "caffeine_mg": 117,
+    "brand": "霸王茶姬",
+    "product_name": "晴山栖谷",
+    "size_ml": 470,
+    "size_label": "中杯",
+    "category": "原叶鲜奶茶",
+    "confidence": "official",
+    "source": "霸王茶姬官方小程序+消费者报道（原值116.6mg）",
+    "aliases": [
+      "晴山栖谷"
+    ]
+  },
+  "霸王茶姬_去云南玫瑰普洱": {
+    "caffeine_mg": 165,
+    "brand": "霸王茶姬",
+    "product_name": "去云南·玫瑰普洱",
+    "size_ml": 470,
+    "size_label": "中杯",
+    "category": "原叶鲜奶茶",
+    "confidence": "official",
+    "source": "霸王茶姬官方小程序+消费者报道",
+    "aliases": [
+      "去云南玫瑰普洱",
+      "玫瑰普洱霸王茶姬"
+    ]
+  },
+  "霸王茶姬_金乌扶摇": {
+    "caffeine_mg": 164,
+    "brand": "霸王茶姬",
+    "product_name": "金乌扶摇",
+    "size_ml": 470,
+    "size_label": "中杯",
+    "category": "原叶鲜奶茶",
+    "confidence": "official",
+    "source": "霸王茶姬官方小程序+消费者报道（原值164.2mg）",
+    "aliases": [
+      "金乌扶摇"
+    ]
+  },
+  "霸王茶姬_乾隆一号": {
+    "caffeine_mg": 103,
+    "brand": "霸王茶姬",
+    "product_name": "乾隆一号",
+    "size_ml": 470,
+    "size_label": "中杯",
+    "category": "原叶鲜奶茶",
+    "confidence": "official",
+    "source": "霸王茶姬官方小程序+消费者报道（原值103.1mg）",
+    "aliases": [
+      "乾隆一号"
+    ]
+  },
+  "霸王茶姬_万山红金丝小种": {
+    "caffeine_mg": 123,
+    "brand": "霸王茶姬",
+    "product_name": "万山红·金丝小种",
+    "size_ml": 470,
+    "size_label": "中杯",
+    "category": "原叶鲜奶茶",
+    "confidence": "official",
+    "source": "霸王茶姬官方小程序+消费者报道（原值122.7mg）",
+    "aliases": [
+      "万山红金丝小种",
+      "金丝小种霸王茶姬"
+    ]
+  },
+  "霸王茶姬_赤霞跃金": {
+    "caffeine_mg": 92,
+    "brand": "霸王茶姬",
+    "product_name": "赤霞跃金",
+    "size_ml": 470,
+    "size_label": "中杯",
+    "category": "原叶鲜奶茶",
+    "confidence": "official",
+    "source": "霸王茶姬官方小程序+消费者报道（原值91.9mg）",
+    "aliases": [
+      "赤霞跃金"
+    ]
+  },
+  "霸王茶姬_归云南云卷松风": {
+    "caffeine_mg": 141,
+    "brand": "霸王茶姬",
+    "product_name": "归云南·云卷松风",
+    "size_ml": 400,
+    "size_label": "小杯",
+    "category": "青云雪顶集",
+    "confidence": "official",
+    "source": "霸王茶姬官方小程序+消费者报道",
+    "aliases": [
+      "云卷松风",
+      "归云南云卷松风"
+    ]
+  },
+  "霸王茶姬_桂子飘飘": {
+    "caffeine_mg": 94,
+    "brand": "霸王茶姬",
+    "product_name": "桂子飘飘",
+    "size_ml": 500,
+    "size_label": "中杯",
+    "category": "青云雪顶集",
+    "confidence": "official",
+    "source": "霸王茶姬官方小程序+消费者报道",
+    "aliases": [
+      "桂子飘飘"
+    ]
+  },
+  "霸王茶姬_玫瑰花园": {
+    "caffeine_mg": 79,
+    "brand": "霸王茶姬",
+    "product_name": "玫瑰花园",
+    "size_ml": 470,
+    "size_label": "中杯",
+    "category": "青云雪顶集",
+    "confidence": "official",
+    "source": "霸王茶姬官方小程序+消费者报道（原值79.4mg）",
+    "aliases": [
+      "玫瑰花园霸王茶姬"
+    ]
+  },
+  "霸王茶姬_春日杧桃": {
+    "caffeine_mg": 66,
+    "brand": "霸王茶姬",
+    "product_name": "春日杧桃",
+    "size_ml": 470,
+    "size_label": "中杯",
+    "category": "青云雪顶集",
+    "confidence": "official",
+    "source": "霸王茶姬官方小程序+消费者报道（原值65.8mg）",
+    "aliases": [
+      "春日杧桃",
+      "春日芒桃"
+    ]
+  },
+  "霸王茶姬_关山木兰": {
+    "caffeine_mg": 126,
+    "brand": "霸王茶姬",
+    "product_name": "关山木兰",
+    "size_ml": 470,
+    "size_label": "中杯",
+    "category": "青云雪顶集",
+    "confidence": "official",
+    "source": "霸王茶姬官方小程序+消费者报道（原值125.5mg）",
+    "aliases": [
+      "关山木兰"
+    ]
+  },
+  "霸王茶姬_千山雪金丝小种": {
+    "caffeine_mg": 85,
+    "brand": "霸王茶姬",
+    "product_name": "千山雪·金丝小种",
+    "size_ml": 500,
+    "size_label": "中杯",
+    "category": "青云雪顶集",
+    "confidence": "official",
+    "source": "霸王茶姬官方小程序+消费者报道（原值85.1mg）",
+    "aliases": [
+      "千山雪金丝小种"
+    ]
+  },
+  "霸王茶姬_远山仙椰": {
+    "caffeine_mg": 46,
+    "brand": "霸王茶姬",
+    "product_name": "远山仙椰",
+    "size_ml": 470,
+    "size_label": "中杯",
+    "category": "活力轻果茶",
+    "confidence": "official",
+    "source": "霸王茶姬官方小程序+消费者报道",
+    "aliases": [
+      "远山仙椰"
+    ]
+  },
+  "霸王茶姬_神仙椰水": {
+    "caffeine_mg": 0,
+    "brand": "霸王茶姬",
+    "product_name": "神仙椰水",
+    "size_ml": 470,
+    "size_label": "中杯",
+    "category": "活力轻果茶",
+    "confidence": "official",
+    "source": "霸王茶姬官方小程序+消费者报道（未检出咖啡因）",
+    "aliases": [
+      "神仙椰水"
+    ]
+  },
+  "霸王茶姬_滇橄榄": {
+    "caffeine_mg": 75,
+    "brand": "霸王茶姬",
+    "product_name": "滇橄榄",
+    "size_ml": 535,
+    "size_label": "大杯",
+    "category": "活力轻果茶",
+    "confidence": "official",
+    "source": "霸王茶姬官方小程序+消费者报道（原值75.3mg）",
+    "aliases": [
+      "滇橄榄"
+    ]
+  },
+  "霸王茶姬_醉红尘": {
+    "caffeine_mg": 146,
+    "brand": "霸王茶姬",
+    "product_name": "醉红尘",
+    "size_ml": 500,
+    "size_label": "大杯",
+    "category": "活力轻果茶",
+    "confidence": "official",
+    "source": "霸王茶姬官方小程序+消费者报道（原值145.8mg）",
+    "aliases": [
+      "醉红尘"
+    ]
+  },
+  "霸王茶姬_七里香": {
+    "caffeine_mg": 59,
+    "brand": "霸王茶姬",
+    "product_name": "七里香",
+    "size_ml": 535,
+    "size_label": "大杯",
+    "category": "活力轻果茶",
+    "confidence": "official",
+    "source": "霸王茶姬官方小程序+消费者报道（原值58.9mg）",
+    "aliases": [
+      "七里香霸王茶姬"
+    ]
+  },
+  "霸王茶姬_粉色乐": {
+    "caffeine_mg": 77,
+    "brand": "霸王茶姬",
+    "product_name": "粉色乐",
+    "size_ml": 535,
+    "size_label": "大杯",
+    "category": "活力轻果茶",
+    "confidence": "official",
+    "source": "霸王茶姬官方小程序+消费者报道",
+    "aliases": [
+      "粉色乐"
+    ]
+  },
+  "霸王茶姬_琥珀光": {
+    "caffeine_mg": 80,
+    "brand": "霸王茶姬",
+    "product_name": "琥珀光",
+    "size_ml": 535,
+    "size_label": "大杯",
+    "category": "活力轻果茶",
+    "confidence": "official",
+    "source": "霸王茶姬官方小程序+消费者报道（原值80.4mg）",
+    "aliases": [
+      "琥珀光"
+    ]
+  },
+  "霸王茶姬_千峰翠": {
+    "caffeine_mg": 171,
+    "brand": "霸王茶姬",
+    "product_name": "千峰翠",
+    "size_ml": 580,
+    "size_label": "大杯",
+    "category": "活力轻果茶",
+    "confidence": "official",
+    "source": "霸王茶姬官方小程序+消费者报道（原值171.4mg）",
+    "aliases": [
+      "千峰翠"
+    ]
+  },
+  "霸王茶姬_橙香四季": {
+    "caffeine_mg": 96,
+    "brand": "霸王茶姬",
+    "product_name": "橙香四季",
+    "size_ml": 535,
+    "size_label": "大杯",
+    "category": "活力轻果茶",
+    "confidence": "official",
+    "source": "霸王茶姬官方小程序+消费者报道（原值95.8mg）",
+    "aliases": [
+      "橙香四季"
+    ]
+  },
+  "霸王茶姬_归云南远山鲜沏": {
+    "caffeine_mg": 111,
+    "brand": "霸王茶姬",
+    "product_name": "归云南（远山鲜沏）",
+    "size_ml": 520,
+    "size_label": "中杯",
+    "category": "远山鲜沏",
+    "confidence": "official",
+    "source": "霸王茶姬官方小程序+消费者报道",
+    "aliases": [
+      "归云南远山鲜沏"
+    ]
+  },
+  "霸王茶姬_轻因花田坞": {
+    "caffeine_mg": 29,
+    "brand": "霸王茶姬",
+    "product_name": "轻因·花田坞",
+    "size_ml": 500,
+    "size_label": "中杯",
+    "category": "远山鲜沏",
+    "confidence": "official",
+    "source": "霸王茶姬官方小程序+消费者报道（原值28.6mg）",
+    "aliases": [
+      "轻因花田坞"
+    ]
+  },
+  "霸王茶姬_梦玫珑": {
+    "caffeine_mg": 117,
+    "brand": "霸王茶姬",
+    "product_name": "梦玫珑",
+    "size_ml": 500,
+    "size_label": "中杯",
+    "category": "远山鲜沏",
+    "confidence": "official",
+    "source": "霸王茶姬官方小程序+消费者报道（原值116.5mg）",
+    "aliases": [
+      "梦玫珑"
+    ]
+  },
+  "霸王茶姬_万象春": {
+    "caffeine_mg": 148,
+    "brand": "霸王茶姬",
+    "product_name": "万象春",
+    "size_ml": 500,
+    "size_label": "中杯",
+    "category": "远山鲜沏",
+    "confidence": "official",
+    "source": "霸王茶姬官方小程序+消费者报道（原值147.9mg）",
+    "aliases": [
+      "万象春"
+    ]
+  },
+  "霸王茶姬_玫瑰园": {
+    "caffeine_mg": 71,
+    "brand": "霸王茶姬",
+    "product_name": "玫瑰园",
+    "size_ml": 500,
+    "size_label": "中杯",
+    "category": "远山鲜沏",
+    "confidence": "official",
+    "source": "霸王茶姬官方小程序+消费者报道（原值71.4mg）",
+    "aliases": [
+      "玫瑰园霸王茶姬"
+    ]
+  },
+  "霸王茶姬_山茶君": {
+    "caffeine_mg": 98,
+    "brand": "霸王茶姬",
+    "product_name": "山茶君",
+    "size_ml": 500,
+    "size_label": "中杯",
+    "category": "远山鲜沏",
+    "confidence": "official",
+    "source": "霸王茶姬官方小程序+消费者报道",
+    "aliases": [
+      "山茶君"
+    ]
+  },
+  "霸王茶姬_轻因伯牙鲜沏": {
+    "caffeine_mg": 69,
+    "brand": "霸王茶姬",
+    "product_name": "轻因·伯牙鲜沏",
+    "size_ml": 500,
+    "size_label": "中杯",
+    "category": "远山鲜沏",
+    "confidence": "official",
+    "source": "霸王茶姬官方小程序+消费者报道",
+    "aliases": [
+      "轻因伯牙鲜沏"
+    ]
+  },
+  "霸王茶姬_醒春山": {
+    "caffeine_mg": 96,
+    "brand": "霸王茶姬",
+    "product_name": "醒春山",
+    "size_ml": 500,
+    "size_label": "中杯",
+    "category": "远山鲜沏",
+    "confidence": "official",
+    "source": "霸王茶姬官方小程序+消费者报道（原值95.9mg）",
+    "aliases": [
+      "醒春山"
+    ]
+  },
+  "霸王茶姬_花田坞": {
+    "caffeine_mg": 94,
+    "brand": "霸王茶姬",
+    "product_name": "花田坞",
+    "size_ml": 500,
+    "size_label": "中杯",
+    "category": "远山鲜沏",
+    "confidence": "official",
+    "source": "霸王茶姬官方小程序+消费者报道（原值93.5mg）",
+    "aliases": [
+      "花田坞"
+    ]
+  },
+  "霸王茶姬_酌红袍": {
+    "caffeine_mg": 74,
+    "brand": "霸王茶姬",
+    "product_name": "酌红袍",
+    "size_ml": 500,
+    "size_label": "中杯",
+    "category": "远山鲜沏",
+    "confidence": "official",
+    "source": "霸王茶姬官方小程序+消费者报道（原值74.4mg）",
+    "aliases": [
+      "酌红袍"
+    ]
+  },
+  "霸王茶姬_云中绿": {
+    "caffeine_mg": 58,
+    "brand": "霸王茶姬",
+    "product_name": "云中绿",
+    "size_ml": 500,
+    "size_label": "中杯",
+    "category": "远山鲜沏",
+    "confidence": "official",
+    "source": "霸王茶姬官方小程序+消费者报道",
+    "aliases": [
+      "云中绿"
+    ]
+  },
+  "霸王茶姬_折桂令": {
+    "caffeine_mg": 103,
+    "brand": "霸王茶姬",
+    "product_name": "折桂令",
+    "size_ml": 500,
+    "size_label": "中杯",
+    "category": "远山鲜沏",
+    "confidence": "official",
+    "source": "霸王茶姬官方小程序+消费者报道（原值102.5mg）",
+    "aliases": [
+      "折桂令"
+    ]
+  },
+  "霸王茶姬_野栀子": {
+    "caffeine_mg": 88,
+    "brand": "霸王茶姬",
+    "product_name": "野栀子",
+    "size_ml": 500,
+    "size_label": "中杯",
+    "category": "远山鲜沏",
+    "confidence": "official",
+    "source": "霸王茶姬官方小程序+消费者报道（原值87.9mg）",
+    "aliases": [
+      "野栀子"
+    ]
+  },
+  "霸王茶姬_木兰辟": {
+    "caffeine_mg": 148,
+    "brand": "霸王茶姬",
+    "product_name": "木兰辟",
+    "size_ml": 500,
+    "size_label": "中杯",
+    "category": "远山鲜沏",
+    "confidence": "official",
+    "source": "霸王茶姬官方小程序+消费者报道",
+    "aliases": [
+      "木兰辟"
+    ]
+  },
+  "霸王茶姬_扶摇起": {
+    "caffeine_mg": 150,
+    "brand": "霸王茶姬",
+    "product_name": "扶摇起",
+    "size_ml": 500,
+    "size_label": "中杯",
+    "category": "远山鲜沏",
+    "confidence": "official",
+    "source": "霸王茶姬官方小程序+消费者报道（原值149.6mg）",
+    "aliases": [
+      "扶摇起"
+    ]
+  },
+  "霸王茶姬_东美人": {
+    "caffeine_mg": 99,
+    "brand": "霸王茶姬",
+    "product_name": "东美人",
+    "size_ml": 500,
+    "size_label": "中杯",
+    "category": "远山鲜沏",
+    "confidence": "official",
+    "source": "霸王茶姬官方小程序+消费者报道",
+    "aliases": [
+      "东美人"
+    ]
+  },
+  "霸王茶姬_观音韵": {
+    "caffeine_mg": 126,
+    "brand": "霸王茶姬",
+    "product_name": "观音韵",
+    "size_ml": 500,
+    "size_label": "中杯",
+    "category": "远山鲜沏",
+    "confidence": "official",
+    "source": "霸王茶姬官方小程序+消费者报道（原值125.5mg）",
+    "aliases": [
+      "观音韵"
+    ]
+  },
+  "霸王茶姬_观音翠": {
+    "caffeine_mg": 96,
+    "brand": "霸王茶姬",
+    "product_name": "观音翠",
+    "size_ml": 500,
+    "size_label": "中杯",
+    "category": "远山鲜沏",
+    "confidence": "official",
+    "source": "霸王茶姬官方小程序+消费者报道（原值95.6mg）",
+    "aliases": [
+      "观音翠"
+    ]
+  },
+  "霸王茶姬_大红袍茶拿铁": {
+    "caffeine_mg": 100,
+    "brand": "霸王茶姬",
+    "product_name": "大红袍茶拿铁",
+    "size_ml": 360,
+    "size_label": "标准杯",
+    "category": "极萃茶拿铁",
+    "confidence": "official",
+    "source": "霸王茶姬官方小程序+消费者报道（原值100.1mg）",
+    "aliases": [
+      "大红袍茶拿铁",
+      "大红袍拿铁霸王茶姬"
+    ]
+  },
+  "霸王茶姬_陈柑普洱茶拿铁": {
+    "caffeine_mg": 138,
+    "brand": "霸王茶姬",
+    "product_name": "陈柑普洱茶拿铁",
+    "size_ml": 360,
+    "size_label": "标准杯",
+    "category": "极萃茶拿铁",
+    "confidence": "official",
+    "source": "霸王茶姬官方小程序+消费者报道（原值137.9mg）",
+    "aliases": [
+      "陈柑普洱茶拿铁",
+      "陈柑普洱拿铁"
+    ]
+  },
+  "霸王茶姬_正山小种茶拿铁": {
+    "caffeine_mg": 96,
+    "brand": "霸王茶姬",
+    "product_name": "正山小种茶拿铁",
+    "size_ml": 360,
+    "size_label": "标准杯",
+    "category": "极萃茶拿铁",
+    "confidence": "official",
+    "source": "霸王茶姬官方小程序+消费者报道（原值95.8mg）",
+    "aliases": [
+      "正山小种茶拿铁",
+      "正山小种拿铁"
+    ]
+  },
+  "霸王茶姬_焦糖大红袍普茶冰川": {
+    "caffeine_mg": 92,
+    "brand": "霸王茶姬",
+    "product_name": "焦糖大红袍普茶冰川",
+    "size_ml": 360,
+    "size_label": "小杯",
+    "category": "极萃茶冰川",
+    "confidence": "official",
+    "source": "霸王茶姬官方小程序+消费者报道（原值91.5mg）",
+    "aliases": [
+      "焦糖大红袍普茶冰川"
+    ]
+  },
+  "霸王茶姬_奥利奥柑普茶冰川": {
+    "caffeine_mg": 161,
+    "brand": "霸王茶姬",
+    "product_name": "奥利奥柑普茶冰川",
+    "size_ml": 500,
+    "size_label": "标准杯",
+    "category": "极萃茶冰川",
+    "confidence": "official",
+    "source": "霸王茶姬官方小程序+消费者报道",
+    "aliases": [
+      "奥利奥柑普茶冰川"
+    ]
+  },
+  "霸王茶姬_七萱茉莉茜芽": {
+    "caffeine_mg": 46,
+    "brand": "霸王茶姬",
+    "product_name": "七萱·茉莉茜芽",
+    "size_ml": 500,
+    "size_label": "标准杯",
+    "category": "东方冰茶",
+    "confidence": "official",
+    "source": "霸王茶姬官方小程序+消费者报道（原值45.5mg）",
+    "aliases": [
+      "七萱茉莉茜芽",
+      "茉莉茜芽"
+    ]
+  },
+  "霸王茶姬_轻醇金桂乌龙": {
+    "caffeine_mg": 22,
+    "brand": "霸王茶姬",
+    "product_name": "轻醇·金桂乌龙",
+    "size_ml": 500,
+    "size_label": "标准杯",
+    "category": "东方冰茶",
+    "confidence": "official",
+    "source": "霸王茶姬官方小程序+消费者报道（原值21.9mg）",
+    "aliases": [
+      "轻醇金桂乌龙",
+      "金桂乌龙霸王茶姬"
+    ]
+  },
+  "霸王茶姬_慢焙金观音": {
+    "caffeine_mg": 45,
+    "brand": "霸王茶姬",
+    "product_name": "慢焙·金观音",
+    "size_ml": 500,
+    "size_label": "标准杯",
+    "category": "东方冰茶",
+    "confidence": "official",
+    "source": "霸王茶姬官方小程序+消费者报道（原值45.2mg）",
+    "aliases": [
+      "慢焙金观音",
+      "金观音霸王茶姬"
+    ]
+  },
+  "霸王茶姬_生晒陈柑普洱": {
+    "caffeine_mg": 75,
+    "brand": "霸王茶姬",
+    "product_name": "生晒·陈柑普洱",
+    "size_ml": 500,
+    "size_label": "标准杯",
+    "category": "东方冰茶",
+    "confidence": "official",
+    "source": "霸王茶姬官方小程序+消费者报道（原值74.6mg）",
+    "aliases": [
+      "生晒陈柑普洱",
+      "陈柑普洱东方冰茶"
+    ]
+  },
+  "霸王茶姬_混搭精选绿茶": {
+    "caffeine_mg": 32,
+    "brand": "霸王茶姬",
+    "product_name": "混搭·精选绿茶",
+    "size_ml": 500,
+    "size_label": "标准杯",
+    "category": "东方冰茶",
+    "confidence": "official",
+    "source": "霸王茶姬官方小程序+消费者报道（原值31.8mg）",
+    "aliases": [
+      "混搭精选绿茶"
+    ]
+  },
+  "霸王茶姬_浮光映橘橙": {
+    "caffeine_mg": 31,
+    "brand": "霸王茶姬",
+    "product_name": "浮光映橘橙",
+    "size_ml": 470,
+    "size_label": "中杯",
+    "category": "原叶特调茶",
+    "confidence": "official",
+    "source": "霸王茶姬官方小程序+消费者报道（原值30.8mg）",
+    "aliases": [
+      "浮光映橘橙"
+    ]
+  },
+  "霸王茶姬_赤玉酌红袍": {
+    "caffeine_mg": 39,
+    "brand": "霸王茶姬",
+    "product_name": "赤玉酌红袍",
+    "size_ml": 500,
+    "size_label": "中杯",
+    "category": "原叶特调茶",
+    "confidence": "official",
+    "source": "霸王茶姬官方小程序+消费者报道（原值38.6mg）",
+    "aliases": [
+      "赤玉酌红袍"
+    ]
+  },
   "喜茶_奶茶波波冰": {
     "caffeine_mg": 178,
     "brand": "喜茶",
@@ -317,7 +1226,10 @@
     "confidence": "tested",
     "source": "深圳市消委会2019年珍珠奶茶比较试验检测数据",
     "heytea_traffic_light": "🔴红灯(>100mg)",
-    "aliases": ["喜茶奶茶波波冰", "波波冰喜茶"]
+    "aliases": [
+      "喜茶奶茶波波冰",
+      "波波冰喜茶"
+    ]
   },
   "喜茶_多肉葡萄": {
     "caffeine_mg": 35,
@@ -330,7 +1242,11 @@
     "confidence": "reported",
     "source": "喜茶2024咖啡因红绿灯标识：绿灯(<50mg)",
     "heytea_traffic_light": "🟢绿灯(<50mg)",
-    "aliases": ["喜茶葡萄", "多肉葡萄", "HEYTEA多肉葡萄"]
+    "aliases": [
+      "喜茶葡萄",
+      "多肉葡萄",
+      "HEYTEA多肉葡萄"
+    ]
   },
   "喜茶_芝芝绿妍茶后": {
     "caffeine_mg": 75,
@@ -343,7 +1259,10 @@
     "confidence": "reported",
     "source": "喜茶2024咖啡因红绿灯标识：黄灯(50-100mg)，取区间中值",
     "heytea_traffic_light": "🟡黄灯(50-100mg)",
-    "aliases": ["芝芝绿妍", "绿妍茶后喜茶"]
+    "aliases": [
+      "芝芝绿妍",
+      "绿妍茶后喜茶"
+    ]
   },
   "喜茶_轻乳茶": {
     "caffeine_mg": 110,
@@ -356,9 +1275,10 @@
     "confidence": "reported",
     "source": "喜茶2024咖啡因红绿灯标识：红灯(>100mg)；茶百道轻乳茶参比",
     "heytea_traffic_light": "🔴红灯(>100mg)",
-    "aliases": ["喜茶轻乳茶"]
+    "aliases": [
+      "喜茶轻乳茶"
+    ]
   },
-
   "奈雪_冻顶宝藏茶": {
     "caffeine_mg": 136,
     "brand": "奈雪的茶",
@@ -369,7 +1289,11 @@
     "tea_base": "冻顶乌龙",
     "confidence": "tested",
     "source": "深圳市消委会2019年检测，奈雪官方回应确认数值",
-    "aliases": ["冻顶宝藏茶", "奈雪冻顶", "Nayuki冻顶宝藏茶"]
+    "aliases": [
+      "冻顶宝藏茶",
+      "奈雪冻顶",
+      "Nayuki冻顶宝藏茶"
+    ]
   },
   "奈雪_鸭屎香柠茶": {
     "caffeine_mg": 65,
@@ -381,9 +1305,11 @@
     "tea_base": "鸭屎香单丛乌龙",
     "confidence": "estimated",
     "source": "单丛乌龙咖啡因较高，参照广西消委会奶茶均值估算",
-    "aliases": ["鸭屎香柠茶", "奈雪鸭屎香"]
+    "aliases": [
+      "鸭屎香柠茶",
+      "奈雪鸭屎香"
+    ]
   },
-
   "蜜雪冰城_珍珠奶茶": {
     "caffeine_mg": 50,
     "brand": "蜜雪冰城",
@@ -394,7 +1320,10 @@
     "tea_base": "红茶",
     "confidence": "tested",
     "source": "广西消委会2022年测评，蜜雪在39-134mg/500g区间，取中位值",
-    "aliases": ["蜜雪珍珠奶茶", "蜜雪冰城奶茶"]
+    "aliases": [
+      "蜜雪珍珠奶茶",
+      "蜜雪冰城奶茶"
+    ]
   },
   "蜜雪冰城_柠檬水": {
     "caffeine_mg": 0,
@@ -405,7 +1334,11 @@
     "category": "果饮",
     "confidence": "official",
     "source": "无茶/咖啡成分",
-    "aliases": ["蜜雪柠檬水", "冰鲜柠檬水", "蜜雪冰城柠檬"]
+    "aliases": [
+      "蜜雪柠檬水",
+      "冰鲜柠檬水",
+      "蜜雪冰城柠檬"
+    ]
   },
   "蜜雪冰城_冰鲜柠檬茶": {
     "caffeine_mg": 25,
@@ -417,9 +1350,11 @@
     "tea_base": "绿茶",
     "confidence": "estimated",
     "source": "广西消委会区间下沿+绿茶底推算",
-    "aliases": ["蜜雪柠檬茶", "冰鲜柠檬茶"]
+    "aliases": [
+      "蜜雪柠檬茶",
+      "冰鲜柠檬茶"
+    ]
   },
-
   "CoCo_珍珠奶茶_中杯": {
     "caffeine_mg": 65,
     "brand": "CoCo都可",
@@ -431,7 +1366,11 @@
     "confidence": "tested",
     "source": "深圳消委会2019年检测品牌之一，广西消委会2022年含CoCo，700ml杯量修正",
     "notes": "CoCo都可标准杯为700ml，大于多数品牌500ml",
-    "aliases": ["CoCo珍珠奶茶", "coco奶茶", "CoCo都可珍珠"]
+    "aliases": [
+      "CoCo珍珠奶茶",
+      "coco奶茶",
+      "CoCo都可珍珠"
+    ]
   },
   "CoCo_多多绿_中杯": {
     "caffeine_mg": 42,
@@ -443,7 +1382,10 @@
     "tea_base": "绿茶",
     "confidence": "estimated",
     "source": "绿茶底+700ml推算",
-    "aliases": ["多多绿", "CoCo多多绿"]
+    "aliases": [
+      "多多绿",
+      "CoCo多多绿"
+    ]
   },
   "CoCo_四季春奶茶_中杯": {
     "caffeine_mg": 58,
@@ -455,9 +1397,11 @@
     "tea_base": "四季春乌龙",
     "confidence": "estimated",
     "source": "四季春乌龙+700ml推算",
-    "aliases": ["CoCo四季春", "四季春奶茶CoCo"]
+    "aliases": [
+      "CoCo四季春",
+      "四季春奶茶CoCo"
+    ]
   },
-
   "一点点_珍珠奶茶": {
     "caffeine_mg": 60,
     "brand": "一点点",
@@ -468,7 +1412,10 @@
     "tea_base": "红茶",
     "confidence": "tested",
     "source": "深圳消委会2019年检测品牌之一，广西消委会2022年含一点点",
-    "aliases": ["一点点珍珠奶茶", "一点点奶茶"]
+    "aliases": [
+      "一点点珍珠奶茶",
+      "一点点奶茶"
+    ]
   },
   "一点点_四季春奶绿": {
     "caffeine_mg": 55,
@@ -480,7 +1427,11 @@
     "tea_base": "四季春乌龙",
     "confidence": "estimated",
     "source": "四季春乌龙+500ml推算",
-    "aliases": ["四季春奶绿", "一点点奶绿", "一点点四季春"]
+    "aliases": [
+      "四季春奶绿",
+      "一点点奶绿",
+      "一点点四季春"
+    ]
   },
   "一点点_波霸奶茶": {
     "caffeine_mg": 70,
@@ -492,9 +1443,11 @@
     "tea_base": "红茶",
     "confidence": "estimated",
     "source": "红茶底+700ml大杯推算",
-    "aliases": ["一点点波霸", "波霸奶茶一点点"]
+    "aliases": [
+      "一点点波霸",
+      "波霸奶茶一点点"
+    ]
   },
-
   "茶百道_乌龙拿铁": {
     "caffeine_mg": 52,
     "brand": "茶百道",
@@ -505,7 +1458,10 @@
     "tea_base": "乌龙茶",
     "confidence": "estimated",
     "source": "广西消委会2022含茶百道，区间39-134mg，乌龙底取偏中值",
-    "aliases": ["茶百道乌龙", "茶百道乌龙拿铁"]
+    "aliases": [
+      "茶百道乌龙",
+      "茶百道乌龙拿铁"
+    ]
   },
   "茶百道_茉莉奶绿": {
     "caffeine_mg": 28,
@@ -517,7 +1473,10 @@
     "tea_base": "茉莉绿茶",
     "confidence": "estimated",
     "source": "茉莉绿茶底（低咖啡因），广西消委会区间下沿参考",
-    "aliases": ["茶百道茉莉奶绿", "茶百道奶绿"]
+    "aliases": [
+      "茶百道茉莉奶绿",
+      "茶百道奶绿"
+    ]
   },
   "茶百道_轻乳茶": {
     "caffeine_mg": 65,
@@ -529,9 +1488,10 @@
     "tea_base": "乌龙/绿茶",
     "confidence": "reported",
     "source": "媒体报道：茶百道轻乳茶咖啡因不超过普通拿铁的2/3，参照拿铁均值",
-    "aliases": ["茶百道轻乳茶"]
+    "aliases": [
+      "茶百道轻乳茶"
+    ]
   },
-
   "古茗_乌龙奶茶": {
     "caffeine_mg": 55,
     "brand": "古茗",
@@ -542,7 +1502,10 @@
     "tea_base": "乌龙茶",
     "confidence": "estimated",
     "source": "乌龙茶底+500ml推算，广西消委会均值参考",
-    "aliases": ["古茗乌龙", "古茗乌龙奶茶"]
+    "aliases": [
+      "古茗乌龙",
+      "古茗乌龙奶茶"
+    ]
   },
   "古茗_茉莉奶茶": {
     "caffeine_mg": 28,
@@ -554,9 +1517,11 @@
     "tea_base": "茉莉绿茶",
     "confidence": "estimated",
     "source": "茉莉绿茶底推算",
-    "aliases": ["古茗茉莉", "古茗茉莉奶茶"]
+    "aliases": [
+      "古茗茉莉",
+      "古茗茉莉奶茶"
+    ]
   },
-
   "沪上阿姨_黑糖珍珠鲜奶": {
     "caffeine_mg": 65,
     "brand": "沪上阿姨",
@@ -567,9 +1532,11 @@
     "tea_base": "红茶",
     "confidence": "estimated",
     "source": "红茶底+500ml，参照广西消委会检测均值",
-    "aliases": ["沪上阿姨黑糖", "黑糖珍珠鲜奶"]
+    "aliases": [
+      "沪上阿姨黑糖",
+      "黑糖珍珠鲜奶"
+    ]
   },
-
   "书亦烧仙草_奶茶": {
     "caffeine_mg": 22,
     "brand": "书亦烧仙草",
@@ -580,35 +1547,11 @@
     "tea_base": "绿茶（少量）",
     "confidence": "estimated",
     "source": "仙草本身无咖啡因，少量绿茶底，广西消委会测评含书亦，区间下沿参考",
-    "aliases": ["书亦烧仙草", "烧仙草奶茶"]
+    "aliases": [
+      "书亦烧仙草",
+      "烧仙草奶茶"
+    ]
   },
-
-  "茶颜悦色_幽兰拿铁": {
-    "caffeine_mg": 55,
-    "brand": "茶颜悦色",
-    "product_name": "幽兰拿铁",
-    "size_ml": 400,
-    "size_label": "中杯",
-    "category": "奶茶",
-    "tea_base": "绿茶",
-    "confidence": "estimated",
-    "source": "茶颜悦色使用原叶茶，媒体报道其咖啡因偏高，400ml杯量+绿茶底推算",
-    "notes": "消费者报告称晚上喝茶颜整夜不眠，估算值可能偏低",
-    "aliases": ["幽兰拿铁", "茶颜幽兰", "茶颜悦色幽兰"]
-  },
-  "茶颜悦色_声声乌龙": {
-    "caffeine_mg": 62,
-    "brand": "茶颜悦色",
-    "product_name": "声声乌龙",
-    "size_ml": 400,
-    "size_label": "中杯",
-    "category": "奶茶",
-    "tea_base": "乌龙茶",
-    "confidence": "estimated",
-    "source": "乌龙茶底+400ml推算",
-    "aliases": ["声声乌龙", "茶颜乌龙"]
-  },
-
   "茉莉奶白_茉莉白奶茶": {
     "caffeine_mg": 25,
     "brand": "茉莉奶白",
@@ -620,7 +1563,10 @@
     "confidence": "estimated",
     "source": "茉莉奶白主打茉莉鲜奶茶，茉莉绿茶底咖啡因低",
     "notes": "茉莉奶白定位鲜奶茶赛道，强调原叶茉莉花茶，咖啡因含量普遍偏低",
-    "aliases": ["茉莉奶白", "茉莉白奶茶"]
+    "aliases": [
+      "茉莉奶白",
+      "茉莉白奶茶"
+    ]
   },
   "茉莉奶白_茉莉绿": {
     "caffeine_mg": 30,
@@ -632,9 +1578,11 @@
     "tea_base": "茉莉绿茶",
     "confidence": "estimated",
     "source": "茉莉绿茶底推算",
-    "aliases": ["茉莉奶白茉莉绿", "茉莉绿茶茉莉奶白"]
+    "aliases": [
+      "茉莉奶白茉莉绿",
+      "茉莉绿茶茉莉奶白"
+    ]
   },
-
   "卡旺卡_桑葚酸奶奶昔": {
     "caffeine_mg": 1,
     "brand": "卡旺卡",
@@ -643,7 +1591,10 @@
     "tea_base": "无",
     "confidence": "official",
     "source": "卡旺卡微信小程序成分分析页（官方公布）",
-    "aliases": ["卡旺卡桑葚酸奶奶昔", "桑葚酸奶奶昔"]
+    "aliases": [
+      "卡旺卡桑葚酸奶奶昔",
+      "桑葚酸奶奶昔"
+    ]
   },
   "卡旺卡_手剥桑葚": {
     "caffeine_mg": 25,
@@ -653,7 +1604,10 @@
     "tea_base": "茉莉茶",
     "confidence": "official",
     "source": "卡旺卡微信小程序成分分析页（官方公布，原值25.47mg）",
-    "aliases": ["卡旺卡手剥桑葚", "手剥桑葚"]
+    "aliases": [
+      "卡旺卡手剥桑葚",
+      "手剥桑葚"
+    ]
   },
   "卡旺卡_桂花酸奶": {
     "caffeine_mg": 0,
@@ -663,7 +1617,10 @@
     "tea_base": "无",
     "confidence": "official",
     "source": "卡旺卡微信小程序成分分析页（官方公布）",
-    "aliases": ["卡旺卡桂花酸奶", "桂花酸奶"]
+    "aliases": [
+      "卡旺卡桂花酸奶",
+      "桂花酸奶"
+    ]
   },
   "卡旺卡_杨枝甘露": {
     "caffeine_mg": 0,
@@ -673,7 +1630,10 @@
     "tea_base": "无",
     "confidence": "official",
     "source": "卡旺卡微信小程序成分分析页（官方公布）",
-    "aliases": ["卡旺卡杨枝甘露", "杨枝甘露"]
+    "aliases": [
+      "卡旺卡杨枝甘露",
+      "杨枝甘露"
+    ]
   },
   "卡旺卡_芒果酸奶奶昔": {
     "caffeine_mg": 0,
@@ -683,7 +1643,10 @@
     "tea_base": "无",
     "confidence": "official",
     "source": "卡旺卡微信小程序成分分析页（官方公布）",
-    "aliases": ["卡旺卡芒果酸奶奶昔", "芒果酸奶奶昔"]
+    "aliases": [
+      "卡旺卡芒果酸奶奶昔",
+      "芒果酸奶奶昔"
+    ]
   },
   "卡旺卡_桂花酒酿小丸子": {
     "caffeine_mg": 22,
@@ -693,7 +1656,10 @@
     "tea_base": "桂花乌龙茶",
     "confidence": "official",
     "source": "卡旺卡微信小程序成分分析页（官方公布，原值21.5mg）",
-    "aliases": ["卡旺卡桂花酒酿小丸子", "桂花酒酿小丸子"]
+    "aliases": [
+      "卡旺卡桂花酒酿小丸子",
+      "桂花酒酿小丸子"
+    ]
   },
   "卡旺卡_茉莉小丸子": {
     "caffeine_mg": 65,
@@ -703,7 +1669,10 @@
     "tea_base": "白毫茉莉茶",
     "confidence": "official",
     "source": "卡旺卡微信小程序成分分析页（官方公布，原值64.92mg）",
-    "aliases": ["卡旺卡茉莉小丸子", "茉莉小丸子"]
+    "aliases": [
+      "卡旺卡茉莉小丸子",
+      "茉莉小丸子"
+    ]
   },
   "卡旺卡_全套奶茶": {
     "caffeine_mg": 69,
@@ -714,7 +1683,11 @@
     "confidence": "official",
     "source": "卡旺卡微信小程序成分分析页（官方公布，原值69.48mg）",
     "notes": "卡旺卡经典款，0奶精0植脂末0脂肪酸，现煮奶茶",
-    "aliases": ["卡旺卡全套奶茶", "全套奶茶", "卡旺卡招牌奶茶"]
+    "aliases": [
+      "卡旺卡全套奶茶",
+      "全套奶茶",
+      "卡旺卡招牌奶茶"
+    ]
   },
   "卡旺卡_红豆奶茶": {
     "caffeine_mg": 92,
@@ -724,7 +1697,10 @@
     "tea_base": "红茶",
     "confidence": "official",
     "source": "卡旺卡微信小程序成分分析页（官方公布，原值91.67mg）",
-    "aliases": ["卡旺卡红豆奶茶", "红豆奶茶"]
+    "aliases": [
+      "卡旺卡红豆奶茶",
+      "红豆奶茶"
+    ]
   },
   "卡旺卡_满满百香果": {
     "caffeine_mg": 90,
@@ -734,7 +1710,10 @@
     "tea_base": "白毫茉莉茶",
     "confidence": "official",
     "source": "卡旺卡微信小程序成分分析页（官方公布，原值90.19mg）",
-    "aliases": ["卡旺卡满满百香果", "满满百香果"]
+    "aliases": [
+      "卡旺卡满满百香果",
+      "满满百香果"
+    ]
   },
   "卡旺卡_满满橙意茶": {
     "caffeine_mg": 94,
@@ -744,7 +1723,10 @@
     "tea_base": "清韵观音茶（乌龙）",
     "confidence": "official",
     "source": "卡旺卡微信小程序成分分析页（官方公布，原值93.93mg）",
-    "aliases": ["卡旺卡满满橙意茶", "满满橙意茶"]
+    "aliases": [
+      "卡旺卡满满橙意茶",
+      "满满橙意茶"
+    ]
   },
   "卡旺卡_蜜桃乌龙": {
     "caffeine_mg": 109,
@@ -754,7 +1736,10 @@
     "tea_base": "白桃乌龙茶",
     "confidence": "official",
     "source": "卡旺卡微信小程序成分分析页（官方公布，原值109.1mg）",
-    "aliases": ["卡旺卡蜜桃乌龙", "蜜桃乌龙"]
+    "aliases": [
+      "卡旺卡蜜桃乌龙",
+      "蜜桃乌龙"
+    ]
   },
   "卡旺卡_抹茶生椰麻薯": {
     "caffeine_mg": 60,
@@ -764,7 +1749,10 @@
     "tea_base": "抹茶液（春时鸠坑茶+龙井茶研磨）",
     "confidence": "estimated",
     "source": "小程序仅显示配料（抹茶液+椰乳+厚乳），无咖啡因实测值，按抹茶含量推算",
-    "aliases": ["卡旺卡抹茶生椰麻薯", "抹茶生椰麻薯"]
+    "aliases": [
+      "卡旺卡抹茶生椰麻薯",
+      "抹茶生椰麻薯"
+    ]
   },
   "卡旺卡_抹茶爽": {
     "caffeine_mg": 65,
@@ -774,7 +1762,10 @@
     "tea_base": "抹茶液（春时鸠坑茶+龙井茶研磨）",
     "confidence": "estimated",
     "source": "小程序仅显示配料（抹茶液+牛奶+厚乳+红豆），无咖啡因实测值，按抹茶含量推算",
-    "aliases": ["卡旺卡抹茶爽", "抹茶爽"]
+    "aliases": [
+      "卡旺卡抹茶爽",
+      "抹茶爽"
+    ]
   },
   "卡旺卡_茉莉绿雪": {
     "caffeine_mg": 45,
@@ -784,7 +1775,10 @@
     "tea_base": "茉莉绿茶+抹茶奶芙",
     "confidence": "estimated",
     "source": "小程序仅显示配料（茉莉绿茶+纯牛奶+厚乳+抹茶奶芙），无咖啡因实测值，按茶底推算",
-    "aliases": ["卡旺卡茉莉绿雪", "茉莉绿雪"]
+    "aliases": [
+      "卡旺卡茉莉绿雪",
+      "茉莉绿雪"
+    ]
   },
   "卡旺卡_黑全套奶茶": {
     "caffeine_mg": 70,
@@ -795,9 +1789,12 @@
     "confidence": "estimated",
     "source": "小程序仅显示配料（奶茶液+黑米爆珠+黑糖布丁+芋圆），无咖啡因实测值，参照全套奶茶69mg估算",
     "notes": "卡旺卡招牌产品，红茶底，料更多",
-    "aliases": ["卡旺卡黑全套奶茶", "黑全套奶茶", "卡旺卡黑全套"]
+    "aliases": [
+      "卡旺卡黑全套奶茶",
+      "黑全套奶茶",
+      "卡旺卡黑全套"
+    ]
   },
-
   "茶话弄_奶茶": {
     "caffeine_mg": 55,
     "brand": "茶话弄",
@@ -809,9 +1806,11 @@
     "confidence": "estimated",
     "source": "⚠️ 网络公开资料极少，参考广西消委会2022年30款奶茶均值估算，误差极大",
     "notes": "茶话弄属精品小众品牌，主打地方特色，官方数据完全缺失",
-    "aliases": ["茶话弄奶茶", "茶话弄"]
+    "aliases": [
+      "茶话弄奶茶",
+      "茶话弄"
+    ]
   },
-
   "红牛_250ml": {
     "caffeine_mg": 80,
     "brand": "红牛",
@@ -821,7 +1820,11 @@
     "category": "功能饮料",
     "confidence": "official",
     "source": "产品标签",
-    "aliases": ["红牛", "Red Bull", "红牛功能饮料"]
+    "aliases": [
+      "红牛",
+      "Red Bull",
+      "红牛功能饮料"
+    ]
   },
   "Monster_绿罐": {
     "caffeine_mg": 160,
@@ -832,7 +1835,12 @@
     "category": "功能饮料",
     "confidence": "official",
     "source": "产品标签",
-    "aliases": ["Monster", "怪兽饮料", "Monster绿罐", "魔爪"]
+    "aliases": [
+      "Monster",
+      "怪兽饮料",
+      "Monster绿罐",
+      "魔爪"
+    ]
   },
   "东方树叶_绿茶": {
     "caffeine_mg": 35,
@@ -844,7 +1852,10 @@
     "tea_base": "绿茶",
     "confidence": "reported",
     "source": "农夫山泉官网+媒体测评",
-    "aliases": ["东方树叶", "东方树叶绿茶"]
+    "aliases": [
+      "东方树叶",
+      "东方树叶绿茶"
+    ]
   },
   "东方树叶_乌龙茶": {
     "caffeine_mg": 45,
@@ -856,7 +1867,9 @@
     "tea_base": "乌龙茶",
     "confidence": "reported",
     "source": "农夫山泉官网",
-    "aliases": ["东方树叶乌龙"]
+    "aliases": [
+      "东方树叶乌龙"
+    ]
   },
   "东方树叶_红茶": {
     "caffeine_mg": 55,
@@ -868,7 +1881,9 @@
     "tea_base": "红茶",
     "confidence": "reported",
     "source": "农夫山泉官网",
-    "aliases": ["东方树叶红茶"]
+    "aliases": [
+      "东方树叶红茶"
+    ]
   },
   "可口可乐_355ml": {
     "caffeine_mg": 34,
@@ -879,7 +1894,12 @@
     "category": "碳酸饮料",
     "confidence": "official",
     "source": "可口可乐官网营养成分",
-    "aliases": ["可乐", "可口可乐", "Coca-Cola", "冰可乐"]
+    "aliases": [
+      "可乐",
+      "可口可乐",
+      "Coca-Cola",
+      "冰可乐"
+    ]
   },
   "元气森林_气泡水": {
     "caffeine_mg": 0,
@@ -890,6 +1910,2599 @@
     "category": "气泡水",
     "confidence": "official",
     "source": "无咖啡因成分",
-    "aliases": ["元气森林", "气泡水", "元气森林气泡水"]
+    "aliases": [
+      "元气森林",
+      "气泡水",
+      "元气森林气泡水"
+    ]
+  },
+  "霸王茶姬_轻因·伯牙绝弦_大杯": {
+    "caffeine_mg": 53,
+    "brand": "霸王茶姬",
+    "product_name": "轻因·伯牙绝弦",
+    "size_ml": 580,
+    "size_label": "大杯/标准冰/标准糖",
+    "category": "轻乳茶(脱咖啡因/轻因系列)",
+    "confidence": "official",
+    "source": "霸王茶姬官方海报披露(2025-03-21轻因系列首发);新浪/新华网/餐饮O2O多源援引官方",
+    "aliases": [
+      "轻因伯牙绝弦",
+      "Light Caffeine Bo Ya Jue Xian",
+      "轻因版伯牙绝弦"
+    ],
+    "original_unit": "mg/cup",
+    "dosing_model": "fill_to_line",
+    "source_url": "https://finance.sina.com.cn/jjxw/2025-03-21/doc-ineqkqsv7074433.shtml",
+    "notes": "已核实:2025-03-21官方首推,CO₂超临界萃取脱咖,大杯53mg,较经典版117mg降约50%。独立检索另见「约55mg」表述(口径四舍五入),53mg为官方标准款值,合理(<300mg)。dosing_model=fill_to_line,去冰/少冰补茶汤会升高。"
+  },
+  "霸王茶姬_轻因·花田乌龙_标准杯": {
+    "caffeine_mg": 39,
+    "brand": "霸王茶姬",
+    "product_name": "轻因·花田乌龙",
+    "size_ml": 580,
+    "size_label": "标准杯(官方未明示杯型,推测大杯)",
+    "category": "轻乳茶(脱咖啡因/轻因系列)",
+    "confidence": "official",
+    "source": "霸王茶姬官方披露,2025-05(国际茶日)上新;CBNData/百度百科援引",
+    "aliases": [
+      "轻因花田乌龙",
+      "Light Caffeine Garden Oolong",
+      "轻因版花田乌龙"
+    ],
+    "original_unit": "mg/cup",
+    "dosing_model": "fill_to_line",
+    "source_url": "https://www.cbndata.com/information/293798",
+    "notes": "已核实:39mg为官方公示逐杯值,较经典花田乌龙约89.2mg降约50%。官方未明示对应杯型,size_ml=580为推测,若实为中杯则数值口径偏高,存在不确定性。39mg数值本身可信,杯型绑定不确定。dosing_model=fill_to_line。"
+  },
+  "霸王茶姬_伯牙绝弦_大杯": {
+    "caffeine_mg": 117.2,
+    "brand": "霸王茶姬",
+    "product_name": "伯牙绝弦",
+    "size_ml": 580,
+    "size_label": "大杯",
+    "category": "轻乳茶(常规版,抽查)",
+    "confidence": "tested",
+    "source": "霸王茶姬官方小程序「产品身份证」逐杯公示;媒体援引(多源表述为约117mg)",
+    "aliases": [
+      "Bo Ya Jue Xian",
+      "经典伯牙绝弦",
+      "茉莉雪芽轻乳茶"
+    ],
+    "original_unit": "mg/cup",
+    "dosing_model": "fill_to_line",
+    "source_url": "https://www.cbndata.com/information/294833",
+    "notes": "已核实:多来源一致约117mg(<300mg合理)。0.2精度疑来自单一公示截图,confidence由official降为tested以反映精度不确定。另有香港官网中杯105.8mg、消委会中杯(470ml)茶香款103.9mg,差异源于杯型/口味。dosing_model=fill_to_line。"
+  },
+  "霸王茶姬_万里木兰_大杯": {
+    "caffeine_mg": 184.4,
+    "brand": "霸王茶姬",
+    "product_name": "万里木兰",
+    "size_ml": 580,
+    "size_label": "大杯",
+    "category": "轻乳茶(常规版,抽查)",
+    "confidence": "tested",
+    "source": "霸王茶姬「产品身份证」成分表咖啡因31.8mg/100ml;媒体援引官方数据",
+    "aliases": [
+      "Wan Li Mu Lan",
+      "万里木兰轻乳茶"
+    ],
+    "original_unit": "mg/100ml",
+    "dosing_model": "fill_to_line",
+    "source_url": "https://www.cbndata.com/information/294833",
+    "notes": "已核实换算:31.8mg/100ml × 580ml = 184.4mg,数学吻合(<300mg合理)。original_unit由mg/cup改为mg/100ml以如实反映该值实为浓度推算而非官方逐杯整数,confidence相应由official降tested。注意并行数据:235mg(大杯热饮满杯不加糖)、消委会中杯(470ml)149.5mg。dosing_model=fill_to_line,热饮满杯显著升高。"
+  },
+  "奈雪的茶_冻顶宝藏茶_标准杯": {
+    "caffeine_mg": 136,
+    "brand": "奈雪的茶",
+    "product_name": "冻顶宝藏茶",
+    "size_ml": null,
+    "size_label": "标准杯(原测评未注明杯型)",
+    "category": "奶盖茶/宝藏茶",
+    "confidence": "reported",
+    "source": "2019年新式茶饮咖啡因测评，奈雪官方回应援引(媒体报道，相当于约2.7罐红牛)。注:为第三方测评+官方回应，介于tested/reported，取reported更稳妥",
+    "aliases": [
+      "宝藏茶",
+      "冻顶乌龙宝藏茶"
+    ],
+    "original_unit": "mg/cup",
+    "dosing_model": "unknown",
+    "source_url": "https://m.thepaper.cn/newsDetail_forward_4767103",
+    "notes": "奈雪唯一接近可采信的逐杯咖啡因数据(官方对第三方测评的回应)。原报道未注明杯型容量,size_ml留空,故无法核验浓度。乌龙茶底,咖啡因偏高。降级tested→reported:并非奈雪官方逐杯主动公示。"
+  },
+  "奈雪的茶_冰美式(0添加美式)_按500ml估": {
+    "caffeine_mg": 215,
+    "brand": "奈雪的茶",
+    "product_name": "冰美式(0添加美式)",
+    "size_ml": 500,
+    "size_label": "按500ml估(杯型未核实,大杯可达660ml)",
+    "category": "咖啡",
+    "confidence": "estimated",
+    "source": "深圳市消委会2024现制咖啡比较试验(奈雪为受测品牌之一,但未公开其单款mg/kg);此处借用冰美式品类跨品牌均值429.9 mg/kg×0.5L估算",
+    "aliases": [
+      "奈雪冰美式",
+      "美式咖啡"
+    ],
+    "original_unit": "mg/kg",
+    "dosing_model": "unknown",
+    "source_url": "https://www.sznews.com/news/content/2024-05/06/content_30917604.htm",
+    "notes": "估算值,非奈雪实测。换算:429.9 mg/kg×0.5L=214.95≈215mg,算术正确;但所用浓度为12款均值而非奈雪个体,且500ml为假设杯型——若按大杯660ml则≈284mg。不确定性大(±50mg以上),仅供量级参考。消委会全样本浓度区间164–563 mg/kg。"
+  },
+  "奈雪的茶_冰拿铁(生椰/原味拿铁等特调咖啡)_按500ml估": {
+    "caffeine_mg": 178,
+    "brand": "奈雪的茶",
+    "product_name": "冰拿铁(生椰/原味拿铁等特调咖啡)",
+    "size_ml": 500,
+    "size_label": "按500ml估(杯型未核实)",
+    "category": "咖啡",
+    "confidence": "estimated",
+    "source": "深圳市消委会2024现制咖啡比较试验;借用冰拿铁品类跨品牌均值356.8 mg/kg×0.5L估算",
+    "aliases": [
+      "拿铁",
+      "奈雪拿铁"
+    ],
+    "original_unit": "mg/kg",
+    "dosing_model": "unknown",
+    "source_url": "https://www.sznews.com/news/content/2024-05/06/content_30917604.htm",
+    "notes": "估算值,非奈雪实测。换算:356.8 mg/kg×0.5L=178.4≈178mg,算术正确;浓度为12款均值非奈雪个体,500ml为假设(大杯660ml则≈236mg)。拿铁加奶/椰乳稀释,浓度低于美式。不确定性大(±50mg)。奈雪特调咖啡营养分级B,0添加美式A。"
+  },
+  "茶百道_茶百道招牌芋圆奶茶（大杯·推算）_大杯": {
+    "caffeine_mg": 156,
+    "brand": "茶百道",
+    "product_name": "茶百道 招牌芋圆奶茶（大杯·推算）",
+    "size_ml": 660,
+    "size_label": "大杯",
+    "category": "奶茶",
+    "confidence": "estimated",
+    "source": "estimated：以龙游2022奶茶均值118mg/500ml=236mg/L折算大杯660ml",
+    "aliases": [
+      "芋圆奶茶",
+      "招牌奶茶"
+    ],
+    "original_unit": "range",
+    "dosing_model": "fixed_dose",
+    "source_url": "https://finance.sina.cn/tech/2022-07-30/detail-imizirav6047911.d.html",
+    "notes": "推算值±20mg。236mg/L×0.66L=155.8≈156mg，换算正确。但660ml大杯容量为假设值（茶百道无官方杯型公示），实际随茶底浓度浮动，仅量级参考。"
+  },
+  "茶百道_茶百道招牌芋圆奶茶（中杯·推算）_中杯": {
+    "caffeine_mg": 118,
+    "brand": "茶百道",
+    "product_name": "茶百道 招牌芋圆奶茶（中杯·推算）",
+    "size_ml": 500,
+    "size_label": "中杯",
+    "category": "奶茶",
+    "confidence": "estimated",
+    "source": "estimated：龙游2022奶茶均值折算500ml",
+    "aliases": [
+      "芋圆奶茶 中杯"
+    ],
+    "original_unit": "range",
+    "dosing_model": "fixed_dose",
+    "source_url": "https://finance.sina.cn/tech/2022-07-30/detail-imizirav6047911.d.html",
+    "notes": "推算值±20mg。236mg/L×0.5L=118mg，等同龙游均值口径，本质是均值的重述，非独立检测。"
+  },
+  "茶百道_茶百道杨枝甘露（大杯·推算）_大杯": {
+    "caffeine_mg": 90,
+    "brand": "茶百道",
+    "product_name": "茶百道 杨枝甘露（大杯·推算）",
+    "size_ml": 660,
+    "size_label": "大杯",
+    "category": "水果茶",
+    "confidence": "estimated",
+    "source": "estimated：水果茶/含椰类茶底占比低，按约135mg/L×0.66L估算",
+    "aliases": [
+      "杨枝甘露",
+      "芒果杨枝甘露"
+    ],
+    "original_unit": "range",
+    "dosing_model": "fixed_dose",
+    "source_url": "https://m.guokr.com/article/460018",
+    "notes": "推算值±20mg。135mg/L×0.66L≈89≈90mg，换算正确。135mg/L系数为主观设定（茶底占比低），无检测依据，量级偏估。"
+  },
+  "茶百道_茶百道桂花引/茉莉奶绿类（绿茶底奶茶·推算）_大杯": {
+    "caffeine_mg": 130,
+    "brand": "茶百道",
+    "product_name": "茶百道 桂花引/茉莉奶绿类（绿茶底奶茶·推算）",
+    "size_ml": 660,
+    "size_label": "大杯",
+    "category": "奶茶",
+    "confidence": "estimated",
+    "source": "estimated",
+    "aliases": [
+      "奶绿",
+      "茉莉奶绿"
+    ],
+    "original_unit": "range",
+    "dosing_model": "fixed_dose",
+    "source_url": "https://finance.sina.cn/tech/2022-07-30/detail-imizirav6047911.d.html",
+    "notes": "推算值±20mg。200mg/L×0.66L=132≈130mg，换算正确。200mg/L系数为主观设定，与龙游均值236mg/L不一致，SKU间差异不可作为真实依据。"
+  },
+  "茶百道_茶百道乌龙奶茶/烤奶（乌龙茶底·推算）_大杯": {
+    "caffeine_mg": 150,
+    "brand": "茶百道",
+    "product_name": "茶百道 乌龙奶茶/烤奶（乌龙茶底·推算）",
+    "size_ml": 660,
+    "size_label": "大杯",
+    "category": "奶茶",
+    "confidence": "estimated",
+    "source": "estimated，以龙游均值上浮（乌龙偏浓）",
+    "aliases": [
+      "乌龙奶茶",
+      "烤奶"
+    ],
+    "original_unit": "range",
+    "dosing_model": "fixed_dose",
+    "source_url": "https://finance.sina.cn/tech/2022-07-30/detail-imizirav6047911.d.html",
+    "notes": "推算值±20mg。230mg/L×0.66L≈152≈150mg，换算正确。230mg/L系数主观设定，无检测支撑。"
+  },
+  "茶百道_茶百道纯茶（茉莉花茶/乌龙纯茶·推算）_大杯": {
+    "caffeine_mg": 120,
+    "brand": "茶百道",
+    "product_name": "茶百道 纯茶（茉莉花茶/乌龙纯茶·推算）",
+    "size_ml": 660,
+    "size_label": "大杯",
+    "category": "纯茶",
+    "confidence": "estimated",
+    "source": "estimated",
+    "aliases": [
+      "纯茶",
+      "茉莉花茶"
+    ],
+    "original_unit": "range",
+    "dosing_model": "fixed_dose",
+    "source_url": "https://finance.sina.cn/tech/2022-07-30/detail-imizirav6047911.d.html",
+    "notes": "推算值±20mg。180mg/L×0.66L≈119≈120mg，换算正确。180mg/L系数主观设定，无检测依据。"
+  },
+  "古茗_招牌奶茶/经典奶茶（红茶底）_中杯500ml": {
+    "caffeine_mg": 90,
+    "brand": "古茗",
+    "product_name": "招牌奶茶 / 经典奶茶（红茶底）",
+    "size_ml": 500,
+    "size_label": "中杯500ml",
+    "category": "奶茶",
+    "confidence": "estimated",
+    "source": "按红茶奶茶茶底类型+500ml容量推算，参照椒江/龙游/深圳检测的奶茶咖啡因区间",
+    "aliases": [
+      "经典奶茶",
+      "招牌奶茶"
+    ],
+    "original_unit": "range",
+    "dosing_model": "fixed_dose",
+    "source_url": "https://finance.sina.cn/2022-07-30/detail-imizmscv4141647.d.html",
+    "notes": "estimated ±20mg。换算核验:120-200mg/kg×0.5L=60-100mg/杯,给定90在区间内。大杯630ml约按比例升至约113mg。无官方/单品检测数据。"
+  },
+  "古茗_云岭茉莉白（茉莉轻乳茶）_中杯500ml": {
+    "caffeine_mg": 95,
+    "brand": "古茗",
+    "product_name": "云岭茉莉白（茉莉轻乳茶）",
+    "size_ml": 500,
+    "size_label": "中杯500ml",
+    "category": "轻乳茶",
+    "confidence": "estimated",
+    "source": "按茉莉/绿茶底轻乳茶类型+500ml容量推算",
+    "aliases": [
+      "云雾茉莉",
+      "茉莉轻乳茶",
+      "云岭茉莉"
+    ],
+    "original_unit": "range",
+    "dosing_model": "fixed_dose",
+    "source_url": "https://finance.sina.com.cn/roll/2024-08-19/doc-incketke9457177.shtml",
+    "notes": "estimated ±20mg。换算核验:150-260mg/kg×0.5L=75-130mg/杯,给定95在区间内。茉莉/绿茶基底茶味浓、咖啡因偏高，参照霸王茶姬同类中杯量级。无古茗官方公示。"
+  },
+  "古茗_云雾栀子青（栀子绿茶轻乳茶）_中杯500ml": {
+    "caffeine_mg": 95,
+    "brand": "古茗",
+    "product_name": "云雾栀子青（栀子绿茶轻乳茶）",
+    "size_ml": 500,
+    "size_label": "中杯500ml",
+    "category": "轻乳茶",
+    "confidence": "estimated",
+    "source": "按绿茶/栀子底轻乳茶类型+500ml容量推算",
+    "aliases": [
+      "栀子青",
+      "云雾栀子青轻乳茶"
+    ],
+    "original_unit": "range",
+    "dosing_model": "fixed_dose",
+    "source_url": "https://news.qq.com/rain/a/20240908A0259L00",
+    "notes": "estimated ±20mg。换算核验:150-260mg/kg×0.5L=75-130mg/杯,给定95在区间内。绿茶基底,量级与云岭茉莉白相近。无官方逐杯数据。"
+  },
+  "古茗_芝士奶盖茶（绿茶/乌龙底）_中杯500ml": {
+    "caffeine_mg": 90,
+    "brand": "古茗",
+    "product_name": "芝士奶盖茶（绿茶/乌龙底）",
+    "size_ml": 500,
+    "size_label": "中杯500ml",
+    "category": "奶茶",
+    "confidence": "estimated",
+    "source": "按绿茶/乌龙奶盖茶类型+500ml容量推算",
+    "aliases": [
+      "奶盖茶",
+      "芝士茶"
+    ],
+    "original_unit": "range",
+    "dosing_model": "fixed_dose",
+    "source_url": "https://finance.sina.cn/2022-07-30/detail-imizmscv4141647.d.html",
+    "notes": "estimated ±20mg。换算核验:130-220mg/kg×0.5L=65-110mg/杯,给定90在区间内。无官方数据。"
+  },
+  "古茗_珍珠奶茶/波霸奶茶（红茶底）_中杯500ml": {
+    "caffeine_mg": 95,
+    "brand": "古茗",
+    "product_name": "珍珠奶茶 / 波霸奶茶（红茶底）",
+    "size_ml": 500,
+    "size_label": "中杯500ml",
+    "category": "奶茶",
+    "confidence": "estimated",
+    "source": "按红茶珍珠奶茶类型+500ml容量推算，参照椒江2018波霸奶茶检测",
+    "aliases": [
+      "珍珠奶茶",
+      "波霸奶茶"
+    ],
+    "original_unit": "range",
+    "dosing_model": "fixed_dose",
+    "source_url": "https://news.sina.cn/2018-04-17/detail-ifzfkmth5487744.d.html",
+    "notes": "estimated ±20mg。换算核验:160-200mg/kg×0.5L=80-100mg/杯,给定95在区间内。297mg/kg为一点点非古茗,仅作上限参照。无古茗单品数据。"
+  },
+  "古茗_厚乳茶/厚奶茶（红茶底）_中杯500ml": {
+    "caffeine_mg": 90,
+    "brand": "古茗",
+    "product_name": "厚乳茶 / 厚奶茶（红茶底）",
+    "size_ml": 500,
+    "size_label": "中杯500ml",
+    "category": "奶茶",
+    "confidence": "estimated",
+    "source": "按红茶厚奶茶类型+500ml容量推算",
+    "aliases": [
+      "厚乳茶",
+      "厚奶茶"
+    ],
+    "original_unit": "range",
+    "dosing_model": "fixed_dose",
+    "source_url": "https://finance.sina.cn/2022-07-30/detail-imizmscv4141647.d.html",
+    "notes": "estimated ±20mg。换算核验:120-200mg/kg×0.5L=60-100mg/杯,给定90在区间内。无官方数据。"
+  },
+  "古茗_葡萄/杨枝甘露等水果茶（绿茶底）_中杯500ml": {
+    "caffeine_mg": 55,
+    "brand": "古茗",
+    "product_name": "葡萄/杨枝甘露等水果茶（绿茶底）",
+    "size_ml": 500,
+    "size_label": "中杯500ml",
+    "category": "水果茶",
+    "confidence": "estimated",
+    "source": "按绿茶底水果茶类型+500ml容量推算",
+    "aliases": [
+      "水果茶",
+      "杨枝甘露",
+      "葡萄茶"
+    ],
+    "original_unit": "range",
+    "dosing_model": "fixed_dose",
+    "source_url": "https://finance.sina.cn/2022-07-30/detail-imizmscv4141647.d.html",
+    "notes": "estimated ±20mg。换算核验:80-150mg/kg×0.5L=40-75mg/杯,给定55在区间内。无茶底纯果茶接近0。无官方数据。"
+  },
+  "古茗_纯茶（红茶/绿茶现泡，无奶）_中杯500ml": {
+    "caffeine_mg": 100,
+    "brand": "古茗",
+    "product_name": "纯茶（红茶/绿茶现泡，无奶）",
+    "size_ml": 500,
+    "size_label": "中杯500ml",
+    "category": "纯茶",
+    "confidence": "estimated",
+    "source": "按现泡纯茶类型+500ml容量推算",
+    "aliases": [
+      "纯茶",
+      "现泡茶"
+    ],
+    "original_unit": "range",
+    "dosing_model": "fixed_dose",
+    "source_url": "https://finance.sina.cn/2022-07-30/detail-imizmscv4141647.d.html",
+    "notes": "estimated ±20mg。换算核验:150-260mg/kg×0.5L=75-130mg/杯,给定100在区间内。纯茶无奶稀释、浓度高。无官方数据。"
+  },
+  "古茗_柠檬水/柠檬茶（绿茶底）_中杯500ml": {
+    "caffeine_mg": 45,
+    "brand": "古茗",
+    "product_name": "柠檬水 / 柠檬茶（绿茶底）",
+    "size_ml": 500,
+    "size_label": "中杯500ml",
+    "category": "柠檬水",
+    "confidence": "estimated",
+    "source": "按柠檬茶（含/不含茶底）类型+500ml容量推算",
+    "aliases": [
+      "柠檬茶",
+      "柠檬水",
+      "鲜柠檬"
+    ],
+    "original_unit": "range",
+    "dosing_model": "fixed_dose",
+    "source_url": "https://finance.sina.cn/2022-07-30/detail-imizmscv4141647.d.html",
+    "notes": "estimated ±20mg。换算核验:70-130mg/kg×0.5L=35-65mg/杯,给定45在区间内。纯柠檬水(无茶)接近0。取决于是否加茶底。无官方数据。"
+  },
+  "沪上阿姨_沪咖·鲜果咖啡沪咖精选拿铁_中杯": {
+    "caffeine_mg": 54,
+    "brand": "沪上阿姨",
+    "product_name": "沪咖·鲜果咖啡 沪咖精选拿铁",
+    "size_ml": 360,
+    "size_label": "中杯(容量按约360ml估算)",
+    "category": "咖啡",
+    "confidence": "tested",
+    "source": "2023年福建省消委会联合福州市消委会59款现制现售咖啡比较试验，福州海关技术中心检测，参考GB/T 30767-2014",
+    "aliases": [
+      "精选拿铁",
+      "沪咖拿铁"
+    ],
+    "original_unit": "mg/kg",
+    "dosing_model": "unknown",
+    "source_url": "https://m.mp.oeeee.com/a/BAAFRD000020231207884504.html",
+    "notes": "换算核验通过：151 mg/kg × (360/1000) = 54.36 ≈ 54mg/杯。mg/kg为第三方检测真值(tested)，但每杯mg依赖未公示的容量估算(360ml)，若实际容量不同需按比例修正。沪上阿姨咖啡子品牌，非奶茶线。"
+  },
+  "沪上阿姨_沪咖·鲜果咖啡香草拿铁_中杯": {
+    "caffeine_mg": 58,
+    "brand": "沪上阿姨",
+    "product_name": "沪咖·鲜果咖啡 香草拿铁",
+    "size_ml": 360,
+    "size_label": "中杯(容量按约360ml估算)",
+    "category": "咖啡",
+    "confidence": "tested",
+    "source": "2023年福建省消委会联合福州市消委会59款现制现售咖啡比较试验，福州海关技术中心检测",
+    "aliases": [
+      "香草风味拿铁"
+    ],
+    "original_unit": "mg/kg",
+    "dosing_model": "unknown",
+    "source_url": "https://m.mp.oeeee.com/a/BAAFRD000020231207884504.html",
+    "notes": "换算核验通过：162 mg/kg × (360/1000) = 58.32 ≈ 58mg/杯。容量为估算，依赖360ml假设。非奶茶线。"
+  },
+  "沪上阿姨_血糯米奶茶_大杯": {
+    "caffeine_mg": 80,
+    "brand": "沪上阿姨",
+    "product_name": "血糯米奶茶",
+    "size_ml": 700,
+    "size_label": "大杯",
+    "category": "奶茶",
+    "confidence": "estimated",
+    "source": "估算（沪上阿姨招牌单品，无逐杯公开数据；参考奶茶行业检测均值与红茶茶底浓度）",
+    "aliases": [
+      "血糯米鲜奶茶",
+      "招牌血糯米奶茶"
+    ],
+    "original_unit": "unknown",
+    "dosing_model": "unknown",
+    "source_url": "https://finance.sina.cn/2022-09-29/detail-imqmmtha9198214.d.html?vt=4",
+    "notes": "估算值±20mg，非官方。血糯米为谷物配料不含咖啡因，咖啡因来自茶底。质检注：source_url为行业通用报道，不含沪上阿姨逐SKU数据，仅作背景参考。"
+  },
+  "沪上阿姨_茉莉奶绿_大杯": {
+    "caffeine_mg": 90,
+    "brand": "沪上阿姨",
+    "product_name": "茉莉奶绿",
+    "size_ml": 700,
+    "size_label": "大杯",
+    "category": "奶茶",
+    "confidence": "estimated",
+    "source": "估算（无逐杯公开数据；按绿茶/茉莉花茶茶底浓度推算）",
+    "aliases": [
+      "茉莉奶绿大杯"
+    ],
+    "original_unit": "unknown",
+    "dosing_model": "unknown",
+    "source_url": "https://m.tj.bendibao.com/youhui/detail19849.htm",
+    "notes": "估算值±20mg，非官方。质检注：source_url为优惠/活动类页面，不含咖啡因检测数据，仅作产品存在性参考。"
+  },
+  "沪上阿姨_轻乳茶系列(代表款，如茉莉/乌龙轻乳茶)_中杯": {
+    "caffeine_mg": 60,
+    "brand": "沪上阿姨",
+    "product_name": "轻乳茶系列(代表款，如茉莉/乌龙轻乳茶)",
+    "size_ml": 500,
+    "size_label": "中杯",
+    "category": "轻乳茶",
+    "confidence": "estimated",
+    "source": "估算（轻乳茶行业普遍对咖啡因做减法，参考茶百道等轻乳茶中杯不超过普通拿铁2/3的公开说法）",
+    "aliases": [
+      "牛乳茶",
+      "轻乳茶"
+    ],
+    "original_unit": "unknown",
+    "dosing_model": "unknown",
+    "source_url": "http://stcn.com/article/detail/1291635.html",
+    "notes": "估算值±20mg，非官方。质检注：为系列代表款而非具体SKU，数值随茶底波动。source_url不含沪上阿姨逐杯数据。"
+  },
+  "沪上阿姨_鲜奶茉莉茶(纯茶/淡奶基底)_大杯": {
+    "caffeine_mg": 70,
+    "brand": "沪上阿姨",
+    "product_name": "鲜奶茉莉茶(纯茶/淡奶基底)",
+    "size_ml": 700,
+    "size_label": "大杯",
+    "category": "纯茶",
+    "confidence": "estimated",
+    "source": "估算（无逐杯公开数据；按茉莉花茶纯茶冲泡浓度推算）",
+    "aliases": [],
+    "original_unit": "unknown",
+    "dosing_model": "unknown",
+    "source_url": "https://finance.sina.cn/2022-09-29/detail-imqmmtha9198214.d.html?vt=4",
+    "notes": "估算值±20mg，非官方。质检注：source_url为行业通用报道，不含本品牌逐SKU数据。"
+  },
+  "蜜雪冰城_冰鲜柠檬水_大杯": {
+    "caffeine_mg": 0,
+    "brand": "蜜雪冰城",
+    "product_name": "冰鲜柠檬水",
+    "size_ml": 660,
+    "size_label": "大杯/瘦长专用杯",
+    "category": "柠檬水",
+    "confidence": "estimated",
+    "source": "成分推断：仅柠檬与糖浆，无茶底/咖啡，咖啡因接近0",
+    "aliases": [
+      "柠檬水",
+      "鲜萃柠檬水"
+    ],
+    "original_unit": "mg/cup",
+    "dosing_model": "fixed_dose",
+    "source_url": "https://www.lifeweek.com.cn/h5/article/detail.do?artId=239662",
+    "notes": "招牌单品。配方无茶底，咖啡因可视为0（±5mg）。专用70mm瘦长杯，660ml容量来自媒体报道，相对可靠。"
+  },
+  "蜜雪冰城_摇摇奶昔_中杯": {
+    "caffeine_mg": 0,
+    "brand": "蜜雪冰城",
+    "product_name": "摇摇奶昔",
+    "size_ml": 500,
+    "size_label": "中杯",
+    "category": "奶昔",
+    "confidence": "estimated",
+    "source": "成分推断：奶昔不含茶底/咖啡",
+    "aliases": [
+      "奶昔"
+    ],
+    "original_unit": "mg/cup",
+    "dosing_model": "fixed_dose",
+    "source_url": "https://www.zhihu.com/question/619738834",
+    "notes": "原味/草莓等口味为奶基底，无咖啡因（±5mg）；若为抹茶/咖啡口味另计。size_ml为推算，未见官方公示。"
+  },
+  "蜜雪冰城_满杯红柚（绿茶底）_中杯": {
+    "caffeine_mg": 45,
+    "brand": "蜜雪冰城",
+    "product_name": "满杯红柚（绿茶底）",
+    "size_ml": 500,
+    "size_label": "中杯",
+    "category": "水果茶",
+    "confidence": "estimated",
+    "source": "推算：绿茶底果茶，参照广西消委会现制茶饮39~134mg/500g区间下段",
+    "aliases": [
+      "满杯百香果",
+      "满杯红柚果茶"
+    ],
+    "original_unit": "range",
+    "dosing_model": "fixed_dose",
+    "source_url": "https://news.qq.com/rain/a/20221010A00AW400",
+    "notes": "估算±20mg。果茶绿茶底用量较奶茶少，取区间低段约45mg。非实测值。"
+  },
+  "蜜雪冰城_蜜桃四季春_中杯": {
+    "caffeine_mg": 50,
+    "brand": "蜜雪冰城",
+    "product_name": "蜜桃四季春",
+    "size_ml": 500,
+    "size_label": "中杯",
+    "category": "水果茶",
+    "confidence": "estimated",
+    "source": "推算：四季春（乌龙）茶底，参照消委会39~134mg/500g低中段",
+    "aliases": [
+      "蜜桃四季春茶",
+      "桃子四季春"
+    ],
+    "original_unit": "range",
+    "dosing_model": "fixed_dose",
+    "source_url": "https://news.qq.com/rain/a/20221010A00AW400",
+    "notes": "估算±20mg。四季春为乌龙茶，咖啡因中等偏低。非实测值。"
+  },
+  "蜜雪冰城_茉莉奶绿_中杯": {
+    "caffeine_mg": 70,
+    "brand": "蜜雪冰城",
+    "product_name": "茉莉奶绿",
+    "size_ml": 500,
+    "size_label": "中杯",
+    "category": "奶茶",
+    "confidence": "estimated",
+    "source": "推算：茉莉绿茶底，参照广西消委会现制奶茶均值114mg/500g以下中段",
+    "aliases": [
+      "茉莉奶绿茶",
+      "奶绿"
+    ],
+    "original_unit": "range",
+    "dosing_model": "fixed_dose",
+    "source_url": "https://news.qq.com/rain/a/20221010A00AW400",
+    "notes": "估算±20mg。绿茶底奶茶，取约70mg。非实测值。"
+  },
+  "蜜雪冰城_芝士奶盖四季春_中杯": {
+    "caffeine_mg": 55,
+    "brand": "蜜雪冰城",
+    "product_name": "芝士奶盖四季春",
+    "size_ml": 500,
+    "size_label": "中杯",
+    "category": "奶茶",
+    "confidence": "estimated",
+    "source": "推算：四季春茶底奶盖茶，参照消委会39~134mg/500g区间",
+    "aliases": [
+      "奶盖四季春",
+      "芝芝四季春"
+    ],
+    "original_unit": "range",
+    "dosing_model": "fixed_dose",
+    "source_url": "https://news.qq.com/rain/a/20221010A00AW400",
+    "notes": "估算±20mg。乌龙茶底，约55mg。非实测值。"
+  },
+  "蜜雪冰城_绿茶（纯茶/原味绿茶）_中杯": {
+    "caffeine_mg": 60,
+    "brand": "蜜雪冰城",
+    "product_name": "绿茶（纯茶/原味绿茶）",
+    "size_ml": 500,
+    "size_label": "中杯",
+    "category": "纯茶",
+    "confidence": "estimated",
+    "source": "推算：纯绿茶现泡；3600mg/kg为干茶叶mg/kg（10款袋泡茶中最低），仅佐证茶底偏淡，不可直接换算为每杯",
+    "aliases": [
+      "冰绿茶",
+      "鲜绿茶"
+    ],
+    "original_unit": "range",
+    "dosing_model": "fixed_dose",
+    "source_url": "https://time-weekly.com/post/308510",
+    "notes": "估算±20mg。约60mg/杯。关键提示：3600mg/kg是干茶叶咖啡因含量，非冲泡后每杯值，未对其做mg/kg×容量换算（干茶投料量与杯容量无直接比例关系，强行换算会严重高估）。"
+  },
+  "蜜雪冰城_冰红茶/红茶（纯茶）_中杯": {
+    "caffeine_mg": 65,
+    "brand": "蜜雪冰城",
+    "product_name": "冰红茶/红茶（纯茶）",
+    "size_ml": 500,
+    "size_label": "中杯",
+    "category": "纯茶",
+    "confidence": "estimated",
+    "source": "推算：纯红茶现泡，参照现制茶饮普通区间",
+    "aliases": [
+      "冰红茶",
+      "鲜红茶"
+    ],
+    "original_unit": "range",
+    "dosing_model": "fixed_dose",
+    "source_url": "https://news.qq.com/rain/a/20221010A00AW400",
+    "notes": "估算±20mg。红茶咖啡因略高于绿茶，约65mg/杯。非实测值。"
+  },
+  "蜜雪冰城_抹茶圣代/抹茶摩天脆脆_单份": {
+    "caffeine_mg": 15,
+    "brand": "蜜雪冰城",
+    "product_name": "抹茶圣代/抹茶摩天脆脆",
+    "size_ml": null,
+    "size_label": "单份",
+    "category": "甜品",
+    "confidence": "estimated",
+    "source": "推断：抹茶口味含少量抹茶粉；普通圣代/脆脆不含咖啡因",
+    "aliases": [
+      "抹茶大圣代",
+      "抹茶摩天脆脆"
+    ],
+    "original_unit": "range",
+    "dosing_model": "fixed_dose",
+    "source_url": "https://health.baidu.com/m/detail/ar_3746077841992926020",
+    "notes": "估算±10mg。属甜品而非饮品SKU（scope边缘项）。仅抹茶口味含咖啡因（抹茶粉量少，约10~20mg）；普通香草/原味款不含。无ml刻度，size_ml=null。"
+  },
+  "一点点_波霸奶茶（中杯，换算估值）_中杯": {
+    "caffeine_mg": 87,
+    "brand": "一点点",
+    "product_name": "波霸奶茶（中杯，换算估值）",
+    "size_ml": 480,
+    "size_label": "中杯（容量按行业实测假设480ml）",
+    "category": "奶茶",
+    "confidence": "estimated",
+    "source": "由182mg/kg实测按假设480ml容量+密度≈1.0换算",
+    "aliases": [
+      "波霸奶茶",
+      "珍珠奶茶"
+    ],
+    "original_unit": "mg/kg",
+    "dosing_model": "fixed_dose",
+    "source_url": "https://www.sznews.com/eating/content/mb/2019-10/23/content_22565945.htm",
+    "notes": "换算每杯=182×0.48≈87mg。注意：mg/kg是实测(tested)，但每杯mg依赖容量假设，故降级为estimated。含糖密度>1.0会使真实值略高。误差±20mg以上。"
+  },
+  "一点点_波霸奶茶（大杯，换算估值）_大杯": {
+    "caffeine_mg": 116,
+    "brand": "一点点",
+    "product_name": "波霸奶茶（大杯，换算估值）",
+    "size_ml": 640,
+    "size_label": "大杯（容量按行业实测假设640ml）",
+    "category": "奶茶",
+    "confidence": "estimated",
+    "source": "由182mg/kg实测按假设640ml容量+密度≈1.0换算",
+    "aliases": [
+      "波霸奶茶大杯",
+      "珍珠奶茶"
+    ],
+    "original_unit": "mg/kg",
+    "dosing_model": "fixed_dose",
+    "source_url": "https://www.sznews.com/eating/content/mb/2019-10/23/content_22565945.htm",
+    "notes": "换算每杯=182×0.64≈116mg，与媒体『约两罐半红牛≈125mg』量级相符。同样：mg/kg为实测，per-cup为体积假设估算，降级为estimated。误差±20mg以上。"
+  },
+  "一点点_红茶玛奇朵（大杯）_大杯": {
+    "caffeine_mg": 140,
+    "brand": "一点点",
+    "product_name": "红茶玛奇朵（大杯）",
+    "size_ml": 640,
+    "size_label": "大杯",
+    "category": "奶茶",
+    "confidence": "estimated",
+    "source": "无来源估算（红茶茶底茶饮咖啡因偏高）",
+    "aliases": [
+      "红茶玛奇朵",
+      "玛奇朵",
+      "Black Tea Macchiato"
+    ],
+    "original_unit": "unknown",
+    "dosing_model": "fixed_dose",
+    "notes": "上海2017/龙游2022/深圳2019三份报告均无此单品数值，无来源，纯估算。红茶茶底咖啡因高于乌龙/绿茶，玛奇朵茶含量足。误差≥±30mg，请勿当精确值。"
+  },
+  "一点点_四季奶青（大杯）_大杯": {
+    "caffeine_mg": 110,
+    "brand": "一点点",
+    "product_name": "四季奶青（大杯）",
+    "size_ml": 640,
+    "size_label": "大杯",
+    "category": "奶茶",
+    "confidence": "estimated",
+    "source": "无来源估算（四季春属轻发酵乌龙）",
+    "aliases": [
+      "四季奶青",
+      "四季春奶茶",
+      "Four Seasons Milk Tea"
+    ],
+    "original_unit": "unknown",
+    "dosing_model": "fixed_dose",
+    "notes": "无品牌单品实测，无来源。四季春乌龙系茶底，咖啡因介于绿茶与红茶之间。误差≥±30mg。"
+  },
+  "一点点_乌龙玛奇朵（大杯）_大杯": {
+    "caffeine_mg": 120,
+    "brand": "一点点",
+    "product_name": "乌龙玛奇朵（大杯）",
+    "size_ml": 640,
+    "size_label": "大杯",
+    "category": "奶茶",
+    "confidence": "estimated",
+    "source": "无来源估算（乌龙茶底+玛奇朵奶盖）",
+    "aliases": [
+      "乌龙玛奇朵",
+      "冻顶玛奇朵"
+    ],
+    "original_unit": "unknown",
+    "dosing_model": "fixed_dose",
+    "notes": "无品牌单品实测，无来源。玛奇朵系列茶底浓、奶盖不稀释茶汤。误差≥±30mg。"
+  },
+  "一点点_茉莉绿茶/茉香绿茶（大杯）_大杯": {
+    "caffeine_mg": 70,
+    "brand": "一点点",
+    "product_name": "茉莉绿茶 / 茉香绿茶（大杯）",
+    "size_ml": 640,
+    "size_label": "大杯",
+    "category": "纯茶",
+    "confidence": "estimated",
+    "source": "无来源估算（绿茶茶底咖啡因相对低）",
+    "aliases": [
+      "茉香绿茶",
+      "绿茶",
+      "Jasmine Green Tea"
+    ],
+    "original_unit": "unknown",
+    "dosing_model": "fixed_dose",
+    "notes": "无品牌单品实测，无来源。绿茶系茶底咖啡因低于红茶/乌龙。误差≥±25mg。"
+  },
+  "一点点_阿华田（大杯）_大杯": {
+    "caffeine_mg": 90,
+    "brand": "一点点",
+    "product_name": "阿华田（大杯）",
+    "size_ml": 640,
+    "size_label": "大杯",
+    "category": "奶茶",
+    "confidence": "estimated",
+    "source": "无来源估算（红茶/可可基底）",
+    "aliases": [
+      "阿华田",
+      "Ovaltine"
+    ],
+    "original_unit": "unknown",
+    "dosing_model": "fixed_dose",
+    "notes": "无品牌单品实测，无来源。阿华田含可可(微量咖啡因/可可碱)，主要咖啡因来自茶底。误差≥±30mg。"
+  },
+  "瑞幸咖啡_标准美式（冰/热）_大杯": {
+    "caffeine_mg": 193,
+    "brand": "瑞幸咖啡",
+    "product_name": "标准美式（冰/热）",
+    "size_ml": 450,
+    "size_label": "大杯(约450ml含冰)",
+    "category": "咖啡",
+    "confidence": "estimated",
+    "source": "深圳市消委会2024现制咖啡比较试验(冰美式均值429.9mg/kg)×瑞幸大杯450ml推算",
+    "aliases": [
+      "美式",
+      "冰美式",
+      "Americano"
+    ],
+    "original_unit": "mg/kg",
+    "dosing_model": "fixed_dose",
+    "source_url": "https://www.ccn.com.cn/Content/2024/05-08/1630382081.html",
+    "notes": "换算核验通过：429.9×0.45=193.5≈193mg。非瑞幸单款实测，为品类均值推算，±25mg。"
+  },
+  "瑞幸咖啡_标准美式（加浓/4份浓缩）_大杯": {
+    "caffeine_mg": 250,
+    "brand": "瑞幸咖啡",
+    "product_name": "标准美式（加浓/4份浓缩）",
+    "size_ml": 450,
+    "size_label": "大杯/超大杯",
+    "category": "咖啡",
+    "confidence": "estimated",
+    "source": "标准美式193mg基准+1份浓缩约+60mg推算；媒体援引4份约300mg校准",
+    "aliases": [
+      "加浓美式",
+      "超大杯美式"
+    ],
+    "original_unit": "range",
+    "dosing_model": "fixed_dose",
+    "source_url": "https://health.baidu.com/m/detail/ar_8958827352874837964",
+    "notes": "纯推算range约230~270mg，取中值250。证据弱(reported级来源)，非实测，±30mg。"
+  },
+  "瑞幸咖啡_生椰拿铁_大杯": {
+    "caffeine_mg": 160,
+    "brand": "瑞幸咖啡",
+    "product_name": "生椰拿铁",
+    "size_ml": 450,
+    "size_label": "大杯(约450ml含冰)",
+    "category": "咖啡",
+    "confidence": "estimated",
+    "source": "深圳市消委会2024(冰拿铁均值356.8mg/kg)×瑞幸大杯450ml推算",
+    "aliases": [
+      "生椰",
+      "椰子拿铁",
+      "coconut latte"
+    ],
+    "original_unit": "mg/kg",
+    "dosing_model": "fixed_dose",
+    "source_url": "https://www.ccn.com.cn/Content/2024/05-08/1630382081.html",
+    "notes": "换算核验通过：356.8×0.45=160.6≈160mg。约2份浓缩。品类均值推算非单款实测，±30mg。"
+  },
+  "瑞幸咖啡_标准拿铁_大杯": {
+    "caffeine_mg": 160,
+    "brand": "瑞幸咖啡",
+    "product_name": "标准拿铁",
+    "size_ml": 450,
+    "size_label": "大杯(约450ml含冰)",
+    "category": "咖啡",
+    "confidence": "estimated",
+    "source": "深圳市消委会2024(冰拿铁均值356.8mg/kg)推算",
+    "aliases": [
+      "拿铁",
+      "冰拿铁",
+      "热拿铁",
+      "latte"
+    ],
+    "original_unit": "mg/kg",
+    "dosing_model": "fixed_dose",
+    "source_url": "https://www.ccn.com.cn/Content/2024/05-08/1630382081.html",
+    "notes": "换算核验通过：356.8×0.45=160.6≈160mg。约2份浓缩，±30mg，非实测。"
+  },
+  "瑞幸咖啡_陨石拿铁_大杯": {
+    "caffeine_mg": 160,
+    "brand": "瑞幸咖啡",
+    "product_name": "陨石拿铁",
+    "size_ml": 450,
+    "size_label": "大杯(约450ml含冰)",
+    "category": "咖啡",
+    "confidence": "estimated",
+    "source": "类比标准拿铁+消委会冰拿铁均值356.8mg/kg×0.45L",
+    "aliases": [
+      "陨石",
+      "黑糖拿铁"
+    ],
+    "original_unit": "mg/kg",
+    "dosing_model": "fixed_dose",
+    "source_url": "https://www.ccn.com.cn/Content/2024/05-08/1630382081.html",
+    "notes": "换算核验通过≈160mg。与多款拿铁同值，实际浓缩份数或有差异，±30mg，非实测。"
+  },
+  "瑞幸咖啡_丝绒拿铁_大杯": {
+    "caffeine_mg": 160,
+    "brand": "瑞幸咖啡",
+    "product_name": "丝绒拿铁",
+    "size_ml": 450,
+    "size_label": "大杯(约450ml含冰)",
+    "category": "咖啡",
+    "confidence": "estimated",
+    "source": "类比标准拿铁+消委会冰拿铁均值356.8mg/kg×0.45L",
+    "aliases": [
+      "丝绒",
+      "velvet latte"
+    ],
+    "original_unit": "mg/kg",
+    "dosing_model": "fixed_dose",
+    "source_url": "https://www.ccn.com.cn/Content/2024/05-08/1630382081.html",
+    "notes": "换算核验通过≈160mg。±30mg，非实测，与多款拿铁同质化估值。"
+  },
+  "瑞幸咖啡_椰云拿铁_大杯": {
+    "caffeine_mg": 160,
+    "brand": "瑞幸咖啡",
+    "product_name": "椰云拿铁",
+    "size_ml": 450,
+    "size_label": "大杯(约450ml含冰)",
+    "category": "咖啡",
+    "confidence": "estimated",
+    "source": "类比拿铁类+消委会冰拿铁均值356.8mg/kg×0.45L",
+    "aliases": [
+      "椰云",
+      "椰云精萃"
+    ],
+    "original_unit": "mg/kg",
+    "dosing_model": "fixed_dose",
+    "source_url": "https://www.ccn.com.cn/Content/2024/05-08/1630382081.html",
+    "notes": "换算核验通过≈160mg。±30mg，非实测。"
+  },
+  "瑞幸咖啡_丝绒小白_标准杯": {
+    "caffeine_mg": 128,
+    "brand": "瑞幸咖啡",
+    "product_name": "丝绒小白",
+    "size_ml": 360,
+    "size_label": "标准杯(约360ml)",
+    "category": "咖啡",
+    "confidence": "estimated",
+    "source": "消委会拿铁类均值356.8mg/kg×0.36L",
+    "aliases": [
+      "小白",
+      "flat white"
+    ],
+    "original_unit": "mg/kg",
+    "dosing_model": "fixed_dose",
+    "source_url": "https://www.ccn.com.cn/Content/2024/05-08/1630382081.html",
+    "notes": "修正项：原表150mg与所声明公式不符；356.8×0.36=128.4≈128mg。flat white浓缩比例虽偏高，但应在数值上量化而非直接拔高；若按浓缩份数实测可能上探,此处保留公式值,±30mg。"
+  },
+  "瑞幸咖啡_橙C美式_大杯": {
+    "caffeine_mg": 190,
+    "brand": "瑞幸咖啡",
+    "product_name": "橙C美式",
+    "size_ml": 450,
+    "size_label": "大杯(约450ml含冰)",
+    "category": "咖啡",
+    "confidence": "estimated",
+    "source": "类比标准美式+消委会冰美式均值429.9mg/kg",
+    "aliases": [
+      "橙C冰萃美式",
+      "鲜橙美式",
+      "orange americano"
+    ],
+    "original_unit": "mg/kg",
+    "dosing_model": "fixed_dose",
+    "source_url": "https://www.ccn.com.cn/Content/2024/05-08/1630382081.html",
+    "notes": "咖啡因主来自浓缩,与标准美式接近,约190mg。±30mg,非实测。"
+  },
+  "瑞幸咖啡_冷萃美式/陨石冷萃_大杯": {
+    "caffeine_mg": 200,
+    "brand": "瑞幸咖啡",
+    "product_name": "冷萃美式/陨石冷萃",
+    "size_ml": 450,
+    "size_label": "大杯(约450ml含冰)",
+    "category": "咖啡",
+    "confidence": "estimated",
+    "source": "推算(冷萃工艺特性+消委会美式区间)",
+    "aliases": [
+      "冷萃",
+      "cold brew"
+    ],
+    "original_unit": "range",
+    "dosing_model": "fixed_dose",
+    "source_url": "https://www.ccn.com.cn/Content/2024/05-08/1630382081.html",
+    "notes": "range约180~220mg取中值200。冷萃单位咖啡因常高于普通美式,但无瑞幸实测,±30mg。"
+  },
+  "库迪咖啡_标准美式(大杯)_大杯16oz": {
+    "caffeine_mg": 203,
+    "brand": "库迪咖啡",
+    "product_name": "标准美式 (大杯)",
+    "size_ml": 473,
+    "size_label": "大杯 16oz",
+    "category": "咖啡",
+    "confidence": "estimated",
+    "source": "深圳市消委会2024现制咖啡比较试验(全品牌类别均值，非库迪专属) + 库迪杯型容量媒体报道",
+    "aliases": [
+      "库迪美式",
+      "冰美式",
+      "热美式",
+      "Americano"
+    ],
+    "original_unit": "mg/kg",
+    "dosing_model": "fixed_dose",
+    "source_url": "https://www.sznews.com/news/content/mb/2024-05/06/content_30918788.htm",
+    "notes": "换算核验通过：429.9 mg/kg × 0.473L ≈ 203mg。但锚点为全品牌冰美式均值，非库迪检测值；杯型容量为盎司换算估值。综合误差大于±20mg，仅供参考。"
+  },
+  "库迪咖啡_标准美式(中杯)_中杯12oz": {
+    "caffeine_mg": 153,
+    "brand": "库迪咖啡",
+    "product_name": "标准美式 (中杯)",
+    "size_ml": 355,
+    "size_label": "中杯 12oz",
+    "category": "咖啡",
+    "confidence": "estimated",
+    "source": "深圳市消委会2024现制咖啡比较试验(全品牌类别均值) + 库迪杯型容量",
+    "aliases": [
+      "库迪美式 中杯",
+      "冰美式"
+    ],
+    "original_unit": "mg/kg",
+    "dosing_model": "fixed_dose",
+    "source_url": "https://www.sznews.com/news/content/mb/2024-05/06/content_30918788.htm",
+    "notes": "换算核验通过：429.9 mg/kg × 0.355L ≈ 153mg。中杯12oz≈355ml为媒体盎司换算。非库迪专属、非官方逐杯数据。"
+  },
+  "库迪咖啡_标准拿铁(大杯)_大杯16oz": {
+    "caffeine_mg": 169,
+    "brand": "库迪咖啡",
+    "product_name": "标准拿铁 (大杯)",
+    "size_ml": 473,
+    "size_label": "大杯 16oz",
+    "category": "咖啡",
+    "confidence": "estimated",
+    "source": "深圳市消委会2024现制咖啡比较试验(全品牌类别均值) + 库迪杯型容量",
+    "aliases": [
+      "库迪拿铁",
+      "冰拿铁",
+      "热拿铁",
+      "Latte"
+    ],
+    "original_unit": "mg/kg",
+    "dosing_model": "fixed_dose",
+    "source_url": "https://www.sznews.com/news/content/mb/2024-05/06/content_30918788.htm",
+    "notes": "换算核验通过：356.8 mg/kg × 0.473L ≈ 169mg(已采用浓度×总容量法，含奶稀释已计入)。锚点为全品牌拿铁均值，非库迪专属。"
+  },
+  "库迪咖啡_标准拿铁(中杯)_中杯12oz": {
+    "caffeine_mg": 127,
+    "brand": "库迪咖啡",
+    "product_name": "标准拿铁 (中杯)",
+    "size_ml": 355,
+    "size_label": "中杯 12oz",
+    "category": "咖啡",
+    "confidence": "estimated",
+    "source": "深圳市消委会2024现制咖啡比较试验(全品牌类别均值) + 库迪杯型容量",
+    "aliases": [
+      "库迪拿铁 中杯",
+      "冰拿铁"
+    ],
+    "original_unit": "mg/kg",
+    "dosing_model": "fixed_dose",
+    "source_url": "https://www.sznews.com/news/content/mb/2024-05/06/content_30918788.htm",
+    "notes": "换算核验通过：356.8 mg/kg × 0.355L ≈ 127mg。非库迪专属、非官方。"
+  },
+  "库迪咖啡_生椰拿铁(大杯)_大杯16oz": {
+    "caffeine_mg": 169,
+    "brand": "库迪咖啡",
+    "product_name": "生椰拿铁 (大杯)",
+    "size_ml": 473,
+    "size_label": "大杯 16oz",
+    "category": "咖啡",
+    "confidence": "estimated",
+    "source": "深圳市消委会2024现制咖啡比较试验(拿铁全品牌均值，间接套用) + 库迪杯型容量",
+    "aliases": [
+      "库迪生椰拿铁",
+      "椰子拿铁",
+      "Coconut Latte"
+    ],
+    "original_unit": "mg/kg",
+    "dosing_model": "fixed_dose",
+    "source_url": "https://www.sznews.com/news/content/mb/2024-05/06/content_30918788.htm",
+    "notes": "库迪招牌单品但无生椰独立检测数据，直接套用全品牌标准拿铁均值，数值与标准拿铁相同(169mg)。属同源推算，不确定性较高。"
+  },
+  "库迪咖啡_生椰拿铁(中杯)_中杯12oz": {
+    "caffeine_mg": 127,
+    "brand": "库迪咖啡",
+    "product_name": "生椰拿铁 (中杯)",
+    "size_ml": 355,
+    "size_label": "中杯 12oz",
+    "category": "咖啡",
+    "confidence": "estimated",
+    "source": "深圳市消委会2024现制咖啡比较试验(拿铁全品牌均值，间接套用) + 库迪杯型容量",
+    "aliases": [
+      "库迪生椰拿铁 中杯"
+    ],
+    "original_unit": "mg/kg",
+    "dosing_model": "fixed_dose",
+    "source_url": "https://www.sznews.com/news/content/mb/2024-05/06/content_30918788.htm",
+    "notes": "无生椰独立数据，套用标准拿铁均值得127mg，与标准拿铁中杯相同。同源推算。"
+  },
+  "库迪咖啡_奶基底拿铁变体(燕麦/厚乳/丝绒等)大杯_大杯16oz": {
+    "caffeine_mg": 169,
+    "brand": "库迪咖啡",
+    "product_name": "奶基底拿铁变体 (燕麦/厚乳/丝绒等) 大杯",
+    "size_ml": 473,
+    "size_label": "大杯 16oz",
+    "category": "咖啡",
+    "confidence": "estimated",
+    "source": "深圳市消委会2024现制咖啡比较试验(拿铁全品牌均值，间接套用) + 库迪杯型容量",
+    "aliases": [
+      "燕麦拿铁",
+      "厚乳拿铁",
+      "丝绒拿铁"
+    ],
+    "original_unit": "mg/kg",
+    "dosing_model": "fixed_dose",
+    "source_url": "https://www.sznews.com/news/content/mb/2024-05/06/content_30918788.htm",
+    "notes": "质检提示：本条为多款奶基底变体的 catch-all 占位项(非单一真实SKU)，直接复用标准拿铁均值得169mg，无独立检测支撑。建议下游谨慎使用或拆分为具体SKU后再单独估算。"
+  },
+  "MannerCoffee_冰美式(大杯)_大杯360ml": {
+    "caffeine_mg": 203,
+    "brand": "Manner Coffee",
+    "product_name": "冰美式 (大杯)",
+    "size_ml": 360,
+    "size_label": "大杯 360ml",
+    "category": "咖啡",
+    "confidence": "estimated",
+    "source": "深圳市消委会2024现制咖啡饮品比较试验：Manner冰美式浓度563mg/kg(24款最高，浓度系tested)。每杯mg=563×0.360=203mg(浓度tested但per-cup为换算)",
+    "aliases": [
+      "冰美式",
+      "Iced Americano",
+      "美式咖啡"
+    ],
+    "original_unit": "mg/kg",
+    "dosing_model": "fixed_dose",
+    "source_url": "https://www.sznews.com/news/content/2024-05/06/content_30917604.htm",
+    "notes": "浓度563mg/kg为消委会实测(tested)，但每杯总量203mg是按大杯360ml容量换算的推算值(estimated)，杯型容量非官方逐杯公示。浓度为24款样品之首。"
+  },
+  "MannerCoffee_冰美式(中杯)_中杯240ml": {
+    "caffeine_mg": 135,
+    "brand": "Manner Coffee",
+    "product_name": "冰美式 (中杯)",
+    "size_ml": 240,
+    "size_label": "中杯 240ml",
+    "category": "咖啡",
+    "confidence": "estimated",
+    "source": "深圳市消委会2024测Manner冰美式浓度563mg/kg；每杯=563×0.240=135mg(浓度tested，per-cup换算)",
+    "aliases": [
+      "冰美式",
+      "Iced Americano"
+    ],
+    "original_unit": "mg/kg",
+    "dosing_model": "fixed_dose",
+    "source_url": "https://www.sznews.com/news/content/2024-05/06/content_30917604.htm",
+    "notes": "浓度tested，每杯135mg由563mg/kg×中杯240ml换算所得，属推算。中杯仅240ml，故每杯总量相对适中。"
+  },
+  "MannerCoffee_超大杯加浓冰美式_超大杯473ml": {
+    "caffeine_mg": 266,
+    "brand": "Manner Coffee",
+    "product_name": "超大杯加浓冰美式",
+    "size_ml": 473,
+    "size_label": "超大杯 473ml",
+    "category": "咖啡",
+    "confidence": "estimated",
+    "source": "Manner超大杯加浓冰美式473ml；按标准冰美式浓度563mg/kg换算=563×0.473≈266mg",
+    "aliases": [
+      "超大杯美式",
+      "加浓冰美式",
+      "超大杯加浓美式"
+    ],
+    "original_unit": "mg/kg",
+    "dosing_model": "fixed_dose",
+    "source_url": "https://news.qq.com/rain/a/20250611A02MP700",
+    "notes": "estimated±20mg：以标准冰美式563mg/kg×473ml换算为下限。‘加浓’款多加咖啡液/份数，实际每杯可能高于266mg(或300mg+)，无官方检测值。"
+  },
+  "MannerCoffee_超超超大杯加浓冰美式_超超超大杯约592ml": {
+    "caffeine_mg": 333,
+    "brand": "Manner Coffee",
+    "product_name": "超超超大杯加浓冰美式",
+    "size_ml": 592,
+    "size_label": "超超超大杯 约592ml",
+    "category": "咖啡",
+    "confidence": "estimated",
+    "source": "2025年6月Manner推出超超超大杯加浓冰美式约592ml；按563mg/kg×0.592换算≈333mg",
+    "aliases": [
+      "超超超大杯美式",
+      "592ml美式"
+    ],
+    "original_unit": "mg/kg",
+    "dosing_model": "fixed_dose",
+    "source_url": "https://news.qq.com/rain/a/20250611A02MP700",
+    "notes": "estimated：333mg为下限估算且超出常规单杯合理区间(0-300mg)。592ml容量与加浓份数均非官方公示，加浓款实际或更高，单杯接近欧洲食安局400mg/日上限，谨慎参考。"
+  },
+  "MannerCoffee_热美式(大杯)_热杯355ml": {
+    "caffeine_mg": 200,
+    "brand": "Manner Coffee",
+    "product_name": "热美式 (大杯)",
+    "size_ml": 355,
+    "size_label": "热杯 355ml",
+    "category": "咖啡",
+    "confidence": "estimated",
+    "source": "消委会仅测冰美式563mg/kg；热美式无单独检测，按相同浓度×热杯355ml换算=563×0.355≈200mg",
+    "aliases": [
+      "美式咖啡",
+      "热美式",
+      "Hot Americano"
+    ],
+    "original_unit": "mg/kg",
+    "dosing_model": "fixed_dose",
+    "source_url": "https://www.foodtalks.cn/news/53805",
+    "notes": "estimated±20mg：热美式无独立检测值，沿用冰美式浓度563mg/kg×热杯355ml换算，热杯容量非官方公示。"
+  },
+  "MannerCoffee_冰拿铁(大杯)_大杯360ml": {
+    "caffeine_mg": 128,
+    "brand": "Manner Coffee",
+    "product_name": "冰拿铁 (大杯)",
+    "size_ml": 360,
+    "size_label": "大杯 360ml",
+    "category": "咖啡",
+    "confidence": "estimated",
+    "source": "深圳消委会2024：12款冰拿铁咖啡因平均356.8mg/kg(无Manner拿铁单独值)；按大杯360ml换算=356.8×0.360≈128mg",
+    "aliases": [
+      "拿铁",
+      "冰拿铁",
+      "Iced Latte"
+    ],
+    "original_unit": "mg/kg",
+    "dosing_model": "fixed_dose",
+    "source_url": "https://www.sznews.com/news/content/2024-05/06/content_30917604.htm",
+    "notes": "estimated±20mg：356.8mg/kg为12品牌拿铁均值而非Manner实测，再×大杯360ml换算，双重推算。消委会指10/12品牌冰美式浓度高于其冰拿铁。"
+  },
+  "MannerCoffee_冰拿铁(中杯)_中杯240ml": {
+    "caffeine_mg": 86,
+    "brand": "Manner Coffee",
+    "product_name": "冰拿铁 (中杯)",
+    "size_ml": 240,
+    "size_label": "中杯 240ml",
+    "category": "咖啡",
+    "confidence": "estimated",
+    "source": "深圳消委会2024拿铁平均356.8mg/kg；按中杯240ml换算=356.8×0.240≈86mg",
+    "aliases": [
+      "拿铁",
+      "冰拿铁",
+      "Iced Latte"
+    ],
+    "original_unit": "mg/kg",
+    "dosing_model": "fixed_dose",
+    "source_url": "https://www.sznews.com/news/content/2024-05/06/content_30917604.htm",
+    "notes": "estimated±20mg：基于12款拿铁均值356.8mg/kg×中杯240ml换算，非Manner单独检测。"
+  },
+  "MannerCoffee_热拿铁(大杯)_热杯355ml": {
+    "caffeine_mg": 127,
+    "brand": "Manner Coffee",
+    "product_name": "热拿铁 (大杯)",
+    "size_ml": 355,
+    "size_label": "热杯 355ml",
+    "category": "咖啡",
+    "confidence": "estimated",
+    "source": "消委会拿铁平均356.8mg/kg；热拿铁无单独检测，按浓度×热杯355ml换算=356.8×0.355≈127mg",
+    "aliases": [
+      "拿铁",
+      "热拿铁",
+      "Hot Latte",
+      "拿铁咖啡"
+    ],
+    "original_unit": "mg/kg",
+    "dosing_model": "fixed_dose",
+    "source_url": "https://www.foodtalks.cn/news/53805",
+    "notes": "estimated±20mg：热拿铁无独立检测，沿用拿铁均值356.8mg/kg×热杯355ml换算。"
+  },
+  "MannerCoffee_澳式白咖啡(大杯)_大杯360ml": {
+    "caffeine_mg": 140,
+    "brand": "Manner Coffee",
+    "product_name": "澳式白咖啡 (大杯)",
+    "size_ml": 360,
+    "size_label": "大杯 360ml",
+    "category": "咖啡",
+    "confidence": "estimated",
+    "source": "澳白通常双份浓缩奶量少；无消委会检测，按介于美式与拿铁浓度、大杯360ml粗略推算",
+    "aliases": [
+      "澳白",
+      "Flat White",
+      "澳式白咖啡"
+    ],
+    "original_unit": "unknown",
+    "dosing_model": "fixed_dose",
+    "source_url": "https://www.foodtalks.cn/news/53805",
+    "notes": "estimated误差较大：澳白无任何检测数据，140mg为纯粗估，仅供参考。"
+  },
+  "MannerCoffee_卡布奇诺(大杯)_大杯360ml": {
+    "caffeine_mg": 128,
+    "brand": "Manner Coffee",
+    "product_name": "卡布奇诺 (大杯)",
+    "size_ml": 360,
+    "size_label": "大杯 360ml",
+    "category": "咖啡",
+    "confidence": "estimated",
+    "source": "卡布咖啡因与拿铁相近(同份意式浓缩)；无检测，按拿铁均值356.8mg/kg×360ml推算",
+    "aliases": [
+      "卡布",
+      "Cappuccino"
+    ],
+    "original_unit": "unknown",
+    "dosing_model": "fixed_dose",
+    "source_url": "https://www.foodtalks.cn/news/53805",
+    "notes": "estimated±20mg：卡布无检测数据，按拿铁口径(356.8mg/kg×360ml)估算。"
+  },
+  "Tims天好咖啡_冰美式（标准/中杯估算）_中杯355ml": {
+    "caffeine_mg": 153,
+    "brand": "Tims天好咖啡",
+    "product_name": "冰美式（标准/中杯估算）",
+    "size_ml": 355,
+    "size_label": "中杯 355ml",
+    "category": "咖啡",
+    "confidence": "estimated",
+    "source": "深圳市消委会2024现制咖啡比较试验（含Tims冰美式样品），按冰美式类目平均浓度429.9 mg/kg换算",
+    "aliases": [
+      "美式咖啡",
+      "Americano",
+      "冰美式"
+    ],
+    "original_unit": "mg/kg",
+    "dosing_model": "fixed_dose",
+    "source_url": "https://www.sznews.com/news/content/2024-05/06/content_30917604.htm",
+    "notes": "换算核验通过：429.9 mg/kg × 0.355L ≈ 152.6≈153mg/杯。该浓度为12款冰美式平均值，非Tims单独检测值，Tims实际值可能高于或低于此均值，误差≥±40mg。中杯355ml为Tims中国通用规格。"
+  },
+  "Tims天好咖啡_冰美式（大杯估算）_大杯473ml": {
+    "caffeine_mg": 203,
+    "brand": "Tims天好咖啡",
+    "product_name": "冰美式（大杯估算）",
+    "size_ml": 473,
+    "size_label": "大杯 473ml",
+    "category": "咖啡",
+    "confidence": "estimated",
+    "source": "深圳市消委会2024现制咖啡比较试验，按冰美式类目平均浓度429.9 mg/kg换算大杯容量",
+    "aliases": [
+      "大杯美式",
+      "Americano Large"
+    ],
+    "original_unit": "mg/kg",
+    "dosing_model": "fixed_dose",
+    "source_url": "https://www.sznews.com/news/content/2024-05/06/content_30917604.htm",
+    "notes": "换算核验通过：429.9 mg/kg × 0.473L ≈ 203.3≈203mg/杯。但此为弱估算：Tims按份投料(fixed_dose)，大杯多为加1份浓缩而非全杯等浓度，线性换算可能高估或低估，误差≥±50mg。EFSA单次≤200mg，此估算值已达上限附近，仅供参考。"
+  },
+  "Tims天好咖啡_拿铁（标准/中杯估算）_中杯355ml": {
+    "caffeine_mg": 127,
+    "brand": "Tims天好咖啡",
+    "product_name": "拿铁（标准/中杯估算）",
+    "size_ml": 355,
+    "size_label": "中杯 355ml",
+    "category": "咖啡",
+    "confidence": "estimated",
+    "source": "深圳市消委会2024现制咖啡比较试验（含Tims冰拿铁样品），按冰拿铁类目平均浓度356.8 mg/kg换算",
+    "aliases": [
+      "拿铁咖啡",
+      "Latte",
+      "冰拿铁",
+      "热拿铁"
+    ],
+    "original_unit": "mg/kg",
+    "dosing_model": "fixed_dose",
+    "source_url": "https://www.sznews.com/news/content/2024-05/06/content_30917604.htm",
+    "notes": "换算核验通过：356.8 mg/kg × 0.355L ≈ 126.7≈127mg/杯。浓度为12款冰拿铁均值（含奶稀释），非Tims单独值，误差≥±40mg。"
+  },
+  "Tims天好咖啡_拿铁（大杯估算）_大杯473ml": {
+    "caffeine_mg": 169,
+    "brand": "Tims天好咖啡",
+    "product_name": "拿铁（大杯估算）",
+    "size_ml": 473,
+    "size_label": "大杯 473ml",
+    "category": "咖啡",
+    "confidence": "estimated",
+    "source": "深圳市消委会2024现制咖啡比较试验，按冰拿铁类目平均浓度356.8 mg/kg换算大杯容量",
+    "aliases": [
+      "大杯拿铁",
+      "Latte Large"
+    ],
+    "original_unit": "mg/kg",
+    "dosing_model": "fixed_dose",
+    "source_url": "https://www.sznews.com/news/content/2024-05/06/content_30917604.htm",
+    "notes": "换算核验通过：356.8 mg/kg × 0.473L ≈ 168.8≈169mg/杯。弱估算：fixed_dose大杯多加1份浓缩，线性换算未必准确，误差≥±50mg。"
+  },
+  "Tims天好咖啡_不止拿铁（MoreThanLatte，拿铁底估算）_中杯355ml": {
+    "caffeine_mg": 127,
+    "brand": "Tims天好咖啡",
+    "product_name": "不止拿铁（More Than Latte，拿铁底估算）",
+    "size_ml": 355,
+    "size_label": "中杯 355ml（按拿铁估算）",
+    "category": "咖啡",
+    "confidence": "estimated",
+    "source": "无官方/第三方咖啡因数据，按拿铁类目平均浓度356.8 mg/kg×0.355L类比估算",
+    "aliases": [
+      "不止拿铁",
+      "More Than Latte"
+    ],
+    "original_unit": "unknown",
+    "dosing_model": "fixed_dose",
+    "source_url": "https://www.sznews.com/news/content/2024-05/06/content_30917604.htm",
+    "notes": "Tims招牌产品。仅有脂肪含量第三方数据，无任何产品特异性咖啡因数据。咖啡因纯按拿铁底类比估算约127mg，属高度推测，误差≥±50mg，仅供参考。"
+  },
+  "Tims天好咖啡_暖心拿铁（暖心系列，拿铁底估算）_中杯355ml": {
+    "caffeine_mg": 127,
+    "brand": "Tims天好咖啡",
+    "product_name": "暖心拿铁（暖心系列，拿铁底估算）",
+    "size_ml": 355,
+    "size_label": "中杯 355ml（按拿铁估算）",
+    "category": "咖啡",
+    "confidence": "estimated",
+    "source": "无数据，按拿铁底（假设含1份浓缩）类比深圳消委会冰拿铁平均浓度356.8 mg/kg估算",
+    "aliases": [
+      "暖心系列",
+      "暖心拿铁"
+    ],
+    "original_unit": "unknown",
+    "dosing_model": "fixed_dose",
+    "source_url": "https://www.sznews.com/news/content/2024-05/06/content_30917604.htm",
+    "notes": "「暖心系列」为季节性热饮系列。零产品特异性咖啡因数据。若为单份浓缩拿铁底估算约127mg；若调味/含其他底则可能更低。高度估算占位项，实际以门店为准。"
+  },
+  "COSTA_香草拿铁(大杯)_大杯600ml": {
+    "caffeine_mg": 363,
+    "brand": "COSTA",
+    "product_name": "香草拿铁 (大杯)",
+    "size_ml": 600,
+    "size_label": "大杯 600ml",
+    "category": "咖啡",
+    "confidence": "reported",
+    "source": "《消费者报道》2019年10款现磨拿铁对比测评，媒体援引逐杯值",
+    "aliases": [
+      "香草咖啡",
+      "Vanilla Latte",
+      "香草风味拿铁"
+    ],
+    "original_unit": "mg/cup",
+    "dosing_model": "fixed_dose",
+    "source_url": "https://zhuanlan.zhihu.com/p/124219690",
+    "notes": "质检保留但需警示：363mg为2019年媒体援引的逐杯峰值(605mg/kg×0.6L)，是当次10款样品最高、被『相当于7罐红牛』标题党化引用。该值对应约三份浓缩，远高于Costa拿铁通常1-2份espresso的实际投料，可能因2019个别批次或检测方法偏高，仅供上限参考；已超EFSA单次200mg、逼近每日400mg上限。配方/批次或随年份调整。"
+  },
+  "COSTA_拿铁(大杯)_大杯约600ml": {
+    "caffeine_mg": 363,
+    "brand": "COSTA",
+    "product_name": "拿铁 (大杯)",
+    "size_ml": 600,
+    "size_label": "大杯 约600ml(估)",
+    "category": "咖啡",
+    "confidence": "estimated",
+    "source": "《消费者报道》2019现磨拿铁测评(COSTA浓度605mg/kg)，按假设600ml换算",
+    "aliases": [
+      "Latte",
+      "热拿铁",
+      "冰拿铁"
+    ],
+    "original_unit": "mg/kg",
+    "dosing_model": "fixed_dose",
+    "source_url": "https://zhuanlan.zhihu.com/p/124219690",
+    "notes": "质检降级 tested→estimated：与『香草拿铁大杯』为同一2019数据的不同表述(浓度605mg/kg vs 逐杯363mg)，本质重复，故降级避免双计为独立证据。换算605mg/kg×0.6L≈363mg正确；但牛奶饮品咖啡因不随杯量线性增长(多出体积主要是奶非咖啡)，恒定mg/kg外推到各杯型方法上存疑。容量600ml为假设(无官方ml公示)。"
+  },
+  "COSTA_拿铁(中杯)_中杯约450ml": {
+    "caffeine_mg": 272,
+    "brand": "COSTA",
+    "product_name": "拿铁 (中杯)",
+    "size_ml": 450,
+    "size_label": "中杯 约450ml(估)",
+    "category": "咖啡",
+    "confidence": "estimated",
+    "source": "基于2019测评605mg/kg浓度+中杯容量假设推算",
+    "aliases": [
+      "Latte",
+      "中杯拿铁"
+    ],
+    "original_unit": "mg/kg",
+    "dosing_model": "fixed_dose",
+    "source_url": "https://zhuanlan.zhihu.com/p/124219690",
+    "notes": "estimated(±高不确定)：605mg/kg×0.45L≈272mg，算术无误。但隐含假设『caffeine随奶量线性缩放』并不成立，中/小杯实际可能用相同espresso份数，故272mg或偏高。容量450ml为行业惯例假设(可能325-454ml)，无官方公示。"
+  },
+  "COSTA_拿铁(小杯)_小杯约350ml": {
+    "caffeine_mg": 212,
+    "brand": "COSTA",
+    "product_name": "拿铁 (小杯)",
+    "size_ml": 350,
+    "size_label": "小杯 约350ml(估)",
+    "category": "咖啡",
+    "confidence": "estimated",
+    "source": "基于2019测评605mg/kg浓度+小杯容量假设推算",
+    "aliases": [
+      "Latte",
+      "小杯拿铁"
+    ],
+    "original_unit": "mg/kg",
+    "dosing_model": "fixed_dose",
+    "source_url": "https://zhuanlan.zhihu.com/p/124219690",
+    "notes": "estimated：605mg/kg×0.35L≈212mg，算术无误；容量350ml为假设；线性缩放假设同样存疑，实际或偏高。"
+  },
+  "COSTA_卡布奇诺(大杯)_大杯约600ml": {
+    "caffeine_mg": 363,
+    "brand": "COSTA",
+    "product_name": "卡布奇诺 (大杯)",
+    "size_ml": 600,
+    "size_label": "大杯 约600ml(估)",
+    "category": "咖啡",
+    "confidence": "estimated",
+    "source": "类比2019拿铁测评605mg/kg+容量假设推算",
+    "aliases": [
+      "Cappuccino",
+      "卡布"
+    ],
+    "original_unit": "mg/kg",
+    "dosing_model": "fixed_dose",
+    "source_url": "https://zhuanlan.zhihu.com/p/124219690",
+    "notes": "estimated(双重推算)：无COSTA卡布单独检测，按拿铁同espresso投料类比605mg/kg×0.6L≈363mg。卡布espresso基底与拿铁近似故类比尚可，但容量、浓度、线性缩放均为假设，不确定性大；同样继承牛奶饮品高估问题。"
+  },
+  "MStand_冰美式(标准杯)_标准杯": {
+    "caffeine_mg": 202,
+    "brand": "M Stand",
+    "product_name": "冰美式(标准杯)",
+    "size_ml": 470,
+    "size_label": "标准杯(冰，约470ml)",
+    "category": "咖啡",
+    "confidence": "estimated",
+    "source": "深圳市消委会2024现制咖啡比较试验品类均值(429.9 mg/kg)×0.47L换算；M Stand个体值未公开",
+    "aliases": [
+      "美式",
+      "Americano",
+      "冰美式咖啡"
+    ],
+    "original_unit": "mg/kg",
+    "dosing_model": "fixed_dose",
+    "source_url": "https://city.sina.cn/finance/2024-04-29/detail-inatninc3153635.d.html",
+    "notes": "换算核验通过(429.9×0.47=202.1)。estimated：M Stand冰美式个体检测值未公开，采用12款冰美式品类均值，区分度有限，误差约±40mg。检测为不加糖冰咖，实际值取决于浓缩份数与豆种"
+  },
+  "MStand_热美式_标准杯": {
+    "caffeine_mg": 155,
+    "brand": "M Stand",
+    "product_name": "热美式",
+    "size_ml": 360,
+    "size_label": "标准杯(热，约360ml)",
+    "category": "咖啡",
+    "confidence": "estimated",
+    "source": "按美式品类均值429.9 mg/kg×0.36L换算；M Stand未公开热美式数据，原检测仅冰款",
+    "aliases": [
+      "美式咖啡(热)"
+    ],
+    "original_unit": "mg/kg",
+    "dosing_model": "fixed_dose",
+    "source_url": "https://city.sina.cn/finance/2024-04-29/detail-inatninc3153635.d.html",
+    "notes": "换算核验通过(429.9×0.36=154.8)。三重估算：检测仅冰款+取品类均值+360ml热杯容量为假设，不确定度高于冰款，误差≥±40mg"
+  },
+  "MStand_冰拿铁(标准杯)_标准杯": {
+    "caffeine_mg": 168,
+    "brand": "M Stand",
+    "product_name": "冰拿铁(标准杯)",
+    "size_ml": 470,
+    "size_label": "标准杯(冰，约470ml)",
+    "category": "咖啡",
+    "confidence": "estimated",
+    "source": "深圳市消委会2024品类均值(356.8 mg/kg)×0.47L换算；M Stand个体值未公开",
+    "aliases": [
+      "拿铁",
+      "Latte",
+      "冰拿铁咖啡"
+    ],
+    "original_unit": "mg/kg",
+    "dosing_model": "fixed_dose",
+    "source_url": "https://city.sina.cn/finance/2024-04-29/detail-inatninc3153635.d.html",
+    "notes": "换算核验通过(356.8×0.47=167.7)。estimated：采用12款冰拿铁品类均值，与其他拿铁款估值相同，区分度低，误差约±40mg。拿铁含奶被稀释，浓度低于美式"
+  },
+  "MStand_热拿铁_标准杯": {
+    "caffeine_mg": 128,
+    "brand": "M Stand",
+    "product_name": "热拿铁",
+    "size_ml": 360,
+    "size_label": "标准杯(热，约360ml)",
+    "category": "咖啡",
+    "confidence": "estimated",
+    "source": "按拿铁品类均值356.8 mg/kg×0.36L换算；M Stand未公开热拿铁数据，原检测仅冰款",
+    "aliases": [
+      "拿铁(热)"
+    ],
+    "original_unit": "mg/kg",
+    "dosing_model": "fixed_dose",
+    "source_url": "https://city.sina.cn/finance/2024-04-29/detail-inatninc3153635.d.html",
+    "notes": "换算核验通过(356.8×0.36=128.4)。三重估算：检测仅冰款+品类均值+360ml容量假设，误差≥±40mg"
+  },
+  "MStand_燕麦曲奇拿铁(可以吃的咖啡杯)_标准杯": {
+    "caffeine_mg": 128,
+    "brand": "M Stand",
+    "product_name": "燕麦曲奇拿铁(可以吃的咖啡杯)",
+    "size_ml": 360,
+    "size_label": "标准杯(约360ml热奶咖)",
+    "category": "奶咖",
+    "confidence": "estimated",
+    "source": "M Stand招牌奶咖，无单独咖啡因数据；按拿铁品类均值356.8 mg/kg×0.36L粗估",
+    "aliases": [
+      "燕麦拿铁",
+      "可以吃的咖啡杯",
+      "曲奇拿铁"
+    ],
+    "original_unit": "mg/kg",
+    "dosing_model": "fixed_dose",
+    "source_url": "https://www.foodaily.com/articles/32874",
+    "notes": "换算核验通过(356.8×0.36=128.4)。最宽松外推：浓缩份数未知，直接套用普通拿铁均值，实际误差可能>±50mg。曲奇杯本身不含咖啡因。foodaily链接仅佐证产品存在，非咖啡因数据源"
+  },
+  "MStand_椰青美式/椰子美式_标准杯": {
+    "caffeine_mg": 200,
+    "brand": "M Stand",
+    "product_name": "椰青美式/椰子美式",
+    "size_ml": 470,
+    "size_label": "标准杯(冰，约470ml)",
+    "category": "咖啡",
+    "confidence": "estimated",
+    "source": "椰子风味美式，咖啡基底与冰美式相近；按美式品类均值×0.47L粗估，无单独数据",
+    "aliases": [
+      "椰青美式",
+      "生椰美式"
+    ],
+    "original_unit": "mg/kg",
+    "dosing_model": "fixed_dose",
+    "source_url": "https://city.sina.cn/finance/2024-04-29/detail-inatninc3153635.d.html",
+    "notes": "基准换算为429.9×0.47=202，因加椰浆/椰水稀释取整为200(可接受)。最宽松外推：浓缩份数未知，与冰美式估值几乎重叠，误差>±50mg"
+  },
+  "MStand_燕窝拿铁/养生系列拿铁_标准杯": {
+    "caffeine_mg": 128,
+    "brand": "M Stand",
+    "product_name": "燕窝拿铁/养生系列拿铁",
+    "size_ml": 360,
+    "size_label": "标准杯(约360ml)",
+    "category": "奶咖",
+    "confidence": "estimated",
+    "source": "M Stand养生咖啡系列(见Foodaily报道)，无单独咖啡因数据；按拿铁品类均值粗估",
+    "aliases": [
+      "山茶花燕窝拿铁",
+      "燕窝拿铁"
+    ],
+    "original_unit": "mg/kg",
+    "dosing_model": "fixed_dose",
+    "source_url": "https://www.foodaily.com/articles/36523",
+    "notes": "换算核验通过(356.8×0.36=128.4)。最宽松外推：奶咖基底加燕窝配料，浓缩份数未知，套用普通拿铁均值，误差>±50mg。foodaily链接仅佐证产品存在，非咖啡因数据源"
+  },
+  "幸运咖_经典美式（冰/热）_标准杯415mL": {
+    "caffeine_mg": 130,
+    "brand": "幸运咖",
+    "product_name": "经典美式（冰/热）",
+    "size_ml": 415,
+    "size_label": "标准杯 415mL（消委会援引幸运咖美式杯量）",
+    "category": "咖啡",
+    "confidence": "estimated",
+    "source": "代理值：2023福建省/福州市消委会现制咖啡比较试验公布的【美式品类换算均值130.49mg/杯】，幸运咖个体咖啡因值未单列；仅杯量415mL有报道",
+    "aliases": [
+      "美式",
+      "幸运美式",
+      "冰美式"
+    ],
+    "original_unit": "mg/cup",
+    "dosing_model": "fixed_dose",
+    "source_url": "https://m.cqn.com.cn/ms/content/2023-12/06/content_9007087.htm",
+    "notes": "estimated±25mg。杯量415mL可靠（幸运咖美式被点名为最便宜款6元/415mL）；咖啡因为跨品牌美式品类均值代理，非幸运咖实测。幸运咖未进低于200mg/kg黑名单，属正常范围。无官方逐杯公示。"
+  },
+  "幸运咖_经典拿铁（冰/热）_标准杯约500mL": {
+    "caffeine_mg": 110,
+    "brand": "幸运咖",
+    "product_name": "经典拿铁（冰/热）",
+    "size_ml": 500,
+    "size_label": "标准杯 约500mL（网络流传，官方未公示）",
+    "category": "咖啡",
+    "confidence": "estimated",
+    "source": "代理值：2023福建/福州消委会测评【拿铁品类换算均值110.48mg/杯】，幸运咖个体值未单列",
+    "aliases": [
+      "拿铁",
+      "冰拿铁"
+    ],
+    "original_unit": "mg/cup",
+    "dosing_model": "fixed_dose",
+    "source_url": "https://m.cqn.com.cn/ms/content/2023-12/06/content_9007087.htm",
+    "notes": "estimated±25mg。咖啡因为跨品牌拿铁品类均值代理，非幸运咖实测。杯量500mL为网络数据，官方未公布，仅供参考。"
+  },
+  "幸运咖_椰椰拿铁（生椰拿铁）_标准杯约500mL": {
+    "caffeine_mg": 110,
+    "brand": "幸运咖",
+    "product_name": "椰椰拿铁（生椰拿铁）",
+    "size_ml": 500,
+    "size_label": "标准杯 约500mL（网络流传，官方未公示）",
+    "category": "咖啡",
+    "confidence": "estimated",
+    "source": "代理值：幸运咖招牌椰乳拿铁（菲诺厚椰乳合作款），咖啡因按消委会拿铁品类均值代理估算，无幸运咖个体数据",
+    "aliases": [
+      "椰椰拿铁",
+      "生椰拿铁",
+      "椰乳拿铁"
+    ],
+    "original_unit": "mg/cup",
+    "dosing_model": "fixed_dose",
+    "source_url": "https://zhuanlan.zhihu.com/p/487014871",
+    "notes": "estimated±25mg。真实招牌SKU（2022年与菲诺合作，价7-10元）；source_url为合作软文与咖啡因无关，数值为拿铁均值代理。椰乳替代部分牛奶，咖啡因仍由浓缩shot决定。无官方数据。"
+  },
+  "幸运咖_香草拿铁_标准杯约500mL": {
+    "caffeine_mg": 109,
+    "brand": "幸运咖",
+    "product_name": "香草拿铁",
+    "size_ml": 500,
+    "size_label": "标准杯 约500mL（网络流传，官方未公示）",
+    "category": "咖啡",
+    "confidence": "estimated",
+    "source": "代理值：2023福建/福州消委会风味拿铁品类均值109.19mg/杯；幸运咖香草拿铁仅被点名含糖量/丙烯酰胺，咖啡因未单列",
+    "aliases": [
+      "香草拿铁",
+      "香草风味拿铁"
+    ],
+    "original_unit": "mg/cup",
+    "dosing_model": "fixed_dose",
+    "source_url": "https://m.cqn.com.cn/ms/content/2023-12/06/content_9007087.htm",
+    "notes": "estimated±25mg。此款是测评中唯一被点名的幸运咖SKU，但披露的是含糖量(标准糖25.65g/杯,全场最高)与丙烯酰胺(9.10µg/杯)，咖啡因数值未公开；咖啡因为风味拿铁品类均值代理。"
+  },
+  "麦咖啡_冰美式咖啡(中杯)_中杯": {
+    "caffeine_mg": 110,
+    "brand": "麦咖啡",
+    "product_name": "冰美式咖啡(中杯)",
+    "size_ml": 360,
+    "size_label": "中杯(约12oz)",
+    "category": "咖啡",
+    "confidence": "reported",
+    "source": "caffeineinformer第三方实测McDonald's espresso类+深圳消委会2024比较试验(冰美式均值429.9mg/kg)",
+    "aliases": [
+      "美式",
+      "Iced Americano",
+      "冰美式"
+    ],
+    "original_unit": "range",
+    "dosing_model": "fixed_dose",
+    "source_url": "https://www.caffeineinformer.com/mccafe-coffee-caffeine-content",
+    "notes": "麦当劳无官方咖啡因公示。中杯容量360ml为推定(官方未逐杯公示)。消委会均值429.9mg/kg×0.36L≈155mg为mg/kg换算上界,但该均值含12品牌且未单独归属麦当劳,故区间取~110-155mg。reported。"
+  },
+  "麦咖啡_热美式咖啡(中杯)_中杯": {
+    "caffeine_mg": 107,
+    "brand": "麦咖啡",
+    "product_name": "热美式咖啡(中杯)",
+    "size_ml": 360,
+    "size_label": "中杯(约12oz)",
+    "category": "咖啡",
+    "confidence": "reported",
+    "source": "caffeineinformer第三方聚合McDonald's espresso-based drinks",
+    "aliases": [
+      "热美式",
+      "Hot Americano"
+    ],
+    "original_unit": "mg/cup",
+    "dosing_model": "fixed_dose",
+    "source_url": "https://www.caffeineinformer.com/caffeine-content/mcdonalds-latte",
+    "notes": "浓缩咖啡基底,热/冰咖啡因相同(去冰不改变,fixed_dose)。中杯360ml推定。按16oz=142mg按12oz容量比例推算约107mg。reported。"
+  },
+  "麦咖啡_冰美式咖啡(大杯)_大杯": {
+    "caffeine_mg": 142,
+    "brand": "麦咖啡",
+    "product_name": "冰美式咖啡(大杯)",
+    "size_ml": 470,
+    "size_label": "大杯(约16oz)",
+    "category": "咖啡",
+    "confidence": "reported",
+    "source": "caffeineinformer第三方聚合(16oz McCafé espresso drink=142mg)",
+    "aliases": [
+      "大杯美式",
+      "Large Iced Americano"
+    ],
+    "original_unit": "mg/cup",
+    "dosing_model": "fixed_dose",
+    "source_url": "https://www.caffeineinformer.com/mccafe-coffee-caffeine-content",
+    "notes": "大杯16oz≈470ml为推定容量。142mg来自caffeineinformer聚合估算(非实验室检测),原标tested已降级为reported。"
+  },
+  "麦咖啡_拿铁咖啡(中杯)_中杯": {
+    "caffeine_mg": 108,
+    "brand": "麦咖啡",
+    "product_name": "拿铁咖啡(中杯)",
+    "size_ml": 360,
+    "size_label": "中杯(约12oz)",
+    "category": "咖啡",
+    "confidence": "reported",
+    "source": "caffeineinformer第三方聚合+深圳消委会2024(冰拿铁均值356.8mg/kg)",
+    "aliases": [
+      "拿铁",
+      "Latte",
+      "热拿铁"
+    ],
+    "original_unit": "range",
+    "dosing_model": "fixed_dose",
+    "source_url": "https://www.caffeineinformer.com/caffeine-content/mcdonalds-latte",
+    "notes": "拿铁与美式咖啡因由浓缩份数决定,奶不含咖啡因。中杯360ml推定。消委会均值356.8mg/kg×0.36L≈128mg为mg/kg换算参考(未点名麦当劳)。reported。"
+  },
+  "麦咖啡_拿铁咖啡(大杯)_大杯": {
+    "caffeine_mg": 142,
+    "brand": "麦咖啡",
+    "product_name": "拿铁咖啡(大杯)",
+    "size_ml": 470,
+    "size_label": "大杯(约16oz)",
+    "category": "咖啡",
+    "confidence": "reported",
+    "source": "caffeineinformer第三方聚合McDonald's Latte 16oz",
+    "aliases": [
+      "大杯拿铁",
+      "Large Latte"
+    ],
+    "original_unit": "mg/cup",
+    "dosing_model": "fixed_dose",
+    "source_url": "https://www.caffeineinformer.com/caffeine-content/mcdonalds-latte",
+    "notes": "大杯16oz≈470ml推定。142mg为caffeineinformer聚合估算值,原标tested已降级reported。卡布/摩卡/玛奇朵同份浓缩则数值接近。"
+  },
+  "麦咖啡_卡布奇诺(中杯)_中杯": {
+    "caffeine_mg": 108,
+    "brand": "麦咖啡",
+    "product_name": "卡布奇诺(中杯)",
+    "size_ml": 360,
+    "size_label": "中杯(约12oz)",
+    "category": "咖啡",
+    "confidence": "estimated",
+    "source": "caffeineinformer(浓缩类16oz=142mg,按12oz容量比例推算)",
+    "aliases": [
+      "卡布奇诺",
+      "Cappuccino"
+    ],
+    "original_unit": "range",
+    "dosing_model": "fixed_dose",
+    "source_url": "https://www.caffeineinformer.com/mccafe-coffee-caffeine-content",
+    "notes": "estimated(±20mg):按16oz=142mg浓缩类基准、中杯12oz容量比例推算。卡布与拿铁同份浓缩,咖啡因相近。中杯360ml推定。"
+  },
+  "麦咖啡_摩卡咖啡(中杯)_中杯": {
+    "caffeine_mg": 115,
+    "brand": "麦咖啡",
+    "product_name": "摩卡咖啡(中杯)",
+    "size_ml": 360,
+    "size_label": "中杯(约12oz)",
+    "category": "咖啡",
+    "confidence": "estimated",
+    "source": "caffeineinformer浓缩类基准+可可咖啡因推算",
+    "aliases": [
+      "摩卡",
+      "Mocha"
+    ],
+    "original_unit": "range",
+    "dosing_model": "fixed_dose",
+    "source_url": "https://www.caffeineinformer.com/mccafe-coffee-caffeine-content",
+    "notes": "estimated(±20mg):浓缩份数同拿铁,巧克力/可可粉额外带入少量咖啡因故略高于纯拿铁。中杯360ml推定。"
+  },
+  "麦咖啡_焦糖玛奇朵(中杯)_中杯": {
+    "caffeine_mg": 108,
+    "brand": "麦咖啡",
+    "product_name": "焦糖玛奇朵(中杯)",
+    "size_ml": 360,
+    "size_label": "中杯(约12oz)",
+    "category": "咖啡",
+    "confidence": "estimated",
+    "source": "caffeineinformer(浓缩类16oz=142mg)按容量比例推算",
+    "aliases": [
+      "玛奇朵",
+      "Macchiato",
+      "Caramel Macchiato"
+    ],
+    "original_unit": "range",
+    "dosing_model": "fixed_dose",
+    "source_url": "https://www.caffeineinformer.com/mccafe-coffee-caffeine-content",
+    "notes": "estimated(±20mg):风味糖浆不含咖啡因,与拿铁同浓缩份数。中杯360ml推定。"
+  },
+  "麦咖啡_鲜萃咖啡/手冲(中杯)_中杯": {
+    "caffeine_mg": 110,
+    "brand": "麦咖啡",
+    "product_name": "鲜萃咖啡/手冲(中杯)",
+    "size_ml": 360,
+    "size_label": "中杯(约12oz)",
+    "category": "咖啡",
+    "confidence": "reported",
+    "source": "caffeineinformer/Corner Coffee Store第三方(McDonald's brewed 12oz≈110mg)",
+    "aliases": [
+      "鲜萃咖啡",
+      "Brewed Coffee",
+      "鲜煮咖啡"
+    ],
+    "original_unit": "mg/cup",
+    "dosing_model": "fixed_dose",
+    "source_url": "https://www.caffeineinformer.com/mccafe-coffee-caffeine-content",
+    "notes": "滴滤/鲜萃咖啡因高于浓缩奶咖。中杯12oz≈110mg。中国麦咖啡有鲜萃咖啡SKU(官网brewed-coffee页)。reported。"
+  },
+  "麦咖啡_奶铁(燕麦奶铁/小杯)_小杯": {
+    "caffeine_mg": 70,
+    "brand": "麦咖啡",
+    "product_name": "奶铁(燕麦奶铁/小杯)",
+    "size_ml": 237,
+    "size_label": "小杯(8oz)",
+    "category": "咖啡",
+    "confidence": "estimated",
+    "source": "caffeineinformer(small espresso~75mg)+麦咖啡奶铁8oz规格(媒体援引)",
+    "aliases": [
+      "奶铁",
+      "Naitie",
+      "燕麦奶铁"
+    ],
+    "original_unit": "range",
+    "dosing_model": "fixed_dose",
+    "source_url": "https://www.caffeineinformer.com/mccafe-coffee-caffeine-content",
+    "notes": "estimated(±20mg):奶铁为浓缩+牛奶的奶咖(原误分类为奶茶,已改为咖啡),小杯8oz(237ml,媒体已确认规格)。咖啡因约70mg。燕麦奶铁同基底。"
+  },
+  "肯德基KCOFFEE_冰拿铁（中杯）_中杯": {
+    "caffeine_mg": 58,
+    "brand": "肯德基KCOFFEE",
+    "product_name": "冰拿铁（中杯）",
+    "size_ml": 355,
+    "size_label": "中杯（约12oz）",
+    "category": "咖啡",
+    "confidence": "tested",
+    "source": "深圳市消委会2024现制咖啡比较试验（第三方实验室检测，冰咖啡不另加糖）",
+    "aliases": [
+      "冰拿铁",
+      "Iced Latte",
+      "KCOFFEE 冰拿铁"
+    ],
+    "original_unit": "mg/kg",
+    "dosing_model": "fixed_dose",
+    "source_url": "https://www.sznews.com/news/content/2024-05/06/content_30918788.htm",
+    "notes": "换算核验：164mg/kg×0.355L≈58.2mg，与所填58mg一致。浓度为实测(tested)且为24款最低；容量355ml按12oz推算非官方公示，若实际杯型更小则每杯值偏低。"
+  },
+  "肯德基KCOFFEE_冰美式（中杯）_中杯": {
+    "caffeine_mg": 110,
+    "brand": "肯德基KCOFFEE",
+    "product_name": "冰美式（中杯）",
+    "size_ml": 355,
+    "size_label": "中杯（约12oz）",
+    "category": "咖啡",
+    "confidence": "estimated",
+    "source": "深圳市消委会2024现制咖啡比较试验（仅公示美式均值429.9mg/kg与肯德基属较低梯队，未给肯德基冰美式具体值）；媒体援引肯德基咖啡约100mg+",
+    "aliases": [
+      "冰美式",
+      "Iced Americano",
+      "KCOFFEE 冰美式"
+    ],
+    "original_unit": "mg/kg",
+    "dosing_model": "fixed_dose",
+    "source_url": "https://www.sznews.com/news/content/2024-05/06/content_30917604.htm",
+    "notes": "换算核验：假设≈310mg/kg×0.355L≈110mg，数学一致。但消委会未公示肯德基冰美式确切mg/kg，310为反推假设，故标estimated；落在0-300mg合理区间，与媒体'约100mg+'一致。±20mg。"
+  },
+  "肯德基KCOFFEE_热拿铁（中杯）_中杯": {
+    "caffeine_mg": 60,
+    "brand": "肯德基KCOFFEE",
+    "product_name": "热拿铁（中杯）",
+    "size_ml": 355,
+    "size_label": "中杯",
+    "category": "咖啡",
+    "confidence": "estimated",
+    "source": "基于深圳消委会冰拿铁实测低值梯队 + 同系列同份额浓缩液推算",
+    "aliases": [
+      "拿铁",
+      "Hot Latte"
+    ],
+    "original_unit": "range",
+    "dosing_model": "fixed_dose",
+    "source_url": "https://www.sznews.com/news/content/2024-05/06/content_30918788.htm",
+    "notes": "纯推算±20mg。热/冰拿铁通常同份浓缩液，按≈60mg/杯估。source_url为冰饮检测链接，仅间接佐证；无热饮逐杯官方数据。"
+  },
+  "肯德基KCOFFEE_热美式（中杯）_中杯": {
+    "caffeine_mg": 110,
+    "brand": "肯德基KCOFFEE",
+    "product_name": "热美式（中杯）",
+    "size_ml": 355,
+    "size_label": "中杯",
+    "category": "咖啡",
+    "confidence": "estimated",
+    "source": "基于深圳消委会美式低梯队 + 同系列浓缩液推算",
+    "aliases": [
+      "美式",
+      "Hot Americano"
+    ],
+    "original_unit": "range",
+    "dosing_model": "fixed_dose",
+    "source_url": "https://www.sznews.com/news/content/2024-05/06/content_30917604.htm",
+    "notes": "纯推算±20mg。美式咖啡因主要来自浓缩液份数，热/冰美式应接近≈110mg。source_url为冰饮检测链接仅间接佐证；无热饮逐杯官方数据。落在合理区间。"
+  },
+  "喜茶_烤黑糖波波牛乳_标准杯": {
+    "caffeine_mg": 0,
+    "brand": "喜茶",
+    "product_name": "烤黑糖波波牛乳",
+    "size_ml": 500,
+    "size_label": "标准杯",
+    "category": "轻乳茶/牛乳茶",
+    "confidence": "official",
+    "source": "喜茶官方咖啡因红绿灯公示 2024-08-15",
+    "aliases": [
+      "烤黑糖波波牛奶"
+    ],
+    "original_unit": "mg/cup",
+    "dosing_model": "fixed_dose",
+    "source_url": "https://cn.chinadaily.com.cn/a/202408/15/WS66bdc4e5a310054d254ed09e.html",
+    "notes": "官方点名为两款0咖啡因产品之一,夜晚可饮。纯牛乳+黑糖波波无茶底,0为官方精确值。已核验:多篇报道一致点名此两款为0咖啡因。"
+  },
+  "喜茶_黑糖波波真牛乳_标准杯": {
+    "caffeine_mg": 0,
+    "brand": "喜茶",
+    "product_name": "黑糖波波真牛乳",
+    "size_ml": 500,
+    "size_label": "标准杯",
+    "category": "轻乳茶/牛乳茶",
+    "confidence": "official",
+    "source": "喜茶官方咖啡因红绿灯公示 2024-08-15",
+    "aliases": [
+      "黑糖波波牛乳"
+    ],
+    "original_unit": "mg/cup",
+    "dosing_model": "fixed_dose",
+    "source_url": "https://cn.chinadaily.com.cn/a/202408/15/WS66bdc4e5a310054d254ed09e.html",
+    "notes": "官方点名为两款0咖啡因产品之一,夜晚可饮。0为官方精确值,已核验。"
+  },
+  "喜茶_多肉葡萄_标准杯": {
+    "caffeine_mg": 25,
+    "brand": "喜茶",
+    "product_name": "多肉葡萄",
+    "size_ml": 650,
+    "size_label": "标准杯",
+    "category": "水果茶",
+    "confidence": "estimated",
+    "source": "喜茶官方咖啡因红绿灯公示 2024-08-15(分级official,mg值为区间中点估算)",
+    "aliases": [
+      "多肉葡萄(首创)"
+    ],
+    "original_unit": "range",
+    "dosing_model": "fixed_dose",
+    "source_url": "https://cn.chinadaily.com.cn/a/202408/15/WS66bdc4e5a310054d254ed09e.html",
+    "notes": "分级归属为official(报道明确点名绿灯,<50mg/杯);但caffeine_mg=25为0-50区间中点,精确值仅小程序可见、未进入公开报道,故confidence下调为estimated(±25mg)。size_ml由660修正为650(喜茶经典标准杯官方标称650ml,实测约450-500ml)。"
+  },
+  "喜茶_多肉桃李_标准杯": {
+    "caffeine_mg": 25,
+    "brand": "喜茶",
+    "product_name": "多肉桃李",
+    "size_ml": 650,
+    "size_label": "标准杯",
+    "category": "水果茶",
+    "confidence": "estimated",
+    "source": "喜茶官方咖啡因红绿灯公示 2024-08-15(分级official,mg值为区间中点估算)",
+    "aliases": [
+      "多肉桃李(首创)"
+    ],
+    "original_unit": "range",
+    "dosing_model": "fixed_dose",
+    "source_url": "https://cn.chinadaily.com.cn/a/202408/15/WS66bdc4e5a310054d254ed09e.html",
+    "notes": "分级归属official(报道点名绿灯);mg值为区间中点估算,故estimated(±25mg)。size_ml修正为650。"
+  },
+  "喜茶_多肉芒芒_标准杯": {
+    "caffeine_mg": 25,
+    "brand": "喜茶",
+    "product_name": "多肉芒芒",
+    "size_ml": 650,
+    "size_label": "标准杯",
+    "category": "水果茶",
+    "confidence": "estimated",
+    "source": "喜茶官方咖啡因红绿灯公示 2024-08-15(分级official,mg值为区间中点估算)",
+    "aliases": [
+      "多肉芒果"
+    ],
+    "original_unit": "range",
+    "dosing_model": "fixed_dose",
+    "source_url": "https://cn.chinadaily.com.cn/a/202408/15/WS66bdc4e5a310054d254ed09e.html",
+    "notes": "分级归属official(报道点名绿灯);mg值为区间中点估算,故estimated(±25mg)。size_ml修正为650。"
+  },
+  "喜茶_芝芝莓莓_标准杯": {
+    "caffeine_mg": 25,
+    "brand": "喜茶",
+    "product_name": "芝芝莓莓",
+    "size_ml": 650,
+    "size_label": "标准杯",
+    "category": "水果茶/芝士茶",
+    "confidence": "estimated",
+    "source": "按喜茶绿灯果茶品类推断",
+    "aliases": [
+      "芝芝莓莓(草莓)"
+    ],
+    "original_unit": "range",
+    "dosing_model": "fixed_dose",
+    "source_url": "https://news.qq.com/rain/a/20240815A06UH500",
+    "notes": "官方未逐一点名;同属绿妍茶底低茶量果茶,绿灯占比约53%,推断<50mg/杯,取中点25mg,±25mg。芝士奶盖不含咖啡因。size_ml修正为650。"
+  },
+  "喜茶_芝芝芒芒_标准杯": {
+    "caffeine_mg": 25,
+    "brand": "喜茶",
+    "product_name": "芝芝芒芒",
+    "size_ml": 650,
+    "size_label": "标准杯",
+    "category": "水果茶/芝士茶",
+    "confidence": "estimated",
+    "source": "按喜茶绿灯果茶品类推断",
+    "aliases": [
+      "芝芝芒果"
+    ],
+    "original_unit": "range",
+    "dosing_model": "fixed_dose",
+    "source_url": "https://news.qq.com/rain/a/20240815A06UH500",
+    "notes": "官方未逐一点名,按绿灯果茶品类推断<50mg/杯,取中点25mg,±25mg。size_ml修正为650。"
+  },
+  "喜茶_青提轻柠茶_标准杯": {
+    "caffeine_mg": 75,
+    "brand": "喜茶",
+    "product_name": "青提轻柠茶",
+    "size_ml": 650,
+    "size_label": "标准杯",
+    "category": "水果茶",
+    "confidence": "estimated",
+    "source": "喜茶官方咖啡因红绿灯公示 2024-08-15(分级official,mg值为区间中点估算)",
+    "aliases": [
+      "轻柠檬茶",
+      "青提轻柠"
+    ],
+    "original_unit": "range",
+    "dosing_model": "fixed_dose",
+    "source_url": "https://cn.chinadaily.com.cn/a/202408/15/WS66bdc4e5a310054d254ed09e.html",
+    "notes": "分级归属official(报道明确点名为黄灯品类中少数果茶之一);mg值=50-100中点75为估算,故estimated(±25mg)。size_ml修正为650。"
+  },
+  "喜茶_纯绿妍茶后_标准杯": {
+    "caffeine_mg": 75,
+    "brand": "喜茶",
+    "product_name": "纯绿妍茶后",
+    "size_ml": 500,
+    "size_label": "标准杯",
+    "category": "纯茶/茗茶",
+    "confidence": "estimated",
+    "source": "喜茶官方咖啡因红绿灯公示 2024-08-15(分级official,mg值为区间中点估算)",
+    "aliases": [
+      "绿妍茶后"
+    ],
+    "original_unit": "range",
+    "dosing_model": "fixed_dose",
+    "source_url": "https://cn.chinadaily.com.cn/a/202408/15/WS66bdc4e5a310054d254ed09e.html",
+    "notes": "分级归属official(报道明确点名黄灯茗茶);mg值=区间中点75为估算,故estimated(±25mg)。茉莉绿茶纯茶,无奶无果。"
+  },
+  "喜茶_纯金凤茶王_标准杯": {
+    "caffeine_mg": 75,
+    "brand": "喜茶",
+    "product_name": "纯金凤茶王",
+    "size_ml": 500,
+    "size_label": "标准杯",
+    "category": "纯茶/茗茶",
+    "confidence": "estimated",
+    "source": "按喜茶黄灯茗茶品类推断",
+    "aliases": [
+      "金凤茶王",
+      "纯金凤"
+    ],
+    "original_unit": "range",
+    "dosing_model": "fixed_dose",
+    "source_url": "https://cn.chinadaily.com.cn/a/202408/15/WS66bdc4e5a310054d254ed09e.html",
+    "notes": "乌龙纯茶,官方未逐一点名,按纯茶茗茶黄灯品类推断50-100mg/杯,取中点75mg,±25mg。"
+  },
+  "喜茶_美式咖啡_标准杯": {
+    "caffeine_mg": 150,
+    "brand": "喜茶",
+    "product_name": "美式咖啡",
+    "size_ml": 500,
+    "size_label": "标准杯",
+    "category": "咖啡",
+    "confidence": "estimated",
+    "source": "喜茶官方咖啡因红绿灯公示 2024-08-15(分级official,mg值估算)",
+    "aliases": [
+      "美式",
+      "Americano"
+    ],
+    "original_unit": "range",
+    "dosing_model": "fixed_dose",
+    "source_url": "https://news.qq.com/rain/a/20240816A011UZ00",
+    "notes": "分级归属official(报道点名红灯9款含美式拿铁);但150mg为介于125与175.5之间的人为取值,无逐杯精确来源,故estimated(±30mg)。175.5mg为红灯最高值已核验,但未指明对应哪款。"
+  },
+  "喜茶_拿铁_标准杯": {
+    "caffeine_mg": 130,
+    "brand": "喜茶",
+    "product_name": "拿铁",
+    "size_ml": 500,
+    "size_label": "标准杯",
+    "category": "咖啡",
+    "confidence": "estimated",
+    "source": "喜茶官方咖啡因红绿灯公示 2024-08-15(分级official,mg值估算)",
+    "aliases": [
+      "拿铁咖啡",
+      "Latte"
+    ],
+    "original_unit": "range",
+    "dosing_model": "fixed_dose",
+    "source_url": "https://news.qq.com/rain/a/20240816A011UZ00",
+    "notes": "分级归属official(报道点名红灯9款含拿铁);130mg为接近红灯主分布上限125mg的人为取值,无逐杯精确来源,故estimated(±30mg)。"
+  },
+  "喜茶_部分轻乳茶(红灯款,浓茶底)_标准杯": {
+    "caffeine_mg": 115,
+    "brand": "喜茶",
+    "product_name": "部分轻乳茶(红灯款,浓茶底)",
+    "size_ml": 500,
+    "size_label": "标准杯",
+    "category": "轻乳茶",
+    "confidence": "estimated",
+    "source": "喜茶官方咖啡因红绿灯公示 2024-08-15(分级official,具体单品与mg值未公布)",
+    "aliases": [
+      "浓茶轻乳茶"
+    ],
+    "original_unit": "range",
+    "dosing_model": "fixed_dose",
+    "source_url": "https://www.cqn.com.cn/mclz/content/2024-08/15/content_9061645.htm",
+    "notes": "报道称红灯9款含'部分轻乳茶产品',未点名具体哪几款。原数据编造了'山茶花乌龙轻乳茶'具体单品名,已剔除该虚构命名,改为品类占位行。115mg为>100区间偏低估值,±30mg。"
+  },
+  "星巴克_浓缩咖啡（单份Solo/EspressoShot）_单份": {
+    "caffeine_mg": 75,
+    "brand": "星巴克",
+    "product_name": "浓缩咖啡（单份 Solo / Espresso Shot）",
+    "size_ml": 30,
+    "size_label": "单份(Solo, ~30ml)",
+    "category": "咖啡",
+    "confidence": "reported",
+    "source": "星巴克国际官方口径（Coffee Science）",
+    "aliases": [
+      "Espresso",
+      "意式浓缩",
+      "Solo",
+      "单份浓缩"
+    ],
+    "original_unit": "mg/cup",
+    "dosing_model": "fixed_dose",
+    "source_url": "https://about.starbucks.com/stories/2026/coffee-science-which-starbucks-drink-has-the-most-caffeine/",
+    "notes": "espresso类锚点：每shot约75mg。Doppio双份=150mg。"
+  },
+  "星巴克_馥芮白（FlatWhite）_大杯": {
+    "caffeine_mg": 130,
+    "brand": "星巴克",
+    "product_name": "馥芮白（Flat White）",
+    "size_ml": 473,
+    "size_label": "大杯(Grande)",
+    "category": "咖啡",
+    "confidence": "estimated",
+    "source": "按双份ristretto推算",
+    "aliases": [
+      "Flat White",
+      "澳白"
+    ],
+    "original_unit": "mg/cup",
+    "dosing_model": "fixed_dose",
+    "source_url": "https://www.caffeineinformer.com/the-complete-guide-to-starbucks-caffeine",
+    "notes": "Tall与Grande同为双份浓缩，咖啡因近似相等约130mg。估算值。"
+  },
+  "星巴克_美式咖啡（CaffeAmericano）_大杯": {
+    "caffeine_mg": 169,
+    "brand": "星巴克",
+    "product_name": "美式咖啡（Caffe Americano）",
+    "size_ml": 473,
+    "size_label": "大杯(Grande)",
+    "category": "咖啡",
+    "confidence": "reported",
+    "source": "中国大陆媒体援引星巴克中国官方营养数据",
+    "aliases": [
+      "Americano",
+      "美式",
+      "Caffe Americano"
+    ],
+    "original_unit": "mg/cup",
+    "dosing_model": "fixed_dose",
+    "source_url": "https://news.qq.com/rain/a/20250127A03DTY00",
+    "notes": "星巴克中国大杯美式官方援引169mg，低于美国大杯225mg，属配方区域差异。"
+  },
+  "星巴克_美式咖啡（CaffeAmericano）_中杯": {
+    "caffeine_mg": 150,
+    "brand": "星巴克",
+    "product_name": "美式咖啡（Caffe Americano）",
+    "size_ml": 354,
+    "size_label": "中杯(Tall)",
+    "category": "咖啡",
+    "confidence": "reported",
+    "source": "星巴克国际/美国官方口径（Tall=2shot=150mg）",
+    "aliases": [
+      "Americano",
+      "美式"
+    ],
+    "original_unit": "mg/cup",
+    "dosing_model": "fixed_dose",
+    "source_url": "https://www.groundstobrew.com/caffeine-in-starbucks-americanos/",
+    "notes": "国际口径Tall美式=双份浓缩150mg。中国大陆Tall可能略低。"
+  },
+  "星巴克_拿铁（CaffeLatte）_大杯": {
+    "caffeine_mg": 113,
+    "brand": "星巴克",
+    "product_name": "拿铁（Caffe Latte）",
+    "size_ml": 473,
+    "size_label": "大杯(Grande)",
+    "category": "咖啡",
+    "confidence": "reported",
+    "source": "中国大陆媒体援引星巴克中国官方营养数据",
+    "aliases": [
+      "Latte",
+      "拿铁",
+      "Caffe Latte"
+    ],
+    "original_unit": "mg/cup",
+    "dosing_model": "fixed_dose",
+    "source_url": "https://news.qq.com/rain/a/20250127A03DTY00",
+    "notes": "星巴克中国大杯拿铁官方援引113mg。美国大杯为150mg，存在区域差异。"
+  },
+  "星巴克_拿铁（CaffeLatte）_中杯": {
+    "caffeine_mg": 75,
+    "brand": "星巴克",
+    "product_name": "拿铁（Caffe Latte）",
+    "size_ml": 354,
+    "size_label": "中杯(Tall)",
+    "category": "咖啡",
+    "confidence": "reported",
+    "source": "星巴克国际/美国官方口径（Tall=1shot=75mg）",
+    "aliases": [
+      "Latte",
+      "拿铁"
+    ],
+    "original_unit": "mg/cup",
+    "dosing_model": "fixed_dose",
+    "source_url": "https://www.groundstobrew.com/caffeine-in-starbucks-lattes/",
+    "notes": "国际口径Tall拿铁=单份浓缩75mg。中国大陆Tall官方未单列。"
+  },
+  "星巴克_卡布奇诺（Cappuccino）_大杯": {
+    "caffeine_mg": 113,
+    "brand": "星巴克",
+    "product_name": "卡布奇诺（Cappuccino）",
+    "size_ml": 473,
+    "size_label": "大杯(Grande)",
+    "category": "咖啡",
+    "confidence": "reported",
+    "source": "中国大陆媒体援引星巴克中国官方营养数据",
+    "aliases": [
+      "Cappuccino",
+      "卡布奇诺",
+      "卡布"
+    ],
+    "original_unit": "mg/cup",
+    "dosing_model": "fixed_dose",
+    "source_url": "https://news.qq.com/rain/a/20250127A03DTY00",
+    "notes": "卡布奇诺与拿铁浓缩份数相同，中国大杯援引113mg。"
+  },
+  "星巴克_焦糖玛奇朵（CaramelMacchiato）_大杯": {
+    "caffeine_mg": 150,
+    "brand": "星巴克",
+    "product_name": "焦糖玛奇朵（Caramel Macchiato）",
+    "size_ml": 473,
+    "size_label": "大杯(Grande)",
+    "category": "咖啡",
+    "confidence": "reported",
+    "source": "星巴克国际/美国官方口径（Grande=2shot=150mg）",
+    "aliases": [
+      "Caramel Macchiato",
+      "焦糖玛奇朵",
+      "玛奇朵"
+    ],
+    "original_unit": "mg/cup",
+    "dosing_model": "fixed_dose",
+    "source_url": "https://www.caffeineinformer.com/the-complete-guide-to-starbucks-caffeine",
+    "notes": "玛奇朵双份浓缩打底，国际口径Grande约150mg。中国可能略低。"
+  },
+  "星巴克_摩卡（CaffeMocha）_大杯": {
+    "caffeine_mg": 175,
+    "brand": "星巴克",
+    "product_name": "摩卡（Caffe Mocha）",
+    "size_ml": 473,
+    "size_label": "大杯(Grande)",
+    "category": "咖啡",
+    "confidence": "reported",
+    "source": "星巴克国际/美国官方口径（双份浓缩+巧克力）",
+    "aliases": [
+      "Mocha",
+      "摩卡",
+      "Caffe Mocha"
+    ],
+    "original_unit": "mg/cup",
+    "dosing_model": "fixed_dose",
+    "source_url": "https://www.caffeineinformer.com/the-complete-guide-to-starbucks-caffeine",
+    "notes": "摩卡=双份浓缩+巧克力酱，巧克力额外约25mg。国际口径Grande约175mg。"
+  },
+  "星巴克_咖啡星冰乐（CoffeeFrappuccino）_大杯": {
+    "caffeine_mg": 68,
+    "brand": "星巴克",
+    "product_name": "咖啡星冰乐（Coffee Frappuccino）",
+    "size_ml": 473,
+    "size_label": "大杯(Grande)",
+    "category": "咖啡",
+    "confidence": "reported",
+    "source": "中国大陆媒体援引星巴克中国官方营养数据",
+    "aliases": [
+      "Frappuccino",
+      "星冰乐",
+      "咖啡星冰乐",
+      "Coffee Frappuccino"
+    ],
+    "original_unit": "mg/cup",
+    "dosing_model": "fixed_dose",
+    "source_url": "https://news.qq.com/rain/a/20250127A03DTY00",
+    "notes": "中国咖啡星冰乐援引68mg。用Frappuccino咖啡基底而非足量浓缩，故偏低。"
+  },
+  "星巴克_本周咖啡（滴滤/手冲BrewedCoffee）_中杯": {
+    "caffeine_mg": 235,
+    "brand": "星巴克",
+    "product_name": "本周咖啡（滴滤/手冲 Brewed Coffee）",
+    "size_ml": 354,
+    "size_label": "中杯(Tall)",
+    "category": "咖啡",
+    "confidence": "reported",
+    "source": "星巴克国际/美国官方口径（滴滤按容量萃取）",
+    "aliases": [
+      "Brewed Coffee",
+      "本周咖啡",
+      "滴滤咖啡",
+      "手冲"
+    ],
+    "original_unit": "mg/cup",
+    "dosing_model": "fixed_dose",
+    "source_url": "https://www.caffeineinformer.com/the-complete-guide-to-starbucks-caffeine",
+    "notes": "滴滤咖啡大量萃取，咖啡因远高于美式。国际口径Tall约235-260mg、Grande约310mg。中国门店供应有限。"
+  },
+  "茶颜悦色_幽兰拿铁_大杯500ml": {
+    "caffeine_mg": 88,
+    "brand": "茶颜悦色",
+    "product_name": "幽兰拿铁",
+    "size_ml": 500,
+    "size_label": "大杯500ml",
+    "category": "奶茶-红茶底",
+    "confidence": "estimated",
+    "source": "茶底+容量推算（锡兰红茶底，原叶，500ml，±25mg）",
+    "aliases": [
+      "幽兰拿铁",
+      "茶颜幽兰拿铁"
+    ],
+    "original_unit": "estimated",
+    "dosing_model": "unknown",
+    "notes": "招牌#1。锡兰红茶现萃+奶油，红茶底咖啡因偏高。杯量500ml用户确认。推算值，仅供参考。"
+  },
+  "茶颜悦色_声声乌龙_大杯500ml": {
+    "caffeine_mg": 63,
+    "brand": "茶颜悦色",
+    "product_name": "声声乌龙",
+    "size_ml": 500,
+    "size_label": "大杯500ml",
+    "category": "奶茶-乌龙底",
+    "confidence": "estimated",
+    "source": "茶底+容量推算（蜜桃乌龙底，500ml，±25mg）",
+    "aliases": [
+      "声声乌龙"
+    ],
+    "original_unit": "estimated",
+    "dosing_model": "unknown",
+    "notes": "招牌#2。乌龙茶底。杯量500ml用户确认。推算值，仅供参考。"
+  },
+  "茶颜悦色_筝筝纸鸢_大杯500ml": {
+    "caffeine_mg": 63,
+    "brand": "茶颜悦色",
+    "product_name": "筝筝纸鸢",
+    "size_ml": 500,
+    "size_label": "大杯500ml",
+    "category": "奶茶-乌龙底",
+    "confidence": "estimated",
+    "source": "茶底+容量推算（高山乌龙底，500ml，±25mg）",
+    "aliases": [
+      "筝筝纸鸢"
+    ],
+    "original_unit": "estimated",
+    "dosing_model": "unknown",
+    "notes": "高山乌龙茶底。杯量500ml用户确认。推算值，仅供参考。"
+  },
+  "茶颜悦色_素颜锡兰_大杯500ml": {
+    "caffeine_mg": 84,
+    "brand": "茶颜悦色",
+    "product_name": "素颜锡兰",
+    "size_ml": 500,
+    "size_label": "大杯500ml",
+    "category": "奶茶-红茶底",
+    "confidence": "estimated",
+    "source": "茶底+容量推算（锡兰红茶底，纯茶+奶，500ml，±25mg）",
+    "aliases": [
+      "素颜锡兰"
+    ],
+    "original_unit": "estimated",
+    "dosing_model": "unknown",
+    "notes": "锡兰红茶+纯牛奶，无奶油。红茶底咖啡因偏高。杯量500ml用户确认。推算值，仅供参考。"
+  },
+  "茶颜悦色_桂花弄_大杯500ml": {
+    "caffeine_mg": 60,
+    "brand": "茶颜悦色",
+    "product_name": "桂花弄",
+    "size_ml": 500,
+    "size_label": "大杯500ml（冬季限定·杯量待确认）",
+    "category": "奶茶-乌龙底",
+    "confidence": "estimated",
+    "source": "茶底+容量推算（桂花乌龙底，按500ml，±25mg）",
+    "aliases": [
+      "桂花弄"
+    ],
+    "original_unit": "estimated",
+    "dosing_model": "unknown",
+    "notes": "冬季限定款，桂花乌龙茶底。杯量未在小程序确认，按主力500ml推算。推算值，仅供参考。"
+  },
+  "CoCo都可_鲜百香双响炮_大杯500ml": {
+    "caffeine_mg": 50,
+    "brand": "CoCo都可",
+    "product_name": "鲜百香双响炮",
+    "size_ml": 500,
+    "size_label": "大杯500ml",
+    "category": "果茶-绿茶底",
+    "confidence": "estimated",
+    "source": "茶底+容量推算（茉莉绿茶底+百香果，500ml，±25mg）",
+    "aliases": [
+      "鲜百香双响炮",
+      "百香双响炮",
+      "双响炮"
+    ],
+    "original_unit": "estimated",
+    "dosing_model": "fixed_dose",
+    "notes": "常年销量冠军。百香果+椰果+珍珠，绿茶底。推算值，仅供参考。"
+  },
+  "CoCo都可_珍珠奶茶_大杯500ml": {
+    "caffeine_mg": 60,
+    "brand": "CoCo都可",
+    "product_name": "珍珠奶茶",
+    "size_ml": 500,
+    "size_label": "大杯500ml",
+    "category": "奶茶-红茶底",
+    "confidence": "estimated",
+    "source": "茶底+容量推算（红茶底，500ml，±25mg）",
+    "aliases": [
+      "珍珠奶茶",
+      "CoCo珍珠奶茶"
+    ],
+    "original_unit": "estimated",
+    "dosing_model": "fixed_dose",
+    "notes": "经典招牌。红茶奶茶+珍珠。推算值，仅供参考。"
+  },
+  "CoCo都可_奶茶三兄弟_大杯500ml": {
+    "caffeine_mg": 60,
+    "brand": "CoCo都可",
+    "product_name": "奶茶三兄弟",
+    "size_ml": 500,
+    "size_label": "大杯500ml",
+    "category": "奶茶-红茶底",
+    "confidence": "estimated",
+    "source": "茶底+容量推算（红茶底，500ml，±25mg）",
+    "aliases": [
+      "奶茶三兄弟",
+      "三兄弟"
+    ],
+    "original_unit": "estimated",
+    "dosing_model": "fixed_dose",
+    "notes": "大陆市场招牌。珍珠+布丁+仙草，红茶奶茶底。推算值，仅供参考。"
+  },
+  "CoCo都可_阿萨姆奶茶_大杯500ml": {
+    "caffeine_mg": 65,
+    "brand": "CoCo都可",
+    "product_name": "阿萨姆奶茶",
+    "size_ml": 500,
+    "size_label": "大杯500ml",
+    "category": "奶茶-红茶底",
+    "confidence": "estimated",
+    "source": "茶底+容量推算（阿萨姆红茶底，500ml，±25mg）",
+    "aliases": [
+      "阿萨姆奶茶"
+    ],
+    "original_unit": "estimated",
+    "dosing_model": "fixed_dose",
+    "notes": "基础款奶茶，阿萨姆红茶底偏浓。推算值，仅供参考。"
+  },
+  "CoCo都可_百香绿茶_大杯500ml": {
+    "caffeine_mg": 48,
+    "brand": "CoCo都可",
+    "product_name": "百香绿茶",
+    "size_ml": 500,
+    "size_label": "大杯500ml",
+    "category": "果茶-绿茶底",
+    "confidence": "estimated",
+    "source": "茶底+容量推算（茉莉绿茶底，500ml，±25mg）",
+    "aliases": [
+      "百香绿茶"
+    ],
+    "original_unit": "estimated",
+    "dosing_model": "fixed_dose",
+    "notes": "百香果+茉莉绿茶。推算值，仅供参考。"
+  },
+  "CoCo都可_鲜柠檬茶（青茶底）_大杯500ml": {
+    "caffeine_mg": 52,
+    "brand": "CoCo都可",
+    "product_name": "鲜柠檬茶（青茶底）",
+    "size_ml": 500,
+    "size_label": "大杯500ml",
+    "category": "果茶-青茶底",
+    "confidence": "estimated",
+    "source": "茶底+容量推算（青茶/乌龙底，500ml，±25mg）",
+    "aliases": [
+      "鲜柠檬茶",
+      "柠檬茶"
+    ],
+    "original_unit": "estimated",
+    "dosing_model": "fixed_dose",
+    "notes": "鲜柠檬系列，茶底红/绿/青可选，此处按青茶。推算值，仅供参考。"
+  },
+  "CoCo都可_鲜芋奶茶_大杯500ml": {
+    "caffeine_mg": 58,
+    "brand": "CoCo都可",
+    "product_name": "鲜芋奶茶",
+    "size_ml": 500,
+    "size_label": "大杯500ml",
+    "category": "奶茶-红茶底",
+    "confidence": "estimated",
+    "source": "茶底+容量推算（红茶底+芋泥，500ml，±25mg）",
+    "aliases": [
+      "鲜芋奶茶",
+      "芋圆奶茶"
+    ],
+    "original_unit": "estimated",
+    "dosing_model": "fixed_dose",
+    "notes": "红茶奶茶+芋泥/芋圆。推算值，仅供参考。"
   }
 }

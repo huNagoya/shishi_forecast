@@ -8,6 +8,8 @@ export interface SleepPrediction {
   nextDayScore: number // 0-100
   analysis: string
   tips: string[]
+  caffeineEstimated?: boolean // true=估算值（库未命中或茶底推算），前端显示"估算·仅供参考"
+  caffeineConfidence?: string // official/tested/reported/estimated/ai
 }
 
 // 消化预测结果

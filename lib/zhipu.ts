@@ -1,4 +1,3 @@
-const ZHIPU_BASE_URL = 'https://open.bigmodel.cn/api/paas/v4'
 const QWEN_BASE_URL = 'https://dashscope.aliyuncs.com/compatible-mode/v1'
 
 type MessageContent =
@@ -13,37 +12,6 @@ interface Message {
   content: MessageContent
 }
 
-// model: 'glm-4v'（有图片）或 'glm-4-flash'（纯文字）
-export async function callZhipu(messages: Message[], model = 'glm-4-flash'): Promise<string> {
-  const apiKey = process.env.ZHIPU_API_KEY
-  if (!apiKey) {
-    throw new Error('未配置 ZHIPU_API_KEY，请检查 .env.local 文件')
-  }
-
-  const response = await fetch(`${ZHIPU_BASE_URL}/chat/completions`, {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-      Authorization: `Bearer ${apiKey}`,
-    },
-    body: JSON.stringify({
-      model,
-      messages,
-      temperature: 0.3,
-      max_tokens: 1500,
-    }),
-  })
-
-  if (!response.ok) {
-    const errorText = await response.text()
-    throw new Error(`智谱API调用失败: ${response.status} - ${errorText}`)
-  }
-
-  const data = await response.json()
-  return data.choices[0].message.content as string
-}
-
-// 千问视觉模型（OCR 能力更强，用于图片识别场景）
 // model: 'qwen3-vl-plus'（视觉）或 'qwen-plus-latest'（纯文字）
 export async function callQwen(messages: Message[], model = 'qwen3-vl-plus'): Promise<string> {
   const apiKey = process.env.QWEN_API_KEY
