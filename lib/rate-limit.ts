@@ -1,7 +1,7 @@
 import { supabase } from './db'
 
 // 每个客户端每日预测次数上限（sleep + digest 合计）。软上限，仅防公开后被刷爆 token，不是安全级防护。
-export const DAILY_LIMIT = 30
+export const DAILY_LIMIT = 1 // TEMP: 上线前限频验证用，验证后立即改回 30
 
 /**
  * 生成限频 key：优先用小程序传来的 clientId（稳定设备标识），否则退化为请求 IP。
