@@ -1,7 +1,7 @@
 import { supabase } from './db'
 
 // 每个客户端每日预测次数上限（sleep + digest 合计）。软上限，仅防公开后被刷爆 token，不是安全级防护。
-export const DAILY_LIMIT = 1 // TEMP: 上线前限频验证用，验证后立即改回 30
+export const DAILY_LIMIT = 1 // TEMP: 验证 RPC 限频用，验证通过后改回 30
 
 /**
  * 生成限频 key：优先用小程序传来的 clientId（稳定设备标识），否则退化为请求 IP。
@@ -18,25 +18,21 @@ export function getClientKey(clientId: unknown, req: Request): string {
 
 /**
  * 统计该 client 当天（UTC 自然日）已写入 predictions 的行数，判断是否超限。
- * 查询失败时放行（fail-open），避免限频依赖故障误伤正常用户。
+ * 走 RPC count_predictions_today（SECURITY DEFINER 绕过 RLS）——anon key 直接 select
+ * 受 RLS 阻挡恒返回 0，必须经函数计数。查询失败时放行（fail-open），不误伤正常用户。
  */
 export async function checkRateLimit(
   clientKey: string
 ): Promise<{ allowed: boolean; count: number; limit: number }> {
-  const start = new Date()
-  start.setUTCHours(0, 0, 0, 0)
-
-  const { count, error } = await supabase
-    .from('predictions')
-    .select('*', { count: 'exact', head: true })
-    .eq('client_id', clientKey)
-    .gte('created_at', start.toISOString())
+  const { data, error } = await supabase.rpc('count_predictions_today', {
+    p_client: clientKey,
+  })
 
   if (error) {
     console.warn('限频查询失败，放行:', error.message)
     return { allowed: true, count: 0, limit: DAILY_LIMIT }
   }
 
-  const c = count ?? 0
+  const c = typeof data === 'number' ? data : Number(data) || 0
   return { allowed: c < DAILY_LIMIT, count: c, limit: DAILY_LIMIT }
 }
