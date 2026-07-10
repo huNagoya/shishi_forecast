@@ -80,5 +80,52 @@ export function extractJSON(text: string): unknown {
     }
   }
 
+  // 4. 括号栈修复：模型偶尔把结尾 `}` 写成 `]`（或截断），导致括号不配对，
+  //    上面三步全失败。这里按栈重建：遇闭合符强制匹配栈顶应有的闭合符，
+  //    末尾补齐未闭合的。可救回 `...]]`→`...]}`、截断等常见畸形。
+  const repaired = repairJSON(text)
+  if (repaired !== null) return repaired
+
   throw new Error(`AI响应格式异常。原始内容：${text.substring(0, 500)}`)
+}
+
+// 括号栈修复：仅在标准解析全部失败后作为兜底调用
+function repairJSON(text: string): unknown {
+  const start = text.indexOf('{')
+  if (start === -1) return null
+  const s = text.slice(start)
+  const stack: string[] = []
+  let out = ''
+  let inStr = false
+  let esc = false
+  for (let i = 0; i < s.length; i++) {
+    const ch = s[i]
+    if (inStr) {
+      out += ch
+      if (esc) esc = false
+      else if (ch === '\\') esc = true
+      else if (ch === '"') inStr = false
+      continue
+    }
+    if (ch === '"') { inStr = true; out += ch; continue }
+    if (ch === '{' || ch === '[') { stack.push(ch); out += ch; continue }
+    if (ch === '}' || ch === ']') {
+      if (stack.length === 0) continue // 丢弃多余闭合符
+      const open = stack.pop()!
+      out += open === '{' ? '}' : ']' // 强制匹配栈顶，纠正 ] / } 写反
+      if (stack.length === 0) break // 顶层对象已闭合，忽略后续多余内容
+      continue
+    }
+    out += ch
+  }
+  if (inStr) out += '"'
+  while (stack.length) {
+    const open = stack.pop()!
+    out += open === '{' ? '}' : ']'
+  }
+  try {
+    return JSON.parse(out)
+  } catch {
+    return null
+  }
 }
